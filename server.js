@@ -12,11 +12,11 @@ const webpackMiddleware = require('webpack-dev-middleware');
 /***********************************************************
 *  ENVIRONEMENT SETUP
 ************************************************************/
-if (env === 'development')
+if (process.env.NODE_ENV === undefined)
     // development env variables
     require('dotenv').config();
 
-const env = process.env.NODE_ENV
+const env = process.env.NODE_ENV;
 // End Setup ===============================================
 
 const app = express();
@@ -24,7 +24,7 @@ const compiler = webpack(configWebpack(env));
 
 
 // Middleware Setup ========================================
-app.use(express.static(__dirname + '/dist'));
+//app.use(express.static(__dirname + '/dist'));
 app.use(webpackMiddleware(compiler));
 
 
@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/users", (req, res) => {
-  res.sendFile(path.joun(__dirname, 'dist/index.html'));
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 

@@ -6,9 +6,9 @@ const commonConfigs = require('./base.js');
 module.exports = function(env){
   return webpackMerge(commonConfigs(), {
     output: {
-      path: path.join(__dirname, '/../dist/assets'),
+      path: path.join(__dirname, '../dist/assets'),
       filename: '[name].bundle.js',
-      publicPath: '../dist',
+      publicPath: '../dist/',
       sourceMapFilename: '[name].map'
     },
     devtool: 'source-map',
@@ -20,7 +20,7 @@ module.exports = function(env){
       historyApiFallback: true,
       noInfo: false,
       stats: 'minimal',
-      publicPath: publicPath
+      publicPath: '../dist/'
     }
-  }
+  });
 }
