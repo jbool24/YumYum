@@ -1,22 +1,21 @@
 // REACT MODULES ==================================
-import { Component } from 'react';
-
-  // imoprt react-router-configs
-
+import React, { Component } from 'react';
 
 // Import components ==============================
-  //compnents here
-
-
+//compnents here
 
 //=================================================
 
 export default class App extends Component {
   constructor() {
-
+    super();
   }
 
   render() {
-    // {this.props.children} goes somewhere in here for the main application
+    return (
+      <div>
+        <h1> TEST HELLO </h1>
+      </div>
+    );
   }
 }
