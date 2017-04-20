@@ -49,13 +49,14 @@ app.use(logger('dev'));
 
 
 // Main files ==========================================
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/splash.html'));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'dist', 'index.html'));
 });
+//
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, 'public/splash.html'));
+// });
 
-app.get("/users/", (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/dist/index.html'));
-});
 
 
 // Start Server ============================================

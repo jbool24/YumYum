@@ -9,7 +9,7 @@ module.exports = {
   entry: {
     main: './client/index.js',
     vendor: ['react', 'react-dom', 'react-router'],
-    style: './client/stylesheets/test.sass',
+    style: './client/stylesheets/main.sass',
   },
   output: {
     filename: '[name].bundle.js',
