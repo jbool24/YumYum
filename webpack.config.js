@@ -8,7 +8,7 @@ module.exports = {
   context: path.resolve(__dirname),
   entry: {
     main: './client/index.js',
-    vendor: ['react', 'react-dom', 'react-router'],
+    vendor: ['react', 'react-dom', 'react-router-dom'],
     style: './client/stylesheets/main.sass',
   },
   output: {
