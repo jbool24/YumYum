@@ -1,0 +1,57 @@
+$font-stack: 'Nunito', sans-serif
+$white: #FCFFEE
+$circle-width: 25vh
+$red: #ed145b
+$grey: #757575
+
+@mixin no-border 
+	border: none
+	border-radius: 0px
+
+@mixin text-primary ($white, $font-stack)
+	color: $white
+	font-family: $font-stack
+
+@mixin margin-center
+	margin-right: auto
+	margin-left: auto
+
+@mixin btn-def-red
+	color: $white
+	background-color: $red
+	border-color: $red
+
+@mixin btn-red 
+	display: inline-block
+	padding: 6px 12px
+	margin-bottom: 0
+	font-size: 1em
+	border-radius: 0px
+
+
+/*Modal style */
+.modal 
+	.modal-dialog
+		width: 400px
+		max-width: 80%
+		.modal-content
+			@include no-border 
+			background-color: $white
+			@include text-primary ($grey, $font-stack)
+			.modal-header
+				color: $red
+				border-bottom: 1px solid $red
+			.modal-body
+				.form-group
+					.form-control
+						background-color: $white
+						border: $grey 1px solid
+						border-radius: 0px
+			
+			.modal-footer
+				border-top: 1px solid $red
+				.btn-default
+					@include btn-def-red
+				.btn 
+					@include btn-red
+	
