@@ -1,0 +1,107 @@
+/* Sass Document */
+
+
+$break-sm: 576px
+$break-md: 768px
+$break-lg: 992px
+
+$font-stack: 'Nunito', sans-serif
+$white: #FCFFEE
+$circle-width: 25vh
+$red: #ed145b
+$grey: #757575
+
+@mixin no-border 
+	border: none
+	border-radius: 0px
+
+@mixin text-primary ($white, $font-stack)
+	color: $white
+	font-family: $font-stack
+
+@mixin margin-center
+	margin-right: auto
+	margin-left: auto
+
+@mixin btn-def-red
+	color: $white
+	background-color: $red
+	border-color: $red
+
+@mixin btn-red 
+	display: inline-block
+	padding: 6px 12px
+	margin-bottom: 0
+	font-size: 1em
+	border-radius: 0px
+
+
+/* cook */
+.right-border
+	border-right: 1px $grey solid
+	@include margin-center
+	@media screen and (max-width: $break-lg)
+		border-right: none
+	.profile-img
+		margin: 0 10%
+		box-sizing: border-box
+		width: 80%
+		border: 2px $red solid
+		border-radius: 3px
+		padding: 10px
+.contacts-style
+	@include text-primary ($grey, $font-stack)
+
+.cook-copy-bg
+	background-image: url(../links/food1.jpg)
+	background-repeat: no-repeat
+	background-color: #cbf2e6
+	.row-margin
+		margin: 7vh 0
+	
+	.orders-body
+		background-color: $white
+		width: 100%
+		padding-bottom: 10px
+		@include text-primary ($grey, $font-stack)
+
+		@mixin new-order ($red)
+			width: 100%
+			background-color: $red
+			height: 50px
+			@include text-primary ($white, $font-stack)
+			font-size: 1.5em
+			padding: 2%
+		
+		.new-order 
+			@include new-order($red)
+		.orders
+			@include new-order($grey)
+		.order-style
+			margin: 0
+			padding: 15px
+			list-style: none
+			.btn 
+				@include btn-red
+				margin-right: 10px
+			.btn-default
+				@include btn-def-red
+.row-margin-sm
+	margin-top: 15px
+
+.table 
+	@include text-primary ($grey, $font-stack)
+	
+td
+	padding: 8px
+	line-height: 1
+	vertical-align: top
+	border-top: 1px solid $grey
+
+th
+	padding: 8px
+	line-height: 1
+	vertical-align: top
+	border-top: 1px solid $grey
+
+	

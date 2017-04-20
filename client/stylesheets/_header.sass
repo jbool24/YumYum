@@ -1,0 +1,39 @@
+/* Sass Document */
+
+$font-stack: 'Nunito', sans-serif
+$white: #FCFFEE
+$circle-width: 25vh
+$red: #ed145b
+$grey: #757575
+
+@mixin no-border 
+	border: none
+	border-radius: 0px
+
+@mixin text-primary ($white, $font-stack)
+	color: $white
+	font-family: $font-stack
+
+/* navbar */
+.navbar-default 
+	background-color: $red
+	@include no-border
+	@include text-primary ($white, $font-stack)
+	
+	.navbar-header 
+		@include text-primary ($white, $font-stack)
+		
+	.navbar-nav
+		.nav-li 
+			@include text-primary ($white, $font-stack)
+			cursor: pointer
+	
+	.navbar-brand 
+		color: $white
+		padding: 4px
+		
+		.img-logo 
+			width: 45px
+			padding-bottom: 7px
+			padding-right: 5px
+
