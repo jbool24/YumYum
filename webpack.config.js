@@ -8,8 +8,8 @@ module.exports = {
   context: path.resolve(__dirname),
   entry: {
     main: './client/index.js',
-    vendor: ['react', 'react-dom', 'react-router'],
-    style: './client/stylesheets/test.sass',
+    vendor: ['react', 'react-dom', 'react-router-dom'],
+    style: './client/stylesheets/main.sass',
   },
   output: {
     filename: '[name].bundle.js',

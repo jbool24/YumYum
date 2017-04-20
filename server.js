@@ -47,15 +47,22 @@ app.use("/public", express.static(path.resolve(__dirname + "/public")));
 // Morgan Logger
 app.use(logger('dev'));
 
+// Routes ======================
+
+require('./server/routes/index')(app);
+require('./server/api/index')(app);
+//===========
+
 
 // Main files ==========================================
+app.get("/users/", (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'dist', 'index.html'));
+});
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, 'public/splash.html'));
 });
 
-app.get("/users/", (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/dist/index.html'));
-});
 
 
 // Start Server ============================================
