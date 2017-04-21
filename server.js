@@ -6,6 +6,8 @@ const express           = require('express');
 const logger            = require('morgan');
 const webpack           = require('webpack');
 const mongoose          = require('mongoose');
+
+mongoose.Promise = global.Promise;
 // const configWebpack     = require('./webpack.config.js');
 // const webpackMiddleware = require('webpack-dev-middleware');
 
@@ -47,7 +49,8 @@ app.use("/", express.static(path.resolve(__dirname + "/public")));
 // app.use(webpackMiddleware(compiler));
 
 // Morgan Logger
-app.use(logger('dev'));
+if (env === 'development') 
+  app.use(logger('dev'));
 
 // Routes ======================
 
