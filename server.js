@@ -4,8 +4,13 @@
 const path              = require('path');
 const express           = require('express');
 const logger            = require('morgan');
+const bodyParser        = require('body-parser');
+const cookieParser      = require('cookie-parser');
+const favicon           = require('serve-favicon');
 const webpack           = require('webpack');
 const mongoose          = require('mongoose');
+
+mongoose.Promise = global.Promise;
 // const configWebpack     = require('./webpack.config.js');
 // const webpackMiddleware = require('webpack-dev-middleware');
 
@@ -22,7 +27,6 @@ if (process.env.NODE_ENV === undefined)
 
 const env = process.env.NODE_ENV;
 
-
 // Database seteup MongoDB--------------------------
 (env === 'development')
     ? mongoose.connect(process.env.MONGO_TESTDB)
@@ -31,16 +35,28 @@ const env = process.env.NODE_ENV;
 const db = mongoose.connection;
 
 db.on("error", function(err) {
-  console.log("Mongoose Error: ", err);
+  console.error("Mongoose Error: ", err);
+});
+
+db.on('disconnected', function() {
+  console.warn('MongoDB event disconnected');
+});
+
+db.on('reconnected', function() {
+  console.log('MongoDB event reconnected');
 });
 
 db.once("open", function() {
-  console.log("Mongoose connection successful.");
+  console.log(`Mongoose connection successful.\nMongo Host: ${db.host}:${db.port}`);
 });
 
 
 // EXPRESS APP INIT
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(favicon(path.join(__dirname, '/public/favicon.ico')))
+app.use(cookieParser());
 // const compiler = webpack(configWebpack(env));
 
 // Middleware Setup ========================================
@@ -50,7 +66,8 @@ app.use("/", express.static(path.resolve(__dirname + "/public")));
 // app.use(webpackMiddleware(compiler));
 
 // Morgan Logger
-app.use(logger('dev'));
+if (env === 'development')
+  app.use(logger('dev'));
 
 // Routes ======================
 
