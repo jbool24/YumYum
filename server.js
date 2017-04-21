@@ -4,6 +4,9 @@
 const path              = require('path');
 const express           = require('express');
 const logger            = require('morgan');
+const bodyParser        = require('body-parser');
+const cookieParser      = require('cookie-parser');
+const favicon           = require('serve-favicon');
 const webpack           = require('webpack');
 const mongoose          = require('mongoose');
 
@@ -47,6 +50,9 @@ db.once("open", function() {
 
 // EXPRESS APP INIT
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(cookieParser());
 // const compiler = webpack(configWebpack(env));
 
 // Middleware Setup ========================================

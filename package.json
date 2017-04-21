@@ -12,12 +12,15 @@
     "start": "nodemon server"
   },
   "dependencies": {
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
     "express": "^4.15.2",
     "mongoose": "^4.9.5",
     "morgan": "^1.8.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-router": "2.8.1"
+    "react-router": "2.8.1",
+    "serve-favicon": "^2.4.2"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
