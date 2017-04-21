@@ -10,7 +10,6 @@ const favicon           = require('serve-favicon');
 const webpack           = require('webpack');
 const mongoose          = require('mongoose');
 
-const bodyParser        = require('body-parser');
 const expressValidator  = require('express-validator');
 const flash             = require('connect-flash');
 const session           = require('express-session');
