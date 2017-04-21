@@ -9,6 +9,9 @@ const mongoose          = require('mongoose');
 // const configWebpack     = require('./webpack.config.js');
 // const webpackMiddleware = require('webpack-dev-middleware');
 
+// Set mongoose to leverage built in JavaScript ES6 Promises
+mongoose.Promise = Promise;
+
 
 /***********************************************************
 *  ENVIRONEMENT SETUP
