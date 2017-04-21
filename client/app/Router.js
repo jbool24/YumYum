@@ -1,19 +1,17 @@
 // React Router Required Objects
-import React from 'react';
-import { Router, Route, browserHistory } from 'react-router';
+const React = require('react');
+const router = require("react-router");
+const Route = router.Route;
+const Router = router.Router;
+const hashHistory = router.hashHistory;
+const IndexRoute = router.IndexRoute;
 
-// react-router-configs here
 import App from './App';
 
-export default (
+module.exports = (
   // The high level component is the Router component
-  <Router history={browserHistory}>
-    <Route path="/users" component={App}>
-
-      {/* If sub-routes to components */}
-
-
-      {/* <IndexRoute component={App} /> */}
+  <Router history={hashHistory}>
+    <Route path="/" component={App}>
 
     </Route>
   </Router>

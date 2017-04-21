@@ -15,6 +15,7 @@ export default class App extends Component {
     return (
       <div>
         <h1> TEST HELLO </h1>
+        {this.props.children}
       </div>
     );
   }

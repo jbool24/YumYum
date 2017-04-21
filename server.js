@@ -4,15 +4,20 @@
 const path              = require('path');
 const express           = require('express');
 const logger            = require('morgan');
+const bodyParser        = require('body-parser');
+const cookieParser      = require('cookie-parser');
+const favicon           = require('serve-favicon');
 const webpack           = require('webpack');
 const mongoose          = require('mongoose');
-const cookieParser      = require('cookie-parser');
+
 const bodyParser        = require('body-parser');
 const expressValidator  = require('express-validator');
 const flash             = require('connect-flash');
 const session           = require('express-session');
 const passport          = require('passport');
 const LocalStrategy     = require('passport-local');
+
+mongoose.Promise = global.Promise;
 
 // const configWebpack     = require('./webpack.config.js');
 // const webpackMiddleware = require('webpack-dev-middleware');
@@ -27,7 +32,6 @@ if (process.env.NODE_ENV === undefined)
 
 const env = process.env.NODE_ENV;
 
-
 // Database seteup MongoDB--------------------------
 (env === 'development')
     ? mongoose.connect(process.env.MONGO_TESTDB)
@@ -36,25 +40,36 @@ const env = process.env.NODE_ENV;
 const db = mongoose.connection;
 
 db.on("error", function(err) {
-  console.log("Mongoose Error: ", err);
+  console.error("Mongoose Error: ", err);
+});
+
+db.on('disconnected', function() {
+  console.warn('MongoDB event disconnected');
+});
+
+db.on('reconnected', function() {
+  console.log('MongoDB event reconnected');
 });
 
 db.once("open", function() {
-  console.log("Mongoose connection successful.");
+  console.log(`Mongoose connection successful.\nMongo Host: ${db.host}:${db.port}`);
 });
 
 
 // EXPRESS APP INIT
 const app = express();
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(favicon(path.join(__dirname, '/public/favicon.ico')))
+app.use(cookieParser());
+
 // const compiler = webpack(configWebpack(env));
 
 // Middleware Setup ========================================
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-
 app.use("/public", express.static(path.resolve(__dirname + "/public")));
+app.use("/public", express.static(path.resolve(__dirname + "/public/dist")));
+app.use("/", express.static(path.resolve(__dirname + "/public")));
 // app.use(webpackMiddleware(compiler));
 
 // Express Session
@@ -98,20 +113,26 @@ app.use(function (req, res, next) {
   next();
 });
 
-require('./server/routes/index')(app)
-
 // Morgan Logger
-app.use(logger('dev'));
+if (env === 'development')
+  app.use(logger('dev'));
+
+// Routes ======================
+require('./server/routes/index')(app)
+require('./server/routes')(app);
+require('./server/api')(app);
+//===========
 
 
 // Main files ==========================================
+app.get("/users/", (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'dist', 'index.html'));
+});
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, 'public/splash.html'));
 });
 
-app.get("/users/", (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/dist/index.html'));
-});
 
 
 // Start Server ============================================
