@@ -42,6 +42,8 @@ const app = express();
 
 // Middleware Setup ========================================
 app.use("/public", express.static(path.resolve(__dirname + "/public")));
+app.use("/public", express.static(path.resolve(__dirname + "/public/dist")));
+app.use("/", express.static(path.resolve(__dirname + "/public")));
 // app.use(webpackMiddleware(compiler));
 
 // Morgan Logger

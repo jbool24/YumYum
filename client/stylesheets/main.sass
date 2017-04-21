@@ -14,7 +14,7 @@ $circle-width: 25vh
 $red: #ed145b
 $grey: #757575
 
-@mixin no-border 
+@mixin no-border
 	border: none
 	border-radius: 0px
 
@@ -31,7 +31,7 @@ $grey: #757575
 	background-color: $red
 	border-color: $red
 
-@mixin btn-red 
+@mixin btn-red
 	display: inline-block
 	padding: 6px 12px
 	margin-bottom: 0
@@ -42,19 +42,19 @@ a[href] input[type='submit'] input[type='image'] label[for] select button .point
 	cursor: pointer
 
 
-body 
+body
 	background-color: $white
 	overflow-x: hidden
 	-webkit-user-select: none
 	-moz-user-select: none
 	-ms-user-select: none
-	user-select: none           
-	
-.parallax 
+	user-select: none
+
+.parallax
 	overflow-x: hidden
 	overflow-y: auto
-	background-image: url(../links/home.jpg)
-	min-height: 80% 
+	background-image: url(/links/home.jpg)
+	min-height: 80%
 	background-attachment: fixed
 	background-position: center
 	background-repeat: no-repeat
@@ -64,30 +64,30 @@ body
 
 
 /* copy */
-.headline 
+.headline
 	@include text-primary ($white, $font-stack)
 	font-size: 6em
 	padding: 8%
 
-.text-style 
+.text-style
 	@include margin-center
 	width: 85%
 	@include text-primary ($grey, $font-stack)
 
-.copy-style 
+.copy-style
 	margin: 5% auto
-	
+
 	.icon-center
 		width: 50px
-		margin: 15px auto 
-	
+		margin: 15px auto
+
 		.icon-lg
 			width: 48px
 
-	.headline-small 
+	.headline-small
 		@include text-primary ($red, $font-stack)
 		font-size: 3em
-		
+
 
 	.circles-style
 		display: flex
@@ -95,8 +95,8 @@ body
 		@media screen and (max-width: $break-md)
 			justify-content: center
 			flex-direction: column
-		
-		.round 
+
+		.round
 			align-self: center
 			width: $circle-width
 			height: $circle-width
@@ -106,25 +106,19 @@ body
 			padding-top: $circle-width / 2.5
 			@include text-primary ($red, $font-stack)
 
-	.headline-tiny 
+	.headline-tiny
 		@include text-primary ($grey, $font-stack)
 		font-size: 20pt
 		margin: 3%
-		
-	.social-icons 
+
+	.social-icons
 		width: 170px
 		margin: 5% auto 0 auto
-			
+
 		.icon-lg
 			width: 48px
 			float: left
 			margin: 3px
 
-hr 
+hr
 	border-color: $grey
-
-
-
-
-
-

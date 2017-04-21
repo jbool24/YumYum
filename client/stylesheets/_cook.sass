@@ -11,7 +11,7 @@ $circle-width: 25vh
 $red: #ed145b
 $grey: #757575
 
-@mixin no-border 
+@mixin no-border
 	border: none
 	border-radius: 0px
 
@@ -28,7 +28,7 @@ $grey: #757575
 	background-color: $red
 	border-color: $red
 
-@mixin btn-red 
+@mixin btn-red
 	display: inline-block
 	padding: 6px 12px
 	margin-bottom: 0
@@ -53,12 +53,12 @@ $grey: #757575
 	@include text-primary ($grey, $font-stack)
 
 .cook-copy-bg
-	background-image: url(../links/food1.jpg)
+	background-image: url(/links/food1.jpg)
 	background-repeat: no-repeat
 	background-color: #cbf2e6
 	.row-margin
 		margin: 7vh 0
-	
+
 	.orders-body
 		background-color: $white
 		width: 100%
@@ -72,8 +72,8 @@ $grey: #757575
 			@include text-primary ($white, $font-stack)
 			font-size: 1.5em
 			padding: 2%
-		
-		.new-order 
+
+		.new-order
 			@include new-order($red)
 		.orders
 			@include new-order($grey)
@@ -81,7 +81,7 @@ $grey: #757575
 			margin: 0
 			padding: 15px
 			list-style: none
-			.btn 
+			.btn
 				@include btn-red
 				margin-right: 10px
 			.btn-default
@@ -89,9 +89,9 @@ $grey: #757575
 .row-margin-sm
 	margin-top: 15px
 
-.table 
+.table
 	@include text-primary ($grey, $font-stack)
-	
+
 td
 	padding: 8px
 	line-height: 1
@@ -103,5 +103,3 @@ th
 	line-height: 1
 	vertical-align: top
 	border-top: 1px solid $grey
-
-	

@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Router from './app/Router';
+//import Router from './app/Router';
 
+var routes = require('./app/Router');
 
-ReactDOM.render(<Router />, document.getElementById('app-target'));
+import App from './app/App';
+
+ReactDOM.render(routes, document.getElementById('app-target'));
