@@ -52,6 +52,7 @@ db.once("open", function() {
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(favicon(path.join(__dirname, '/public/favicon.ico')))
 app.use(cookieParser());
 // const compiler = webpack(configWebpack(env));
 
