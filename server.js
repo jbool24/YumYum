@@ -21,7 +21,6 @@ if (process.env.NODE_ENV === undefined)
 
 const env = process.env.NODE_ENV;
 
-
 // Database seteup MongoDB--------------------------
 (env === 'development')
     ? mongoose.connect(process.env.MONGO_TESTDB)
@@ -30,11 +29,19 @@ const env = process.env.NODE_ENV;
 const db = mongoose.connection;
 
 db.on("error", function(err) {
-  console.log("Mongoose Error: ", err);
+  console.error("Mongoose Error: ", err);
+});
+
+db.on('disconnected', function() {
+  console.warn('MongoDB event disconnected');
+});
+
+db.on('reconnected', function() {
+  console.log('MongoDB event reconnected');
 });
 
 db.once("open", function() {
-  console.log("Mongoose connection successful.");
+  console.log(`Mongoose connection successful.\nMongo Host: ${db.host}:${db.port}`);
 });
 
 
@@ -49,7 +56,7 @@ app.use("/", express.static(path.resolve(__dirname + "/public")));
 // app.use(webpackMiddleware(compiler));
 
 // Morgan Logger
-if (env === 'development') 
+if (env === 'development')
   app.use(logger('dev'));
 
 // Routes ======================
