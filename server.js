@@ -12,7 +12,7 @@ const expressValidator  = require('express-validator');
 const flash             = require('connect-flash');
 const session           = require('express-session');
 const passport          = require('passport');
-const LocalStrategy     = require('LocalStrategy');
+const LocalStrategy     = require('passport-local');
 
 // const configWebpack     = require('./webpack.config.js');
 // const webpackMiddleware = require('webpack-dev-middleware');
@@ -46,6 +46,7 @@ db.once("open", function() {
 
 // EXPRESS APP INIT
 const app = express();
+
 // const compiler = webpack(configWebpack(env));
 
 // Middleware Setup ========================================
@@ -96,6 +97,8 @@ app.use(function (req, res, next) {
   res.locals.user = req.user || null;
   next();
 });
+
+require('./server/routes/index')(app)
 
 // Morgan Logger
 app.use(logger('dev'));

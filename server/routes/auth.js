@@ -5,19 +5,10 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const User = require('../models/user');
 
-// Register
-router.get('/register', function (req, res) {
-  res.render('register');
-});
-
-// Login
-router.get('/login', function (req, res) {
-  res.render('login');
-});
-
 // Register User
-router.post('/register', function (req, res) {
-  const {username, password} = req.body;
+exports.register = function (req, res) {
+  console.log(req.body);
+  var {username, password} = req.body;
   
 
 //   // Validation
@@ -40,16 +31,15 @@ router.post('/register', function (req, res) {
       password: password
     });
 
-//     User.createUser(newUser, function (err, user) {
-//       if (err) throw err;
-//       console.log(user);
-//     });
-
+    newUser.save(function (err) {
+      if (err) throw err
+    })
+    
 //     req.flash('success_msg', 'You are registered and can now login');
 
 //     res.redirect('/users/login');
-//   }
-// });
+  }
+};
 
 // passport.use(new LocalStrategy(
 //   function (username, password, done) {
@@ -93,5 +83,3 @@ router.post('/register', function (req, res) {
 
 //   res.redirect('/users/login');
 // });
-
-module.exports = router;
