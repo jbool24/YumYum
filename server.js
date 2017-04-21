@@ -49,8 +49,8 @@ app.use(logger('dev'));
 
 // Routes ======================
 
-require('./server/routes/index')(app);
-require('./server/api/index')(app);
+require('./server/routes')(app);
+require('./server/api')(app);
 //===========
 
 
