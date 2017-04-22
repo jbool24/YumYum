@@ -1,3 +1,6 @@
+# OS X journal files
+.DS_Store
+
 # Logs
 logs
 *.log
