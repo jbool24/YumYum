@@ -41,3 +41,4 @@ public/dist
 
 # Environments vars for development
 .env
+.vscode
