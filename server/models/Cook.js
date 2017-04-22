@@ -36,7 +36,8 @@ var CookSchema = new Schema({
     unique:true
   },
   reviews:[{
-    type:String
+    review:{type:String,required:true},
+    customerName:{type:String,required:true}
   }], 
   stars:{
     type: Number,
