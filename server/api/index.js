@@ -6,6 +6,8 @@ const getFooditemsByCook=require('./getFooditemsByCook.js');
 
 const saveFood=require('./saveFood.js');
 
+const addReview=require('./addReview.js');
+
 
 module.exports = function(app) {
 	//get routes
@@ -15,6 +17,11 @@ module.exports = function(app) {
 
 	//post routes
 	app.post("/saveFood/:id",saveFood);
+
+
+	//update routes
+	app.post("/addReview/:id",addReview);
+
 }
 
 

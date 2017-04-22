@@ -7,7 +7,6 @@ const Customer = require("../models/Customer.js");
 
 
 // Get the fooditems for the given cook
-
 const getFooditemsByCook = function(req, res) {
     Cook.findOne({ "_id": req.params.id })
         // ..and populate all of the fooditems associated with it
