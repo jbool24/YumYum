@@ -1,0 +1,27 @@
+.navbar-default {
+	/*change color*/
+	height:50px;
+
+}
+
+.navbar-right {
+	margin-right:0px;
+}
+
+a.checkOut{
+	padding:0px;
+}
+
+.profImgdrop{
+	padding:0px;
+}
+
+.profImg{
+	margin:0px;
+	height:auto;
+	width:20px;
+}
+
+.clip-circle {
+  clip-path: circle(20px at center);
+}
