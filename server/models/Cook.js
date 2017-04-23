@@ -6,8 +6,10 @@ var Schema = mongoose.Schema;
 // Create article schema
 var CookSchema = new Schema({
   
+
   name: {
-    fullName: {type: String, required: true},
+    // Keep firstName delete fullName
+    firstName: {type: String, required: true},
     lastName: {type: String, required: true}
   },
   email: {
@@ -40,9 +42,16 @@ var CookSchema = new Schema({
     customerName:{type:String,required:true}
   }], 
   stars:{
+    totalRatings:{
+      type:Number,
+      default:0
+    },
+    average:{
     type: Number,
-    min:1,
+    default:0,
+    min:0,
     max:5
+    }
   },
   photo: {
    data: Buffer, 
