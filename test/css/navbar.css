@@ -1,0 +1,66 @@
+/* Sass Document */
+body {
+  background-color: #FCFFEE; }
+
+.navbar {
+  margin-bottom: 0px; }
+
+.navbar-default {
+  height: 50px;
+  background-color: #FF4F00;
+  border: none;
+  border-radius: 0px;
+  color: #FCFFEE;
+  font-family: "Nunito", sans-serif; }
+  .navbar-default .navbar-header {
+    color: #FCFFEE;
+    font-family: "Nunito", sans-serif; }
+  .navbar-default .navbar-brand {
+    color: #FCFFEE;
+    padding: 4px;
+    margin-left: -25px; }
+    .navbar-default .navbar-brand .img-logo {
+      width: 45px;
+      padding-bottom: 7px;
+      padding-right: 5px; }
+  .navbar-default .navbar-nav .nav-li {
+    color: #FCFFEE;
+    font-family: "Nunito", sans-serif; }
+  .navbar-default .navbar-nav .checkOut {
+    color: #FCFFEE;
+    font-size: 150%; }
+  .navbar-default .navbar-nav .dropdown-toggle {
+    padding-bottom: 5px;
+    padding-top: 5px; }
+  .navbar-default .navbar-nav .img-logo {
+    width: 40px; }
+  .navbar-default .navbar-nav .clip-circle {
+    clip-path: circle(20px at center); }
+
+.header {
+  height: 400px;
+  margin-top: 50px;
+  overflow: hidden;
+  padding: 0px;
+  width: 100%;
+  position: relative; }
+  .header .headerImg {
+    top: -75px;
+    width: 100%;
+    z-index: -1;
+    position: absolute; }
+  .header .overlayOpacity {
+    position: absolute;
+    background-color: rgba(10, 10, 10, 0.25);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  .header .headerCont {
+    position: absolute;
+    z-index: 10000;
+    color: #FCFFEE;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }

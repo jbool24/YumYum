@@ -4,50 +4,73 @@
 	<meta charset="UTF-8">
 	<title>Project 3</title>
 
+	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 	<script
 	  src="https://code.jquery.com/jquery-3.2.1.js"
 	  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	  crossorigin="anonymous"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- font awesome -->
 	<script src="https://use.fontawesome.com/30475d8f78.js"></script>
 	<!-- css -->
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
+<!-- NAV -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      
+	      <a class="navbar-brand" href="#"><span><img src="../public/links/Logo.png" class="image-responsive img-logo">YumYum</span></a>
+	    </div>
 
-	<div class = "wrapper">
-		<nav class="navbar navbar-default navbar-fixed-top">
-		  <div class="container-fluid">
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      
+	      <ul class="nav navbar-nav navbar-right">
+	        <li>
+		        <a href="#" class=" dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="https://lh3.googleusercontent.com/dB3Dvgf3VIglusoGJAfpNUAANhTXW8K9mvIsiIPkhJUAbAKGKJcEMPTf0mkSexzLM5o=w300" alt="" class="clip-circle img-logo"></a>
+		        <ul class="dropdown-menu">
+		            <li><a href="#">Your Orders</a></li>
+		            <li><a href="#">Account Settings</a></li>
+		            <li><a href="#">About</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#">Sign Out</a></li>
+		          </ul>
+	        </li>
 
-		    <div class="navbar-header">
-		      <a class="navbar-brand" href="#">
-		        <!-- <img alt="Brand" src="">-->
-		        YumYum
-		      </a>
-		    </div>
-	
-		    <ul class="nav navbar-nav navbar-right">
-		        <li>
-			        <a href="#" class="profImgdrop dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg" alt="" class="clip-circle profImg"></a>
-			        <ul class="dropdown-menu">
-			            <li><a href="#">Your Orders</a></li>
-			            <li><a href="#">Account Settings</a></li>
-			            <li><a href="#">About</a></li>
-			            <li role="separator" class="divider"></li>
-			            <li><a href="#">Sign Out</a></li>
-			          </ul>
-		        </li>
+	        <li><a class="checkOut" href="#"><i class="fa fa-shopping-basket fa-1x " aria-hidden="true"></i></a></li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+<!-- END -->
 
-		        <li><a class="checkOut" href="#"><i class="fa fa-shopping-basket fa-1x " aria-hidden="true"></i></a></li>
-		    </ul>
-		  </div>
-		</nav>
+<!-- HEADER -->
+<div class="header">
+
+	<div class="headerCont">
+		<h1>Insert Text Here</h1>
+		<h3> blah blah blah blah description </h3>
+		<form class="navbar-form navbar-left">
+	        <div class="form-group">
+	          <input type="text" class="form-control" placeholder="Search">
+	        </div>
+	        <div class="form-group">
+	          <input type="text" class="form-control" placeholder="Search">
+	        </div>
+	        <button type="submit" class="btn btn-default">Submit</button>
+	      </form>
 	</div>
+	<div class="overlayOpacity"></div>
+	<img class="headerImg" src = "../public/links/food6.jpg">
+
+</div>
+
+
 </body>
 </html>
