@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-const User = require('../models/user');
+const User = require('../models/User');
 
 // Register User
 exports.register = function (req, res) {
@@ -75,13 +75,10 @@ exports.login = function (req, res) {
     // res.redirect('/');
 };
 
-// exports.passport = passport
-// { successRedirect: '/success.html', failureRedirect: '/error.html', failureFlash: true }
+exports.logout = function (req, res) {
+  req.logout();
 
-// router.get('/logout', function (req, res) {
-//   req.logout();
+  // req.flash('success_msg', 'You are logged out');
 
-//   req.flash('success_msg', 'You are logged out');
-
-//   res.redirect('/users/login');
-// });
+  res.redirect('/');
+};
