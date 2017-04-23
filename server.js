@@ -10,6 +10,12 @@ const favicon           = require('serve-favicon');
 const webpack           = require('webpack');
 const mongoose          = require('mongoose');
 
+const expressValidator  = require('express-validator');
+const flash             = require('connect-flash');
+const session           = require('express-session');
+const passport          = require('passport');
+const LocalStrategy     = require('passport-local');
+
 mongoose.Promise = global.Promise;
 // const configWebpack     = require('./webpack.config.js');
 // const webpackMiddleware = require('webpack-dev-middleware');
