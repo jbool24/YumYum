@@ -1,5 +1,4 @@
 const express = require('express');
-const router = express.Router();
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
@@ -37,18 +36,20 @@ exports.register = function (req, res) {
     
 //     req.flash('success_msg', 'You are registered and can now login');
 
-//     res.redirect('/users/login');
+    res.redirect('/test-login.html');
   }
 };
 
 passport.use(new LocalStrategy(
   function (username, password, done) {
     User.getUserByUsername(username, function (err, user) {
+      console.log("getting username");
       if (err) throw err;
       if (!user) {
         return done(null, false, { message: 'Unknown User' });
       }
       user.comparePassword(password, user.password, function (err, isMatch) {
+        console.log("getting passeword");
         if (err) throw err;
         if (isMatch) {
           return done(null, user);
@@ -80,5 +81,5 @@ exports.logout = function (req, res) {
 
   // req.flash('success_msg', 'You are logged out');
 
-  res.redirect('/');
+  res.redirect('/splash');
 };

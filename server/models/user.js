@@ -44,6 +44,7 @@ UserSchema.pre('save', function (next) {
 
 UserSchema.statics.getUserByUsername = function (username, callback) {
   var query = { username: username };
+  console.log(query);
   this.findOne(query, callback);
 }
 
