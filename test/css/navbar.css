@@ -43,7 +43,8 @@ body {
   overflow: hidden;
   padding: 0px;
   width: 100%;
-  position: relative; }
+  position: relative;
+  font-family: "Nunito", sans-serif; }
   .header .headerImg {
     top: -75px;
     width: 100%;
@@ -64,3 +65,18 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
+
+.form-control {
+  height: 40px;
+  border-radius: 1px;
+  font-family: "Nunito", sans-serif, FontAwesome; }
+
+.btn-default {
+  font-family: "Nunito", sans-serif, FontAwesome;
+  color: #FCFFEE;
+  background-color: #FF4F00;
+  border-color: #FF4F00; }
+
+.search-btn {
+  border-radius: 1px;
+  height: 40px; }

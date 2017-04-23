@@ -1,3 +1,6 @@
+# OS X journal files
+.DS_Store
+
 # Logs
 logs
 *.log
@@ -41,3 +44,4 @@ public/dist
 
 # Environments vars for development
 .env
+.vscode
