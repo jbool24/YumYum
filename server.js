@@ -21,7 +21,6 @@ mongoose.Promise = global.Promise;
 // const configWebpack     = require('./webpack.config.js');
 // const webpackMiddleware = require('webpack-dev-middleware');
 
-
 /***********************************************************
 *  ENVIRONEMENT SETUP
 ************************************************************/

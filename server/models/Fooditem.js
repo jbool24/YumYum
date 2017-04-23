@@ -25,9 +25,6 @@ var FooditemSchema = new Schema({
     type: String,
     required: true
   },
-  reviews:[{
-    type:String
-  }],  
   quantity:{
     type:Number
   },
