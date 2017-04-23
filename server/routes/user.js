@@ -49,7 +49,7 @@ passport.use(new LocalStrategy(
         return done(null, false, { message: 'Unknown User' });
       }
       user.comparePassword(password, user.password, function (err, isMatch) {
-        console.log("getting passeword");
+        console.log("getting password");
         if (err) throw err;
         if (isMatch) {
           return done(null, user);
@@ -70,7 +70,7 @@ passport.deserializeUser(function (id, done) {
   });
 });
 
-exports.authenticateUser = passport.authenticate('local', { successRedirect: '/', failureRedirect: '/error.html', failureFlash: true })
+exports.authenticateUser = passport.authenticate('local', { successRedirect: '/users', failureRedirect: '/error.html', failureFlash: true })
   
 exports.login = function (req, res) {
     // res.redirect('/');
@@ -78,8 +78,6 @@ exports.login = function (req, res) {
 
 exports.logout = function (req, res) {
   req.logout();
-
   // req.flash('success_msg', 'You are logged out');
-
-  res.redirect('/splash');
+  res.redirect('/');
 };
