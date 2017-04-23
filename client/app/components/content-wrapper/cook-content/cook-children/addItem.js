@@ -2,17 +2,17 @@
 const React = require("react");
 
 // Creating the Footer component
-const Content = React.createClass({
+const AddItem = React.createClass({
 
   // Here we describe this component's render method
   render: function() {
     return (
-      <div className="content container-fluid">
-        {this.props.children}
+      <div className="contentCook container-fluid">
+        <>
       </div>
     );
   }
 });
 
 // Export the component back for use in other files
-module.exports = Content;
+module.exports = AddItem;
