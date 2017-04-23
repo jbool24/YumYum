@@ -116,10 +116,18 @@ if (env === 'development')
   app.use(logger('dev'));
 
 // Routes ======================
-require('./server/routes/index')(app)
 require('./server/routes')(app);
 require('./server/api')(app);
-//===========
+const authenticated = require('./server/routes/auth');
+
+// Main files ==========================================
+app.get("/users/", authenticated, (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'dist', 'index.html'));
+});
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/splash.html'));
+});
 
 // Start Server ============================================
 const port = process.env.PORT;
