@@ -42,8 +42,6 @@ UserSchema.pre('save', function (next) {
   });
 });
 
-module.exports = mongoose.model("User", UserSchema); 
-
 // module.exports.createUser = function (newUser, callback) {
 //   console.log(newUser);
 //   bcrypt.genSalt(10, function (err, salt) {
@@ -60,15 +58,30 @@ module.exports = mongoose.model("User", UserSchema);
 //   User.findOne(query, callback);
 // }
 
-// const getUserById = function (id, callback) {
-//   User.findById(id, callback);
-// }
+UserSchema.statics.getUserByUsername = function (username, callback) {
+  var query = { username: username };
+  this.findOne(query, callback);
+}
 
-// const comparePassword = function (candidatePassword, hash, callback) {
+
+UserSchema.statics.getUserById = function (id, callback) {
+  User.findById(id, callback);
+}
+
+// exports.comparePassword = function (candidatePassword, hash, callback) {
 //   bcrypt.compare(candidatePassword, hash, function (err, isMatch) {
 //     if (err) throw err;
 //     callback(null, isMatch);
 //   });
 // }
 
-// module.exports = User
+UserSchema.methods.comparePassword = function (candidatePassword, hash, callback) {
+  bcrypt.compare(candidatePassword, hash, function (err, isMatch) {
+    if (err) throw err;
+    callback(null, isMatch);
+  });
+}
+
+const User = mongoose.model("User", UserSchema); 
+
+module.exports = User
