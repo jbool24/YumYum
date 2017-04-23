@@ -121,18 +121,6 @@ require('./server/routes')(app);
 require('./server/api')(app);
 //===========
 
-
-// Main files ==========================================
-app.get("/users/", (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'dist', 'index.html'));
-});
-
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/splash.html'));
-});
-
-
-
 // Start Server ============================================
 const port = process.env.PORT;
 app.listen(port, () => {
