@@ -1,17 +1,17 @@
 // REACT MODULES ==================================
-import React, { Component } from 'react';
+const React = require('react');
 
 // Import components ==============================
 //compnents here
 
 //=================================================
 
-export default class App extends Component {
-  constructor() {
-    super();
-  }
+const App = React.createClass({
+  getInitialState: function() {
+    return this.state = {};
+  },
 
-  render() {
+  render: function() {
     return (
       <div>
         <h1> TEST HELLO </h1>
@@ -19,4 +19,6 @@ export default class App extends Component {
       </div>
     );
   }
-}
+});
+
+module.exports = App;
