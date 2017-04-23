@@ -7,7 +7,7 @@ const Content = React.createClass({
   // Here we describe this component's render method
   render: function() {
     return (
-      <div className="content">
+      <div className="content container-fluid">
         {this.props.children}
       </div>
     );
