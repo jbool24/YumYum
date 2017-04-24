@@ -15,8 +15,8 @@ module.exports = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
 
-        <Route path="/cook" component={Cook}></Route>
-        <Route path="/customer" compoent={Customer}></Route>
+            <Route path="cook" component={Cook}></Route>
+            <Route path="customer" component={Customer}></Route>
 
     </Route>
   </Router>
