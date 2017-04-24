@@ -6,7 +6,7 @@ const Router = router.Router;
 const hashHistory = router.hashHistory;
 const IndexRoute = router.IndexRoute;
 
-import App from './App';
+const App = require('./App');
 
 module.exports = (
   // The high level component is the Router component
