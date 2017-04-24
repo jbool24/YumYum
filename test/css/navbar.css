@@ -18,7 +18,7 @@ body {
   .navbar-default .navbar-brand {
     color: #FCFFEE;
     padding: 4px;
-    margin-left: -25px; }
+    margin-left: 0px; }
     .navbar-default .navbar-brand .img-logo {
       width: 45px;
       padding-bottom: 7px;
@@ -66,17 +66,59 @@ body {
     transform: translate(-50%, -50%);
     text-align: center; }
 
-.form-control {
-  height: 40px;
-  border-radius: 1px;
-  font-family: "Nunito", sans-serif, FontAwesome; }
+.navbar-form {
+  border-top: 0;
+  border-bottom: 0; }
+  .navbar-form .form-control {
+    height: 40px;
+    border-radius: 1px;
+    font-family: "Nunito", sans-serif, FontAwesome; }
+  .navbar-form .cuisine-form {
+    width: 100%; }
+  .navbar-form .address-form {
+    width: 100%; }
+  .navbar-form .btn-default {
+    font-family: "Nunito", sans-serif, FontAwesome;
+    color: #FCFFEE;
+    background-color: #FF4F00;
+    border-color: #FF4F00; }
+  .navbar-form .search-btn {
+    border-radius: 1px;
+    height: 40px; }
 
-.btn-default {
-  font-family: "Nunito", sans-serif, FontAwesome;
-  color: #FCFFEE;
-  background-color: #FF4F00;
-  border-color: #FF4F00; }
-
-.search-btn {
-  border-radius: 1px;
-  height: 40px; }
+.cook-header {
+  height: 325px;
+  margin-top: 50px;
+  overflow: hidden;
+  padding: 0px;
+  width: 100%;
+  position: relative;
+  font-family: "Nunito", sans-serif; }
+  .cook-header .cook-overlayOpacity {
+    position: absolute;
+    background-color: rgba(10, 10, 10, 0.25);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  .cook-header .cook-headerImg {
+    top: -75%;
+    width: 100%;
+    z-index: -1;
+    position: absolute; }
+  .cook-header .cook-headerCont {
+    position: absolute;
+    z-index: 1000;
+    color: #FCFFEE;
+    height: 225px;
+    width: 600px;
+    left: 50px;
+    margin-top: 120px;
+    bottom: 0; }
+  .cook-header .cook-headerRow {
+    height: 100%; }
+    .cook-header .cook-headerRow .cook-profImg {
+      height: 100%;
+      margin-top: 20px; }
+    .cook-header .cook-headerRow .cook-info {
+      height: 100%; }
