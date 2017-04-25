@@ -1,0 +1,56 @@
+$break-sm: 576px
+$break-md: 768px
+
+$font-stack: 'Nunito', sans-serif
+$white: #FCFFEE
+$circle-width: 25vh
+$red: #FF4F00
+$grey: #757575
+
+@mixin no-border 
+	border: none
+	border-radius: 0px
+
+@mixin text-primary ($white, $font-stack)
+	color: $white
+	font-family: $font-stack
+body 
+	background-color: $white
+
+// cook-loggedin
+.cook-header
+	height: 325px
+	margin-top: 50px
+	overflow: hidden
+	padding: 0px
+	width: 100%
+	position: relative
+	font-family: $font-stack
+	.cook-overlayOpacity
+		position: absolute
+		background-color: rgba(10,10,10, 0.25)
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+	.cook-headerImg
+		top: -75%
+		width: 100%
+		z-index: -1
+		position: absolute
+	.cook-headerCont
+		position: absolute
+		z-index: 1000
+		color: $white
+		height: 225px
+		width: 600px
+		left: 50px
+		margin-top: 120px
+		bottom: 0
+	.cook-headerRow
+		height: 100%
+		.cook-profImg
+			height: 100%
+			margin-top: 20px
+		.cook-info
+			height: 100%
