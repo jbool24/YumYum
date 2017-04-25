@@ -45,3 +45,6 @@ public/dist
 # Environments vars for development
 .env
 .vscode
+
+# Auth config files
+routes/config/config.js
