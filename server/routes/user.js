@@ -1,12 +1,12 @@
 const express = require('express');
 
-const User = require('../models/User');
+const User = require('../models/user');
 const passport = require('./config/passport');
 
 // Register User
 exports.register = function (req, res) {
   var {username, password} = req.body;
-  
+
   console.log(req.body);
 
 //   // Validation
@@ -30,13 +30,13 @@ exports.register = function (req, res) {
     newUser.save(function (err) {
       if (err) throw err
     })
-    
+
 //     req.flash('success_msg', 'You are registered and can now login');
 
     res.redirect('/test-login.html');
   }
 };
-  
+
 exports.login = function (req, res) {
     // res.redirect('/');
 };
