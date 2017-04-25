@@ -118,7 +118,7 @@ if (env === 'development')
 // Routes ======================
 require('./server/routes')(app);
 require('./server/api')(app);
-const authenticated = require('./server/routes/auth');
+const authenticated = require('./server/routes/config/auth');
 
 // Main files ==========================================
 app.get("/users/", authenticated, (req, res) => {

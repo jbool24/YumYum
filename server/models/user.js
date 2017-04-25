@@ -5,31 +5,31 @@ const saltRounds = 10;
 
 // User Schema
 var UserSchema = new Schema({
-  username: {
-    type: String,
-    index: true
+  local: {
+    username: {type: String, index: true},
+    password: {type: String},
   },
-  password: {
+  email: {
     type: String
+  },
+  google: {
+    id: String,
+    token: String,
+    email: String,
+    name: String
   }
-  // email: {
-  //   type: String
-  // },
-  // name: {
-  //   type: String
-  // }
 });
 
 UserSchema.pre('save', function (next) {
-  var user = this;
-
+  var user = this.local;
+  console.log(user);
   // only hash the password if it has been modified (or is new)
-  if (!user.isModified('password')) return next();
+  if (!user.isModified('local.password')) return next();
 
   // generate a salt
   bcrypt.genSalt(saltRounds, function (err, salt) {
     if (err) return next(err);
-
+    console.log('salting');
     // hash the password along with our new salt
     bcrypt.hash(user.password, salt, function (err, hash) {
       if (err) return next(err);
@@ -43,11 +43,12 @@ UserSchema.pre('save', function (next) {
 });
 
 UserSchema.statics.getUserByUsername = function (username, callback) {
-  var query = { username: username };
-  console.log(query);
-  this.findOne(query, callback);
+  this.findOne({ "local.username": username }, callback);
 }
 
+UserSchema.statics.getUserByGoogle = function (profileId, callback) {
+  this.findOne({ 'google.id': profileId }, callback);
+}
 
 UserSchema.statics.getUserById = function (id, callback) {
   User.findById(id, callback);

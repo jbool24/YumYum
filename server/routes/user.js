@@ -1,14 +1,13 @@
 const express = require('express');
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
 
 const User = require('../models/User');
+const passport = require('./config/passport');
 
 // Register User
 exports.register = function (req, res) {
-  console.log(req.body);
   var {username, password} = req.body;
   
+  console.log(req.body);
 
 //   // Validation
 //   req.checkBody('name', 'Name is required').notEmpty();
@@ -21,15 +20,13 @@ exports.register = function (req, res) {
   var errors = req.validationErrors();
 
   if (errors) {
-    res.render('register', {
-      errors: errors
-    });
+    res.send('/error.html')
   } else {
     const newUser = new User({
-      username: username,
-      password: password
+      "local.username": username,
+      "local.password": password
     });
-
+    console.log(newUser);
     newUser.save(function (err) {
       if (err) throw err
     })
@@ -39,38 +36,6 @@ exports.register = function (req, res) {
     res.redirect('/test-login.html');
   }
 };
-
-passport.use(new LocalStrategy(
-  function (username, password, done) {
-    User.getUserByUsername(username, function (err, user) {
-      console.log("getting username");
-      if (err) throw err;
-      if (!user) {
-        return done(null, false, { message: 'Unknown User' });
-      }
-      user.comparePassword(password, user.password, function (err, isMatch) {
-        console.log("getting password");
-        if (err) throw err;
-        if (isMatch) {
-          return done(null, user);
-        } else {
-          return done(null, false, { message: 'Invalid password' });
-        }
-      });
-    });
-  }));
-
-passport.serializeUser(function (user, done) {
-  done(null, user.id);
-});
-
-passport.deserializeUser(function (id, done) {
-  User.getUserById(id, function (err, user) {
-    done(err, user);
-  });
-});
-
-exports.authenticateUser = passport.authenticate('local', { successRedirect: '/users', failureRedirect: '/error.html', failureFlash: true })
   
 exports.login = function (req, res) {
     // res.redirect('/');
@@ -81,3 +46,15 @@ exports.logout = function (req, res) {
   // req.flash('success_msg', 'You are logged out');
   res.redirect('/');
 };
+
+exports.authLocal = passport.authenticate('local',
+  { successRedirect: '/users',
+    failureRedirect: '/error.html',
+    failureFlash: true })
+
+exports.authGoogle = passport.authenticate('google',
+  { scope: ['profile', 'email'] });
+
+exports.authGoogleCallback = passport.authenticate('google',
+  { successRedirect: '/users',
+    failureRedirect: '/error.html'});
