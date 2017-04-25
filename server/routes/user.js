@@ -1,6 +1,6 @@
 const express = require('express');
 
-const User = require('../models/User');
+const User = require('../models/user');
 const passport = require('./config/passport');
 
 // Register User
