@@ -144,7 +144,73 @@ body
 		.cook-info
 			height: 100%
 			
-		
+#checkoutNav
+	height: 100%
+	width: 300px
+	position: fixed
+	z-index: 1000
+	top: 0
+	right: 0
+	background-color: #cc3f00
+	overflow-x: hidden
+	transition: 0.5s
+	padding-top: 60px
+	font-family: $font-stack
+	color: $white
+	
+	.emptycart-cont
+		margin-top: 60px
+
+	.fullcart-cont
+		hr
+			border: none
+			height: 3px
+			margin-left: 25px
+			margin-right: 25px
+			color: $white
+			background-color: $white
+		.ordereditems-cart
+			margin-left: 5px
+			margin-right: 5px
+			vertical-align: middle
+			height: 35px
+			.removeItem
+				text-align: center
+				padding-left: 0px
+				padding-right: 0px
+				font-size: 125%
+				margin-top: 2px
+				.fa-minus-circle
+					vertical-align: middle
+			#quantityOrd
+				font-size: 150%
+				text-align: center
+				padding-left: 0px
+				padding-right: 0px
+				p
+					margin: 0px
+			#itemName
+				font-size: 150%
+				padding-left: 0px
+				padding-right: 0px
+			#itemCost
+				font-size: 150%
+				padding-left: 0px
+				padding-right: 0px
+
+		.orderBtn-cont
+			margin-top: 50px
+			.btn-default
+				font-family: $font-stack, FontAwesome
+				color: $white
+				background-color: $red
+				border-color: $red
+				width: 85%
+			.checkout-btn	
+				border-radius: 1px
+				height: 40px
+
+
 
 
 

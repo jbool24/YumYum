@@ -122,3 +122,65 @@ body {
       margin-top: 20px; }
     .cook-header .cook-headerRow .cook-info {
       height: 100%; }
+
+#checkoutNav {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  background-color: #cc3f00;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  font-family: "Nunito", sans-serif;
+  color: #FCFFEE; }
+  #checkoutNav .emptycart-cont {
+    margin-top: 60px; }
+  #checkoutNav .fullcart-cont hr {
+    border: none;
+    height: 3px;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #FCFFEE;
+    background-color: #FCFFEE; }
+  #checkoutNav .fullcart-cont .ordereditems-cart {
+    margin-left: 5px;
+    margin-right: 5px;
+    vertical-align: middle;
+    height: 35px; }
+    #checkoutNav .fullcart-cont .ordereditems-cart .removeItem {
+      text-align: center;
+      padding-left: 0px;
+      padding-right: 0px;
+      font-size: 125%;
+      margin-top: 2px; }
+      #checkoutNav .fullcart-cont .ordereditems-cart .removeItem .fa-minus-circle {
+        vertical-align: middle; }
+    #checkoutNav .fullcart-cont .ordereditems-cart #quantityOrd {
+      font-size: 150%;
+      text-align: center;
+      padding-left: 0px;
+      padding-right: 0px; }
+      #checkoutNav .fullcart-cont .ordereditems-cart #quantityOrd p {
+        margin: 0px; }
+    #checkoutNav .fullcart-cont .ordereditems-cart #itemName {
+      font-size: 150%;
+      padding-left: 0px;
+      padding-right: 0px; }
+    #checkoutNav .fullcart-cont .ordereditems-cart #itemCost {
+      font-size: 150%;
+      padding-left: 0px;
+      padding-right: 0px; }
+  #checkoutNav .fullcart-cont .orderBtn-cont {
+    margin-top: 50px; }
+    #checkoutNav .fullcart-cont .orderBtn-cont .btn-default {
+      font-family: "Nunito", sans-serif, FontAwesome;
+      color: #FCFFEE;
+      background-color: #FF4F00;
+      border-color: #FF4F00;
+      width: 85%; }
+    #checkoutNav .fullcart-cont .orderBtn-cont .checkout-btn {
+      border-radius: 1px;
+      height: 40px; }
