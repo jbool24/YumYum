@@ -20,7 +20,7 @@ const CustomerHeader = React.createClass({
 				      </form>
 				</div>
 				<div className="overlayOpacity"></div>
-				<img className="headerImg" src = "links/food6.jpg"/>
+				<img className="headerImg" src ="links/food6.jpg"/>
 			</div>
 		);
 	}

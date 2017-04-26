@@ -3,6 +3,7 @@ const React = require('react');
 
 
 // const CookSideBar = require('./cookSideBar');
+const CookHeader = require('./cookHeader');
 // const MenuItems   = require('./MenuItems');
 
 const Cook = React.createClass({
@@ -14,6 +15,7 @@ const Cook = React.createClass({
 
     return (
         <div>
+          <CookHeader />
           {/* <CookSidebar /> */}
           <h1>Cook Content</h1>
           {this.props.children}
