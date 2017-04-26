@@ -7,11 +7,16 @@ const hashHistory = router.hashHistory;
 const IndexRoute = router.IndexRoute;
 
 const App = require('./App');
+const Cook = require('./components/cook');
+const Customer = require('./components/customer');
 
 module.exports = (
   // The high level component is the Router component
   <Router history={hashHistory}>
     <Route path="/" component={App}>
+
+            <Route path="cook" component={Cook}></Route>
+            <Route path="customer" component={Customer}></Route>
 
     </Route>
   </Router>
