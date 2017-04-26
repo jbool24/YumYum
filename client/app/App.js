@@ -6,7 +6,8 @@ const React = require('react');
 
 // const Nav    = require("./components/common/Nav");
 // const Header = require("./components/common/Header");
-// const Footer = require("./components/commonFooter");
+const Content = require("././components/common/content");
+const Footer = require("./components/common/footer");
 
 //=================================================
 
@@ -19,11 +20,9 @@ const App = React.createClass({
     return (
       <div>
         {/* <Nav /> */}
-        <div className="container container-fluid">
-          {/* <Header /> */}
-          {this.props.children}
-        </div>
-        {/* <Footer /> */}
+        {/* <Header /> */}
+        <Content />
+        <Footer />
       </div>
     );
   }
