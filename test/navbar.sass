@@ -1,0 +1,221 @@
+/* Sass Document */
+
+$break-sm: 576px
+$break-md: 768px
+
+$font-stack: 'Nunito', sans-serif
+$white: #FCFFEE
+$circle-width: 25vh
+$red: #FF4F00
+$grey: #757575
+
+@mixin no-border 
+	border: none
+	border-radius: 0px
+
+@mixin text-primary ($white, $font-stack)
+	color: $white
+	font-family: $font-stack
+body 
+	background-color: $white
+
+
+.navbar
+	margin-bottom: 0px
+.navbar-default 
+	height: 50px
+	background-color: $red
+	@include no-border
+	@include text-primary ($white, $font-stack)
+	
+	.navbar-header 
+		@include text-primary ($white, $font-stack)
+	
+	.navbar-brand 
+		color: $white
+		padding: 4px
+		margin-left: 0px
+		
+		.img-logo 
+			width: 45px
+			padding-bottom: 7px
+			padding-right: 5px
+
+	.navbar-nav
+		.nav-li 
+			@include text-primary ($white, $font-stack)
+		.checkOut
+  			color: $white
+  			font-size: 150%
+		.dropdown-toggle
+			padding-bottom: 5px
+			padding-top: 5px
+		.img-logo 
+			width: 40px
+		.clip-circle 
+  			clip-path: circle(20px at center)
+  		
+// user logged in header
+.header
+	height: 400px
+	margin-top: 50px
+	overflow: hidden
+	padding: 0px
+	width: 100%
+	position: relative 
+	font-family: $font-stack
+	.headerImg
+		top: -75px
+		width: 100%
+		z-index: -1
+		position: absolute
+	.overlayOpacity
+		position: absolute
+		background-color: rgba(10,10,10, 0.25)
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+	.headerCont
+		position: absolute
+		z-index: 10000
+		color: $white
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		text-align: center
+.navbar-form
+	border-top: 0
+	border-bottom: 0
+	.form-control
+		height: 40px
+		border-radius: 1px
+		font-family: $font-stack, FontAwesome
+	.cuisine-form
+		width : 100%
+	.address-form
+		width: 100%
+
+	.btn-default
+		font-family: $font-stack, FontAwesome
+		color: $white
+		background-color: $red
+		border-color: $red
+	.search-btn	
+		border-radius: 1px
+		height: 40px
+
+	
+// cook-loggedin
+.cook-header
+	height: 325px
+	margin-top: 50px
+	overflow: hidden
+	padding: 0px
+	width: 100%
+	position: relative
+	font-family: $font-stack
+	.cook-overlayOpacity
+		position: absolute
+		background-color: rgba(10,10,10, 0.25)
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+	.cook-headerImg
+		top: -75%
+		width: 100%
+		z-index: -1
+		position: absolute
+	.cook-headerCont
+		position: absolute
+		z-index: 1000
+		color: $white
+		height: 225px
+		width: 600px
+		left: 50px
+		margin-top: 120px
+		bottom: 0
+	.cook-headerRow
+		height: 100%
+		.cook-profImg
+			height: 100%
+			margin-top: 20px
+		.cook-info
+			height: 100%
+			
+#checkoutNav
+	height: 100%
+	width: 300px
+	position: fixed
+	z-index: 1000
+	top: 0
+	right: 0
+	background-color: #cc3f00
+	overflow-x: hidden
+	transition: 0.5s
+	padding-top: 60px
+	font-family: $font-stack
+	color: $white
+	
+	.emptycart-cont
+		margin-top: 60px
+
+	.fullcart-cont
+		hr
+			border: none
+			height: 3px
+			margin-left: 25px
+			margin-right: 25px
+			color: $white
+			background-color: $white
+		.ordereditems-cart
+			margin-left: 5px
+			margin-right: 5px
+			vertical-align: middle
+			height: 35px
+			.removeItem
+				text-align: center
+				padding-left: 0px
+				padding-right: 0px
+				font-size: 125%
+				margin-top: 2px
+				.fa-minus-circle
+					vertical-align: middle
+			#quantityOrd
+				font-size: 150%
+				text-align: center
+				padding-left: 0px
+				padding-right: 0px
+				p
+					margin: 0px
+			#itemName
+				font-size: 150%
+				padding-left: 0px
+				padding-right: 0px
+			#itemCost
+				font-size: 150%
+				padding-left: 0px
+				padding-right: 0px
+
+		.orderBtn-cont
+			margin-top: 50px
+			.btn-default
+				font-family: $font-stack, FontAwesome
+				color: $white
+				background-color: $red
+				border-color: $red
+				width: 85%
+			.checkout-btn	
+				border-radius: 1px
+				height: 40px
+
+
+
+
+
+
+ 
+   
+ 
+  		

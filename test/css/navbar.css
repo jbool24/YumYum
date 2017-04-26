@@ -1,0 +1,186 @@
+/* Sass Document */
+body {
+  background-color: #FCFFEE; }
+
+.navbar {
+  margin-bottom: 0px; }
+
+.navbar-default {
+  height: 50px;
+  background-color: #FF4F00;
+  border: none;
+  border-radius: 0px;
+  color: #FCFFEE;
+  font-family: "Nunito", sans-serif; }
+  .navbar-default .navbar-header {
+    color: #FCFFEE;
+    font-family: "Nunito", sans-serif; }
+  .navbar-default .navbar-brand {
+    color: #FCFFEE;
+    padding: 4px;
+    margin-left: 0px; }
+    .navbar-default .navbar-brand .img-logo {
+      width: 45px;
+      padding-bottom: 7px;
+      padding-right: 5px; }
+  .navbar-default .navbar-nav .nav-li {
+    color: #FCFFEE;
+    font-family: "Nunito", sans-serif; }
+  .navbar-default .navbar-nav .checkOut {
+    color: #FCFFEE;
+    font-size: 150%; }
+  .navbar-default .navbar-nav .dropdown-toggle {
+    padding-bottom: 5px;
+    padding-top: 5px; }
+  .navbar-default .navbar-nav .img-logo {
+    width: 40px; }
+  .navbar-default .navbar-nav .clip-circle {
+    clip-path: circle(20px at center); }
+
+.header {
+  height: 400px;
+  margin-top: 50px;
+  overflow: hidden;
+  padding: 0px;
+  width: 100%;
+  position: relative;
+  font-family: "Nunito", sans-serif; }
+  .header .headerImg {
+    top: -75px;
+    width: 100%;
+    z-index: -1;
+    position: absolute; }
+  .header .overlayOpacity {
+    position: absolute;
+    background-color: rgba(10, 10, 10, 0.25);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  .header .headerCont {
+    position: absolute;
+    z-index: 10000;
+    color: #FCFFEE;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.navbar-form {
+  border-top: 0;
+  border-bottom: 0; }
+  .navbar-form .form-control {
+    height: 40px;
+    border-radius: 1px;
+    font-family: "Nunito", sans-serif, FontAwesome; }
+  .navbar-form .cuisine-form {
+    width: 100%; }
+  .navbar-form .address-form {
+    width: 100%; }
+  .navbar-form .btn-default {
+    font-family: "Nunito", sans-serif, FontAwesome;
+    color: #FCFFEE;
+    background-color: #FF4F00;
+    border-color: #FF4F00; }
+  .navbar-form .search-btn {
+    border-radius: 1px;
+    height: 40px; }
+
+.cook-header {
+  height: 325px;
+  margin-top: 50px;
+  overflow: hidden;
+  padding: 0px;
+  width: 100%;
+  position: relative;
+  font-family: "Nunito", sans-serif; }
+  .cook-header .cook-overlayOpacity {
+    position: absolute;
+    background-color: rgba(10, 10, 10, 0.25);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  .cook-header .cook-headerImg {
+    top: -75%;
+    width: 100%;
+    z-index: -1;
+    position: absolute; }
+  .cook-header .cook-headerCont {
+    position: absolute;
+    z-index: 1000;
+    color: #FCFFEE;
+    height: 225px;
+    width: 600px;
+    left: 50px;
+    margin-top: 120px;
+    bottom: 0; }
+  .cook-header .cook-headerRow {
+    height: 100%; }
+    .cook-header .cook-headerRow .cook-profImg {
+      height: 100%;
+      margin-top: 20px; }
+    .cook-header .cook-headerRow .cook-info {
+      height: 100%; }
+
+#checkoutNav {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  background-color: #cc3f00;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  font-family: "Nunito", sans-serif;
+  color: #FCFFEE; }
+  #checkoutNav .emptycart-cont {
+    margin-top: 60px; }
+  #checkoutNav .fullcart-cont hr {
+    border: none;
+    height: 3px;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #FCFFEE;
+    background-color: #FCFFEE; }
+  #checkoutNav .fullcart-cont .ordereditems-cart {
+    margin-left: 5px;
+    margin-right: 5px;
+    vertical-align: middle;
+    height: 35px; }
+    #checkoutNav .fullcart-cont .ordereditems-cart .removeItem {
+      text-align: center;
+      padding-left: 0px;
+      padding-right: 0px;
+      font-size: 125%;
+      margin-top: 2px; }
+      #checkoutNav .fullcart-cont .ordereditems-cart .removeItem .fa-minus-circle {
+        vertical-align: middle; }
+    #checkoutNav .fullcart-cont .ordereditems-cart #quantityOrd {
+      font-size: 150%;
+      text-align: center;
+      padding-left: 0px;
+      padding-right: 0px; }
+      #checkoutNav .fullcart-cont .ordereditems-cart #quantityOrd p {
+        margin: 0px; }
+    #checkoutNav .fullcart-cont .ordereditems-cart #itemName {
+      font-size: 150%;
+      padding-left: 0px;
+      padding-right: 0px; }
+    #checkoutNav .fullcart-cont .ordereditems-cart #itemCost {
+      font-size: 150%;
+      padding-left: 0px;
+      padding-right: 0px; }
+  #checkoutNav .fullcart-cont .orderBtn-cont {
+    margin-top: 50px; }
+    #checkoutNav .fullcart-cont .orderBtn-cont .btn-default {
+      font-family: "Nunito", sans-serif, FontAwesome;
+      color: #FCFFEE;
+      background-color: #FF4F00;
+      border-color: #FF4F00;
+      width: 85%; }
+    #checkoutNav .fullcart-cont .orderBtn-cont .checkout-btn {
+      border-radius: 1px;
+      height: 40px; }
