@@ -1,0 +1,34 @@
+/* Sass Document */
+
+$break-sm: 576px
+$break-md: 768px
+
+$font-stack: 'Nunito', sans-serif
+$white: #FCFFEE
+$circle-width: 25vh
+$red: #FF4F00
+$grey: #757575
+
+@mixin no-border
+	border: none
+	border-radius: 0px
+
+@mixin text-primary ($white, $font-stack)
+	color: $white
+	font-family: $font-stack
+body
+	background-color: $white
+
+#checkoutNav
+	height: 100%
+	width: 300px
+	position: fixed
+	z-index: 1000
+	top: 0
+	right: 0
+	background-color: #cc3f00
+	overflow-x: hidden
+	transition: 0.5s
+	padding-top: 60px
+	font-family: $font-stack
+	color: $white

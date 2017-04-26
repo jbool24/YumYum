@@ -2,14 +2,11 @@
 const React = require('react');
 
 // Import components ==============================
-//compnents here
 
-// const Nav    = require("./components/common/Nav");
-// const Header = require("./components/common/Header");
-const Content = require("././components/common/content");
+const NavBar = require("./components/common/navbar");
 const Footer = require("./components/common/footer");
-
 //=================================================
+
 
 const App = React.createClass({
   getInitialState: function() {
@@ -19,9 +16,8 @@ const App = React.createClass({
   render: function() {
     return (
       <div>
-        {/* <Nav /> */}
-        {/* <Header /> */}
-        <Content />
+        <NavBar />
+        {this.props.children}
         <Footer />
       </div>
     );
