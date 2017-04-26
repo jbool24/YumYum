@@ -7,8 +7,8 @@ const hashHistory = router.hashHistory;
 const IndexRoute = router.IndexRoute;
 
 const App = require('./App');
-const Cook = require('./component/cook');
-const Customer = require('./component/customer');
+const Cook = require('./components/cook');
+const Customer = require('./components/customer');
 
 module.exports = (
   // The high level component is the Router component

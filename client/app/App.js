@@ -4,9 +4,9 @@ const React = require('react');
 // Import components ==============================
 //compnents here
 
-// const Nav    = require("./component/Nav");
-// const Header = require("./component/Header");
-// const Footer = require("./component/Footer");
+// const Nav    = require("./components/common/Nav");
+// const Header = require("./components/common/Header");
+// const Footer = require("./components/commonFooter");
 
 //=================================================
 
