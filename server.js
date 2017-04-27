@@ -9,7 +9,6 @@ const cookieParser      = require('cookie-parser');
 const favicon           = require('serve-favicon');
 const webpack           = require('webpack');
 const mongoose          = require('mongoose');
-
 const expressValidator  = require('express-validator');
 const flash             = require('connect-flash');
 const session           = require('express-session');
@@ -76,7 +75,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+//Makes request information available on all pages
 app.use(function (req, res, next) {
   res.locals.login = req.isAuthenticated();
   res.locals.session = req.session;
