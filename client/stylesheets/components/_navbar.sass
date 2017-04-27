@@ -1,0 +1,36 @@
+/* Sass Document */
+
+.navbar
+	margin-bottom: 0px
+.navbar-default
+	height: 50px
+	background-color: $red
+	@include no-border
+	@include text-primary ($white, $font-stack)
+
+	.navbar-header
+		@include text-primary ($white, $font-stack)
+
+	.navbar-brand
+		color: $white
+		padding: 4px
+		margin-left: 0px
+
+		.img-logo
+			width: 45px
+			padding-bottom: 7px
+			padding-right: 5px
+
+	.navbar-nav
+		.nav-li
+			@include text-primary ($white, $font-stack)
+		.checkOut
+  			color: $white
+  			font-size: 150%
+		.dropdown-toggle
+			padding-bottom: 5px
+			padding-top: 5px
+		.img-logo
+			width: 40px
+		.clip-circle
+  			clip-path: circle(20px at center)

@@ -7,7 +7,8 @@
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <!-- CSS link -->
-<link href="public/dist/style.min.css" rel="stylesheet" type="text/css">
+
+<link href="/dist/style.min.css" rel="stylesheet" type="text/css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -63,11 +64,18 @@
 				</div>
 			</div>
 			<div class="row circles-style">
-
-					<div class="round text-center">Order</div>
-					<div class="round text-center">Get delivered</div>
-					<div class="round text-center">Enjoy</div>
-
+					<div class="round text-center">
+						<img class="how-to-icons img-responsive" src="links/select.png">
+						<span>Select</span>
+					</div>
+					<div class="round text-center">
+						<img class="how-to-icons img-responsive" src="links/order.png">
+						<span>Order</span>
+					</div>
+					<div class="round text-center">
+						<img class="how-to-icons img-responsive" src="links/delivery.png">
+						<span>Get delivered</span>
+					</div>
 			</div>
 		</div>
 		<div class="container copy-style">
@@ -155,6 +163,11 @@
 
 			</form>
 		  </div>
+
+			<div class="social-btn">
+				<button onclick="location.href ='/auth/google'" class="btn btn-warning" type="button" name="googl-button">Google</button>
+				<button class="btn btn-primary" type="button" name="facebook-button">Facebook</button>
+			</div>
 
 		  <div class="modal-footer">
 			<button type="submit" class="btn btn-default">Login</button>

@@ -2,9 +2,11 @@
 const React = require('react');
 
 // Import components ==============================
-//compnents here
 
+const NavBar = require("./components/common/navbar");
+const Footer = require("./components/common/footer");
 //=================================================
+
 
 const App = React.createClass({
   getInitialState: function() {
@@ -14,8 +16,9 @@ const App = React.createClass({
   render: function() {
     return (
       <div>
-        <h1> TEST HELLO </h1>
+        <NavBar />
         {this.props.children}
+        <Footer />
       </div>
     );
   }
