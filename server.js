@@ -65,11 +65,13 @@ app.use(cookieParser());
 // Express Session
 app.use(session({
   secret: 'secret',
-  saveUninitialized: true,
-  resave: true,
+  saveUninitialized: false,
+  resave: false,
   store: new MongoStore({ mongooseConnection: db }),
-  cookie: { maxAge: 60 * 60 * 1000 }
+  cookie: { maxAge: 24 * 60 * 60 * 1000 }
 }));
+
+console.log(Date.now());
 
 // Passport init
 app.use(passport.initialize());
