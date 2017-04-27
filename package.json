@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "test": "echo 'No test engine setup \n'",
-    "build:dev": "rm -rf public/dist/* | webpack",
-    "start:dev": "npm run build:dev | nodemon server",
+    "build:dev": "rm -rf public/dist/* && webpack",
+    "start:dev": "npm run build:dev && nodemon server",
     "start": "nodemon server"
   },
   "dependencies": {
