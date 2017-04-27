@@ -9,9 +9,6 @@ var UserSchema = new Schema({
     username: {type: String, index: true},
     password: {type: String},
   },
-  email: {
-    type: String
-  },
   google: {
     id: String,
     token: String,
