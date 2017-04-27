@@ -47,4 +47,4 @@ public/dist
 .vscode
 
 # Auth config files
-routes/config/config.js
+server/routes/config/config.js
