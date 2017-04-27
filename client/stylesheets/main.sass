@@ -1,8 +1,11 @@
 /* Sass Document */
+
 @import header
 @import footer
 @import cook
 @import modal
+@import components/all
+
 
 $break-sm: 576px
 $break-md: 768px
@@ -11,8 +14,9 @@ $break-lg: 992px
 $font-stack: 'Nunito', sans-serif
 $white: #FCFFEE
 $circle-width: 25vh
-$red: #ed145b
+$red: #FF4F00
 $grey: #757575
+$blue: #0076a3
 
 @mixin no-border
 	border: none
@@ -100,11 +104,17 @@ body
 			align-self: center
 			width: $circle-width
 			height: $circle-width
-			border: solid 2px $red
+			border: solid 2px $blue
 			border-radius: 50%
+			padding-top: $circle-width / 7
 			margin: 15px
-			padding-top: $circle-width / 2.5
-			@include text-primary ($red, $font-stack)
+			@include text-primary ($blue, $font-stack)
+			font-weight: bold
+
+			.how-to-icons
+				width: $circle-width / 2
+				margin: auto
+
 
 	.headline-tiny
 		@include text-primary ($grey, $font-stack)
