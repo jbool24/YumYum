@@ -6,7 +6,7 @@ const passport = require('./config/passport');
 // Register User
 exports.register = function (req, res) {
   var {username, password} = req.body;
-  
+
   console.log(req.body);
 
 //   // Validation
@@ -18,7 +18,6 @@ exports.register = function (req, res) {
 //   req.checkBody('password2', 'Passwords do not match').equals(req.body.password);
 
   var errors = req.validationErrors();
-
 
   if (errors) {
     res.send('/error.html')
@@ -45,11 +44,19 @@ exports.register = function (req, res) {
         res.redirect('/test-login.html');
       }
     });
-  }
-  
 
+    console.log(newUser);
+    newUser.save(function (err) {
+      if (err) throw err
+    })
+
+//     req.flash('success_msg', 'You are registered and can now login');
+
+    res.redirect('/test-login.html');
+
+  }
 };
-  
+
 exports.login = function (req, res) {
     // res.redirect('/');
 };

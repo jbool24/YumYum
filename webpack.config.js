@@ -14,7 +14,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.join(__dirname, 'public/dist/'),
-    publicPath: '/public/dist/',
+    publicPath: '/dist',
     sourceMapFilename: '[name].map',
   },
   devtool: process.env.NODE_ENV !== 'production' ? 'source-map' : 'cheap-source-map',
