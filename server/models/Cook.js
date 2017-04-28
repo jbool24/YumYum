@@ -6,16 +6,6 @@ var Schema = mongoose.Schema;
 // Create article schema
 var CookSchema = new Schema({
   
-  name: {
-    fullName: {type: String, required: true},
-    lastName: {type: String, required: true}
-  },
-  email: {
-    type: String,
-    required: true,
-    match: [/.+\@.+\..+/, "Please enter a valid e-mail address"],
-    unique:true
-  },
   address:{
     line1: {type: String, required: true},
     line2: {type: String},
@@ -30,28 +20,30 @@ var CookSchema = new Schema({
   phone: {
     type: String,    
   }, 
-  username: {
-    type: String,
-    required: true,    
-    unique:true
-  },
   reviews:[{
     review:{type:String,required:true},
     customerName:{type:String,required:true}
   }], 
   stars:{
+    totalRatings:{
+      type:Number,
+      default:0
+    },
+    average:{
     type: Number,
-    min:1,
+    default:0,
+    min:0,
     max:5
-  },
-  photo: {
-   data: Buffer, 
-   contentType: String
+    }
   },
   fooditems: [{
     type: Schema.Types.ObjectId,
     ref: "Fooditem"
-  }]
+  }],
+  user:{
+     type: Schema.Types.ObjectId,
+    ref: "User"
+  }
 });
 
 

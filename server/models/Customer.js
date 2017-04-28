@@ -6,16 +6,6 @@ var Schema = mongoose.Schema;
 // Create fooditem schema
 var CustomerSchema = new Schema({
   
-  name: {
-    fullName: {type: String, required: true},
-    lastName: {type: String, required: true}
-  },
-  email: {
-    type: String,
-    required: true,
-    match: [/.+\@.+\..+/, "Please enter a valid e-mail address"],
-    unique:true
-  },
   address:{
     line1: {type: String, required: true},
     line2: {type: String},
@@ -25,12 +15,7 @@ var CustomerSchema = new Schema({
   },  
   phone: {
     type: String,    
-  }, 
-  username: {
-    type: String,
-    required: true,    
-    unique:true
-  },   
+  },    
   order_history: [{
     type: Schema.Types.ObjectId,
     ref: "Order"
@@ -38,7 +23,11 @@ var CustomerSchema = new Schema({
   current_basket: [{
     type: Schema.Types.ObjectId,
     ref: "Order"
-  }]
+  }],
+  user:{
+     type: Schema.Types.ObjectId,
+    ref: "User"
+  }
 });
 
 

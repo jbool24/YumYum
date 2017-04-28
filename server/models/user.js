@@ -15,11 +15,11 @@ var UserSchema = new Schema({
     email: String,
     name: String
   },
-  cook: {
+  cook:{
     type: Schema.Types.ObjectId,
     ref: "Cook"
   },
-  customer: {
+  customer:{
     type: Schema.Types.ObjectId,
     ref: "Customer"
   }
