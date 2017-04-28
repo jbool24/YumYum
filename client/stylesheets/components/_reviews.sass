@@ -1,0 +1,46 @@
+/* reviews sass*/
+
+.reviews
+	.row-margin
+		margin: 7vh 0
+
+		.orders-body
+		background-color: $white
+		width: 100%
+		padding-bottom: 10px
+		@include text-primary ($grey, $font-stack)
+
+		.new-order
+			width: 100%
+			background-color: $red
+			height: 50px
+			@include text-primary ($white, $font-stack)
+			font-size: 1.5em
+			padding: 2%
+
+			.orders
+				width: 100%
+				background-color: $red
+				height: 50px
+				@include text-primary ($white, $font-stack)
+				font-size: 1.5em
+				padding: 2%
+		.order-style
+			margin: 0
+			padding: 15px
+			
+			.border
+				box-sizing: border-box
+				padding: 15px
+				.align-stars
+					display: flex
+					justify-content: space-between
+					align-items: center
+					.review-text
+						width: 50%
+						font-size: 1.5em
+						font-weight: bold
+					.stars
+						margin-left: auto
+						width: 30%
+						align-self: center
