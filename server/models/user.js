@@ -14,6 +14,11 @@ var UserSchema = new Schema({
     token: String,
     email: String,
     name: String
+  },
+  isCook: {
+    type: Boolean,
+    default: false,
+    required: true
   }
 });
 

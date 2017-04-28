@@ -1,6 +1,14 @@
 const user = require('./user');
 
-const { register, login, logout, authLocal, authGoogle, authGoogleCallback} = user;
+const { 
+  register,
+  login,
+  logout,
+  authLocal,
+  authGoogle,
+  authGoogleCallback,
+  continueGoogle
+} = user;
 
 module.exports = function (app) {
   app.post('/register', register);
@@ -8,5 +16,5 @@ module.exports = function (app) {
   app.get('/users/logout', logout);
   app.get('/auth/google', authGoogle);
     
-  app.get('/auth/google/callback', authGoogleCallback)
+  app.get('/auth/google/callback', authGoogleCallback, continueGoogle)
 };

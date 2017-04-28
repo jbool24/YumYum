@@ -67,14 +67,19 @@ exports.logout = function (req, res) {
   res.redirect('/');
 };
 
+//Local Authentication
 exports.authLocal = passport.authenticate('local',
   { successRedirect: '/users',
     failureRedirect: '/error.html',
     failureFlash: true })
 
+//Google Authentication
 exports.authGoogle = passport.authenticate('google',
   { scope: ['profile', 'email'] });
 
-exports.authGoogleCallback = passport.authenticate('google',
-  { successRedirect: '/users',
-    failureRedirect: '/error.html'});
+exports.authGoogleCallback = passport.authenticate('google')
+
+exports.continueGoogle = function (req, res) {
+  res.redirect('/users')
+  console.log(req.user);
+}
