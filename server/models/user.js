@@ -15,11 +15,15 @@ var UserSchema = new Schema({
     email: String,
     name: String
   },
-  isCook: {
-    type: Boolean,
-    default: false,
-    required: true
+  cook: {
+    type: Schema.Types.ObjectId,
+    ref: "Cook"
+  },
+  customer: {
+    type: Schema.Types.ObjectId,
+    ref: "Customer"
   }
+
 });
 
 UserSchema.pre('save', function (next) {
