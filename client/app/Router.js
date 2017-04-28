@@ -13,6 +13,9 @@ const Customer = require('./components/customer');
 const FilterPage = require('./components/customer/customerFilterPage');
 const MenuItems = require('./components/common/menuItem');
 
+
+
+
 module.exports = (
   // The high level component is the Router component
   <Router history={hashHistory}>
