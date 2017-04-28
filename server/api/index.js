@@ -20,7 +20,7 @@ module.exports = function(app) {
 	app.get("/cook/:zip", cooksByZip);
 	app.get("/fooditem/:id", getFooditemsByCook);
 	app.get("/fooditem/:cuisine", getFooditemsByCuisine);
-	// app.get("add-to-cart/:id", addToCart)
+	app.get("/add-to-cart/:id", addToCart)
 
 	//post routes
 	app.post("/saveCook",saveCook);

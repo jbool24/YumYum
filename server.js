@@ -79,6 +79,8 @@ app.use(passport.session());
 app.use(function (req, res, next) {
   res.locals.login = req.isAuthenticated();
   res.locals.session = req.session;
+
+  console.log(res.locals.session);
   next();
 })
 // const compiler = webpack(configWebpack(env));
