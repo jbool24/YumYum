@@ -39,7 +39,11 @@ var CookSchema = new Schema({
   fooditems: [{
     type: Schema.Types.ObjectId,
     ref: "Fooditem"
-  }]
+  }],
+  user:{
+     type: Schema.Types.ObjectId,
+    ref: "User"
+  }
 });
 
 

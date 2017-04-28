@@ -27,7 +27,7 @@ const addStars = function(req, res) {
             var totalRating = totalRating + 1;
            
             Cook.findOneAndUpdate({ "_id": req.params.id }, { "stars": { "totalRatings": totalRating, "average": newAvg } },
-                function(err, doc) {
+                { new: true }, function(err, doc) {
                     if (err) {
                         res.send({ error: "Could not save your ratings at this time. Try again later!!" })
                     } else {                       
