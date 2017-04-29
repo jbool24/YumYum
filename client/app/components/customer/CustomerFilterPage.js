@@ -1,8 +1,8 @@
 // Include React
 const React = require("react");
 
-const CustomerHeader = require("./customerHeader");
-// const FilteredItemsDisplay = require("./filteredItems");
+const LocalFav = require('./localFav');
+const RecentOrders = require('./recentOrders');
 
 // Creating the Customer Main Page component
 const FilterPage = React.createClass({
@@ -10,10 +10,11 @@ const FilterPage = React.createClass({
   // Here we describe this component's render method
   render: function() {
     return (
-      <div className="contentCook container-fluid">
-        <CustomerHeader />
-        {/* <FilteredItemsDisplay /> */}
-      </div>
+      <LocalFav/>
+      <RecentOrders/>
+      {/* <div className="contentCook container-fluid">
+        <FilteredItemsDisplay />
+      </div> */}
     );
   }
 });
