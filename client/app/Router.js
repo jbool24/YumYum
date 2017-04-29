@@ -13,16 +13,16 @@ const CookDetails = require('./components/cook/CookDetails');
 
 const Customer = require('./components/customer');
 const CustomerDash = require('./components/customer/CustomerDash');
-const CustomerFilterPage = require('./components/customer/CustomerFilterPage');
 const CustomerContent = require('./components/customer/CustomerContent');
+const CustomerFilterPage = require('./components/customer/CustomerFilterPage');
 
-// The high level component is the Router component
 module.exports = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
 
-        <Route path="customer" component={Customer}>
+        <Route path="customer" component={Customer} >
               <Route path="customer-dashboard" component={CustomerDash}>
+
                     <Route path="filter-search" component={CustomerFilterPage} />
                     <Route path="filter-results" component={CookDetails} />
 

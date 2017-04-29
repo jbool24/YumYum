@@ -30,7 +30,7 @@ const MenuItem = React.createClass({
       //  return <button onClick={this.handleAddToCart}>Add Item</button>;
       // }
       //** for Demo return generic button **//
-      return <button key={this.props.key} onClick={alert("you clicked the button")}> Click</button>;
+      return <button onClick={alert("you clicked the button")}> Click</button>;
     };
     return (
       <div className="contentCook container-fluid">

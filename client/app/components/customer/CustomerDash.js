@@ -14,3 +14,5 @@ const CustomerDash = React.createClass({
 		);
 	}
 });
+
+module.exports = CustomerDash;
