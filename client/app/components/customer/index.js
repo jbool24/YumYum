@@ -1,8 +1,7 @@
 // REACT MODULES ==================================
 const React = require('react');
 
-const MenuItems       = require('../common/menuItem');
-const CustomerHeader  = require('./customerHeader');
+// const MenuItem   = require('../common/MenuItem');
 
 // const CustomerSideBar = require('./customerSideBar');
 
@@ -25,9 +24,9 @@ const Customer = React.createClass({
   },
 
   render: function() {
-    const items = this.state.items;
-    let menuitems = items.map((item) => <MenuItems key={item.id} name={item.name} />);
-    console.log(menuitems)
+    // const items = this.state.items;
+    // let menuitems = items.map((item) => <MenuItem key={item.id} name={item.name} />);
+    // console.log(menuitems)
     return (
       <div>
         {/* <CustomerSideBar /> */}

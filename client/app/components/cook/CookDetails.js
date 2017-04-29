@@ -2,13 +2,13 @@
 const React = require('react');
 
 const CookHeader = require('./CookHeader');
-const MenuItem   = require('../common/menuItem');
+const MenuItem   = require('../common/MenuItem');
 
 
 // const CustomerSideBar = require('./customerSideBar');
 
 
-const Customer = React.createClass({
+const CookDetails = React.createClass({
   getInitialState: function() {
     return this.state = {
       // this data comes from DB in componentWillMount
@@ -39,4 +39,4 @@ const Customer = React.createClass({
   }
 });
 
-module.exports = Customer;
+module.exports = CookDetails;

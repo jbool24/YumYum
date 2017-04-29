@@ -13,34 +13,32 @@ const CookDetails = require('./components/cook/CookDetails');
 
 const Customer = require('./components/customer');
 const CustomerDash = require('./components/customer/CustomerDash');
-const CustomerFilterPage = require('./components/customer/CustomerFilterPage')
-const MenuItems = require('./components/common/menuItem');
+const CustomerFilterPage = require('./components/customer/CustomerFilterPage');
+const CustomerContent = require('./components/customer/CustomerContent');
 
-
-
-
+// The high level component is the Router component
 module.exports = (
-  // The high level component is the Router component
   <Router history={hashHistory}>
     <Route path="/" component={App}>
 
-            <Route path="cook" component={Cook}>
-              <Route path="cook-content" component={CookDetails} />
-              <IndexRoute component={CookDetails} />
-            </Route>
+        <Route path="customer" component={Customer}>
+              <Route path="customer-dashboard" component={CustomerDash}>
+                    <Route path="filter-search" component={CustomerFilterPage} />
+                    <Route path="filter-results" component={CookDetails} />
 
-            <Route path="customer" component={Customer}>
-              <Route path="customer-content" component={CustomerContent} />
-
-              <Route path="customer-dash" component={CustomerDash}>
-                <Route path="FilterSearch" component={CustomerFilterPage} />
-                <Route path="FilterResults" component={CookDetails} />
+                    <IndexRoute component={CustomerFilterPage} />
               </Route>
 
-              <IndexRoute component={CustomerDash} />
-            </Route>
+              <Route path="customer-content" component={CustomerContent} />
 
-        {/* This is only for Demo  */}
+              <IndexRoute component={CustomerDash} />
+        </Route>
+
+        <Route path="cook" component={Cook}>
+            <Route path="cook-content" component={CookDetails} />
+            <IndexRoute component={CookDetails} />
+        </Route>
+
         <IndexRoute component={Customer} />
     </Route>
   </Router>

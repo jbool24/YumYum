@@ -1,12 +1,16 @@
 
 const React = require("react");
 
+const CustomerFilterHeader = require('./CustomerFilterHeader');
+
 const CustomerDash = React.createClass({
 
 	render: function(){
 		return(
-      <CustomerFilterHeader />
-      {this.props.children}
+			<div>
+	      <CustomerFilterHeader />
+	      {this.props.children}
+			</div>
 		);
 	}
 });

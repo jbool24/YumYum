@@ -1,7 +1,7 @@
 // Include React
 const React = require("react");
 
-const CustomerHeader = require("./customerHeader");
+// const CustomerHeader = require("./CustomerHeader");
 // const FilteredItemsDisplay = require("./filteredItems");
 
 // Creating the Customer Main Page component
@@ -16,14 +16,14 @@ const FilterPage = React.createClass({
 		         <h2>Recent Orders</h2>
 		    </div>
 	    </div>
-		
+
 	    <div className="recentOrders-cont">
-	    {/* 
+	    {/*
 			<div className="row noPrevOrders">
 				<span>You have no recent orders!</span>
-    		</div> 
+    		</div>
 	     */}
-	   
+
 	    	<div className="row prevOrders">
 	    		<div className="col-md-4 prevOrder-cont">
 					<div className="prevOrder-Card">
