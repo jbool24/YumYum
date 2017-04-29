@@ -33,11 +33,11 @@ const Customer = React.createClass({
       <div>
         {/* <CustomerSideBar /> */}
         <CustomerHeader />
-        {/* 
+        {/*
           <h1>Customer Content</h1>
           { menuitems }
         */}
-        
+        {this.props.children}
         <LocalFav />
         <RecentOrders />
       </div>
