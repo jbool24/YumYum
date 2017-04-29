@@ -26,7 +26,7 @@ const CookItem = React.createclassName({
 						    <li>3</li>
 						    <li>4</li>
 						  </ul>
-						</div>
+						</div> 
 					</div>
 			      	<h5>Special Instructions</h5>
 			        <textarea className="form-control" rows="3"></textarea>
