@@ -8,7 +8,7 @@ const Footer = React.createClass({
   render: function() {
     return (
       <div className="row footer-style">
-        <div className="textCenter colMd6 colMdOffset3">
+        <div className="text-center col-md-6 col-md-offset-3">
         <p>Copyright &copy; 2017 &middot; All Rights Reserved &middot; <a href="https://github.com/jbool24/YumYum" >Yummy</a></p>
         </div>
       </div>

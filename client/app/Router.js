@@ -10,8 +10,11 @@ const IndexRoute = router.IndexRoute;
 const App = require('./App');
 const Cook = require('./components/cook');
 const Customer = require('./components/customer');
-const FilterPage = require('./components/customer/customerFilterPage');
+const CustomerDash = require('./components/customer/CustomerDash');
 const MenuItems = require('./components/common/menuItem');
+
+
+
 
 module.exports = (
   // The high level component is the Router component
@@ -25,8 +28,12 @@ module.exports = (
 
             <Route path="customer" component={Customer}>
               <Route path="customer-content" component={MenuItems} />
-              <Route path="customer-dash" component={FilterPage} />
-              <IndexRoute component={FilterPage} />
+              <Route path="customer-dash" component={CustomerDash}>
+                <Route path="" component={FilterPage} />
+                <Route path="" component={CookDetails} />
+              <Route/>
+
+              <IndexRoute component={CustomerDash} />
             </Route>
 
         {/* This is only for Demo  */}

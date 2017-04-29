@@ -30,7 +30,7 @@ const saveFood = function(req, res) {
             res.send(error);
         } else {
             
-            Cook.findOneAndUpdate({ "_id": req.params.id }, { $push: { "fooditems": doc._id } }, function(err, newdoc) {
+            Cook.findOneAndUpdate({ "_id": req.params.id }, { $push: { "fooditems": doc._id } },{new:true}, function(err, newdoc) {
                 if (err) {
                     res.send(err);
                 } else {

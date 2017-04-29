@@ -9,12 +9,12 @@ const cookieParser      = require('cookie-parser');
 const favicon           = require('serve-favicon');
 const webpack           = require('webpack');
 const mongoose          = require('mongoose');
-
 const expressValidator  = require('express-validator');
 const flash             = require('connect-flash');
 const session           = require('express-session');
 const passport          = require('passport');
 const LocalStrategy     = require('passport-local');
+const MongoStore        = require('connect-mongo')(session)
 
 mongoose.Promise = global.Promise;
 
@@ -62,6 +62,27 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(favicon(path.join(__dirname, '/public/favicon.ico')))
 app.use(cookieParser());
 
+// Express Session
+app.use(session({
+  secret: 'secret',
+  saveUninitialized: false,
+  resave: false,
+  store: new MongoStore({ mongooseConnection: db }),
+  cookie: { maxAge: 24 * 60 * 60 * 1000 }
+}));
+
+console.log(Date.now());
+
+// Passport init
+app.use(passport.initialize());
+app.use(passport.session());
+
+//Makes request information available on all pages
+app.use(function (req, res, next) {
+  res.locals.login = req.isAuthenticated();
+  res.locals.session = req.session;
+  next();
+})
 // const compiler = webpack(configWebpack(env));
 
 // Middleware Setup ========================================
@@ -70,16 +91,6 @@ app.use(cookieParser());
 app.use("/", express.static(path.resolve(__dirname + "/public")));
 // app.use(webpackMiddleware(compiler));
 
-// Express Session
-app.use(session({
-    secret: 'secret',
-    saveUninitialized: true,
-    resave: true
-}));
-
-// Passport init
-app.use(passport.initialize());
-app.use(passport.session());
 
 // Express Validator
 app.use(expressValidator({

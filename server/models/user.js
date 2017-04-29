@@ -9,14 +9,19 @@ var UserSchema = new Schema({
     username: {type: String, index: true},
     password: {type: String},
   },
-  email: {
-    type: String
-  },
   google: {
     id: String,
     token: String,
     email: String,
     name: String
+  },
+  cook:{
+    type: Schema.Types.ObjectId,
+    ref: "Cook"
+  },
+  customer:{
+    type: Schema.Types.ObjectId,
+    ref: "Customer"
   }
 });
 
