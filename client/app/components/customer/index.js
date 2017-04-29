@@ -5,7 +5,7 @@ const MenuItems       = require('../common/menuItem');
 const CustomerHeader  = require('./customerHeader');
 const LocalFav = require('./localFav');
 const RecentOrders = require('./recentOrders');
-// const CustomerSideBar = require('./customerSideBar');
+const CustomerCartSideBar = require('./CustomerCartSideBar');
 
 
 const Customer = React.createClass({
@@ -31,7 +31,7 @@ const Customer = React.createClass({
     console.log(menuitems)
     return (
       <div>
-        {/* <CustomerSideBar /> */}
+        {/*<CustomerCartSideBar /> */}
         <CustomerHeader />
         {/* 
           <h1>Customer Content</h1>
