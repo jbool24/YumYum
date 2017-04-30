@@ -1,5 +1,6 @@
 // REACT MODULES ==================================
 const React = require('react');
+const CustomerDash = require('./CustomerDash');
 
 const Customer = React.createClass({
   getInitialState: function() {
@@ -21,7 +22,6 @@ const Customer = React.createClass({
   render: function() {
     return (
       <div>
-        {/* <CustomerSideBar /> */}
         {this.props.children}
       </div>
     );
