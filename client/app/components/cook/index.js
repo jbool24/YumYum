@@ -3,7 +3,7 @@ const React = require('react');
 
 
 // const CookSideBar = require('./cookSideBar');
-const CookHeader = require('./cookHeader');
+const CookHeader = require('./CookHeader');
 // const MenuItems   = require('./MenuItems');
 
 const Cook = React.createClass({

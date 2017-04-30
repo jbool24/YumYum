@@ -3,15 +3,15 @@ const React = require("react");
 
 const LocalFav = React.createClass({
 
-	render: function(){
-		return(
+	render: function() {
+		return (
 			<div className="container localFav-cont">
 			    <div className="col-xs-12">
 			         <h2>Local Favorites</h2>
 
 			        <div className="well">
 			            <div id="myCarousel" className="carousel slide">
-			                
+
 			                {/* Carousel Items */}
 			                <div className="carousel-inner">
 			                    <div className="item active">
@@ -252,7 +252,7 @@ const LocalFav = React.createClass({
 			                        {/* End Row */}
 			                    </div>
 			                </div>
-			               
+
 			            </div>
 			           	{/* End Carousel */}
 			            {/* Carousel Controls */}

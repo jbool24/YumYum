@@ -98,7 +98,7 @@ app.use(expressValidator({
       var namespace = param.split('.')
       , root    = namespace.shift()
       , formParam = root;
- 
+
     while(namespace.length) {
       formParam += '[' + namespace.shift() + ']';
     }
@@ -132,7 +132,7 @@ require('./server/api')(app);
 const authenticated = require('./server/routes/config/auth');
 
 // Main files ==========================================
-app.get("/users/", authenticated, (req, res) => {
+app.get("/home/", authenticated, (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'dist', 'index.html'));
 });
 

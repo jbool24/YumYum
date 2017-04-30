@@ -21,8 +21,8 @@ exports.register = function (req, res) {
 
   if (errors) {
     res.send('/error.html')
-  } 
-  
+  }
+
   else {
     User.getUserByUsername(username, function (err, user) {
       console.log("getting username");
@@ -69,7 +69,7 @@ exports.logout = function (req, res) {
 
 //Local Authentication
 exports.authLocal = passport.authenticate('local',
-  { successRedirect: '/users',
+  { successRedirect: '/home',
     failureRedirect: '/error.html',
     failureFlash: true })
 
