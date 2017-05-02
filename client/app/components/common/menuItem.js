@@ -33,13 +33,22 @@ const MenuItem = React.createClass({
       return <button key={this.props.key} onClick={alert("you clicked the button")}> Click</button>;
     };
     return (
-      <div className="contentCook container-fluid">
-        <div className ="card">
-          <img className="cardImgTop" src="http://placehold.it/100x100" alt="Card image cap" />
-          <div className="cardBlock">
-            <h4 className="cardTitle">Menu Item - {this.props.name}</h4>
-            <p className="cardText">This is a really delicious meal my mother made me when I was young. And now I get to cook it for you.</p>
-            { specialbutton }
+      <div class="container copy-style">
+        <div class="row">
+          <div className="orders-body">
+            <div className="orders text-center center-block row-margin-sm">Current menu</div>
+              <div className="order-style">
+                <div className="row">
+                  <div className="col-sm-4 profile-img">
+                    <img src="links/cook1.jpg" className="img-responsive"></img>
+                  </div>
+                  <div className="col-sm-8 text-left">
+                    <h2>Menu Item - {this.props.name}</h2>
+                    <p>This is a really delicious meal my mother made me when I was young. And now I get to cook it for you.</p>
+                  { specialbutton }
+                  </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
