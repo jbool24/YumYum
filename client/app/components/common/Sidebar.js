@@ -1,6 +1,5 @@
 // Include React
 const React = require("react");
-const StripePayment = require('../customer/StripePayment');
 
 const cart = true;
 
