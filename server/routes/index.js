@@ -10,6 +10,8 @@ const {
   continueGoogle
 } = user;
 
+const stripeCharge = require('./stripe')
+
 module.exports = function (app) {
   app.post('/register', register);
   app.post('/login', authLocal);
@@ -17,4 +19,5 @@ module.exports = function (app) {
   app.get('/auth/google', authGoogle);
     
   app.get('/auth/google/callback', authGoogleCallback, continueGoogle)
+  app.post('/users/stripe-charge', stripeCharge)
 };
