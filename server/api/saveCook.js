@@ -15,19 +15,19 @@ const saveCook = function(req, res) {
     console.log(req.body);
 
     // sample req.body
-    //   {
-       //  "_id": "59027b2294f26f33e49db3c6",    (req.user._id   Cook is saved with his same userID )
-       //  "bio" : "Hello there!!",
-       //  "phone" : "551-222-7043",
-       //  "address" : {
-       //          "line1" : "31 ACB Ct",
-       //          "line2" : "Apt 2503",
-       //          "city" : "Jersey City",
-       //          "state" : "NJ",
-       //          "zip" : "07302"
-       //  },
-       //  "user":"59027b2294f26f33e49db3c6"
-       // }
+      // {
+      //   "_id": "59027b2294f26f33e49db3c6",    (req.user._id   Cook is saved with his same userID )
+      //   "bio" : "Hello there!!",
+      //   "phone" : "551-222-7043",
+      //   "address" : {
+      //           "line1" : "31 ACB Ct",
+      //           "line2" : "Apt 2503",
+      //           "city" : "Jersey City",
+      //           "state" : "NJ",
+      //           "zip" : "07302"
+      //   },
+      //   "user":"59027b2294f26f33e49db3c6"
+      //  }
 
 
     newCook.save(function(error, doc) {
