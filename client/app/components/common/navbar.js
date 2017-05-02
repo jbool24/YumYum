@@ -1,28 +1,8 @@
 const React = require("react");
 
 const Navbar = React.createClass({
-	getInitialState: function() {
-		return {
-			sidebarShown: false,
-		}
-	},
-
-	componentWillReceiveProps: function(nextProps) {
-		if (this.state.sidebarShown !== nextProps.sidebarShown) {
-			this.setState({ sidebarShown: nextProps.sidebarShown });
-		}
-	},
-
-	handleShowSideBar: function() {
-		this.props.handleShowSideBar();
-		return false;
-	},
 
 	render: function() {
-		let sidebar = "";
-
-		if (this.state.sidebarShown)
-			sidebar = <Sidebar />
 
 		return(
 			<div className="nav-checkoutNav">
@@ -43,7 +23,7 @@ const Navbar = React.createClass({
 							        </a>
 
 							        <ul className="dropdown-menu">
-							            <li><a href="#" onClick={this.handleShowSideBar.bind(this)}>Your Orders</a></li>
+							            <li><a href="#">Your Orders</a></li>
 							            <li><a href="#">Account Settings</a></li>
 							            <li><a href="#">About</a></li>
 							            <li role="separator" className="divider"></li>
