@@ -2,6 +2,7 @@
 const React = require("react");
 
 const CustomerFilterHeader = require('./CustomerFilterHeader');
+const CookHeader = require('../cook/CookHeader');
 
 const CustomerDash = React.createClass({
 
@@ -11,8 +12,9 @@ const CustomerDash = React.createClass({
 
 		let header = "";
 
-		if (context === "#/customer/customer-dashboard/filter-search")
-  				header = <CustomerFilterHeader/>
+		(context === "#/customer/customer-dashboard/filter-search")
+  				? header = <CustomerFilterHeader/>
+					: header = <CookHeader />
 
 		return(
 			<div>

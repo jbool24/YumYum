@@ -7,7 +7,7 @@ const MenuItem   = require('../common/MenuItem');
 
 const CookDetails = React.createClass({
   getInitialState: function() {
-    return this.state = {
+    return {
       // this data comes from DB in componentWillMount
       items: [
         { id: 1, name: "Turduckin" },
@@ -29,8 +29,6 @@ const CookDetails = React.createClass({
     const menuitems = items.map((item) => {
       return <MenuItem key={item.id} name={item.name} />;
     });
-
-    console.log(menuitems);
 
     return (
       <div>
