@@ -19,6 +19,7 @@ const Customer = React.createClass({
   },
 
   render: function() {
+
     return (
       <div>
         {/* <CustomerSideBar /> */}

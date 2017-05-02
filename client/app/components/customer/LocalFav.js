@@ -4,6 +4,9 @@ const React = require("react");
 const LocalFav = React.createClass({
 
 	render: function() {
+		let foodCard = ()
+
+
 		return (
 			<div className="container localFav-cont">
 			    <div className="col-xs-12">
@@ -15,36 +18,74 @@ const LocalFav = React.createClass({
 			                {/* Carousel Items */}
 			                <div className="carousel-inner">
 			                    <div className="item active">
-			                        <div className="row">
-			                            <div className="col-xs-3">
-			                            	<div className="localFav-card">
-			                            		<div className="localFav-cardTop">
-			                            			<img src="links/home.jpg" className="localFav-cardImg"/>
-			                            			<h3 className="localFav-cardItem">Food name</h3>
-			                            		</div>
-			                            		<div className="localFav-cardBottom">
-													<div className="row localFav-cardStarRating">
-														<div className="col-md-12">
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-														</div>
-													</div>
-													<div className="row localFav-cardInfo">
-														<div className="col-md-4 localFav-cardPrice">
-															<i className="fa fa-usd" aria-hidden="true"></i>
-															<i className="fa fa-usd" aria-hidden="true"></i>
-															<i className="fa fa-usd" aria-hidden="true"></i>
-														</div>
-														<div className="col-md-8 localFav-cardName">
-															Restaurant Name
-														</div>
-													</div>
 
+			                        <div className="row">
+
+			                            <div className="col-xs-3">
+
+			                            	<div className="localFav-card">
+			                            		<div className="localFav-cardTop">
+			                            			<img src="links/home.jpg" className="localFav-cardImg"/>
+			                            			<h3 className="localFav-cardItem">Food name</h3>
+			                            		</div>
+
+			                            		<div className="localFav-cardBottom">
+																					<div className="row localFav-cardStarRating">
+																						<div className="col-md-12">
+																							<i className="fa fa-star" aria-hidden="true"></i>
+																							<i className="fa fa-star" aria-hidden="true"></i>
+																							<i className="fa fa-star" aria-hidden="true"></i>
+																							<i className="fa fa-star" aria-hidden="true"></i>
+																						</div>
+																					</div>
+																					<div className="row localFav-cardInfo">
+																						<div className="col-md-4 localFav-cardPrice">
+																							<i className="fa fa-usd" aria-hidden="true"></i>
+																							<i className="fa fa-usd" aria-hidden="true"></i>
+																							<i className="fa fa-usd" aria-hidden="true"></i>
+																						</div>
+																						<div className="col-md-8 localFav-cardName">
+																							Restaurant Name
+																						</div>
+																					</div>
 			                            		</div>
 			                            	</div>
+
 			                            </div>
+
+			                            <div className="col-xs-3">
+
+			                            	<div className="localFav-card">
+			                            		<div className="localFav-cardTop">
+			                            			<img src="links/home.jpg" className="localFav-cardImg"/>
+			                            			<h3 className="localFav-cardItem">Food name</h3>
+			                            		</div>
+
+			                            		<div className="localFav-cardBottom">
+																					<div className="row localFav-cardStarRating">
+																						<div className="col-md-12">
+																							<i className="fa fa-star" aria-hidden="true"></i>
+																							<i className="fa fa-star" aria-hidden="true"></i>
+																							<i className="fa fa-star" aria-hidden="true"></i>
+																							<i className="fa fa-star" aria-hidden="true"></i>
+																						</div>
+																					</div>
+
+																					<div className="row localFav-cardInfo">
+																						<div className="col-md-4 localFav-cardPrice">
+																							<i className="fa fa-usd" aria-hidden="true"></i>
+																							<i className="fa fa-usd" aria-hidden="true"></i>
+																							<i className="fa fa-usd" aria-hidden="true"></i>
+																						</div>
+																						<div className="col-md-8 localFav-cardName">
+																							Restaurant Name
+																						</div>
+																					</div>
+			                            		</div>
+			                            	</div>
+
+			                            </div>
+
 			                            <div className="col-xs-3">
 			                            	<div className="localFav-card">
 			                            		<div className="localFav-cardTop">
@@ -52,83 +93,59 @@ const LocalFav = React.createClass({
 			                            			<h3 className="localFav-cardItem">Food name</h3>
 			                            		</div>
 			                            		<div className="localFav-cardBottom">
-													<div className="row localFav-cardStarRating">
-														<div className="col-md-12">
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-														</div>
-													</div>
-													<div className="row localFav-cardInfo">
-														<div className="col-md-4 localFav-cardPrice">
-															<i className="fa fa-usd" aria-hidden="true"></i>
-															<i className="fa fa-usd" aria-hidden="true"></i>
-															<i className="fa fa-usd" aria-hidden="true"></i>
-														</div>
-														<div className="col-md-8 localFav-cardName">
-															Restaurant Name
-														</div>
-													</div>
+																					<div className="row localFav-cardStarRating">
+																						<div className="col-md-12">
+																							<i className="fa fa-star" aria-hidden="true"></i>
+																							<i className="fa fa-star" aria-hidden="true"></i>
+																							<i className="fa fa-star" aria-hidden="true"></i>
+																							<i className="fa fa-star" aria-hidden="true"></i>
+																						</div>
+																					</div>
+																					<div className="row localFav-cardInfo">
+																						<div className="col-md-4 localFav-cardPrice">
+																							<i className="fa fa-usd" aria-hidden="true"></i>
+																							<i className="fa fa-usd" aria-hidden="true"></i>
+																							<i className="fa fa-usd" aria-hidden="true"></i>
+																						</div>
+																						<div className="col-md-8 localFav-cardName">
+																							Restaurant Name
+																						</div>
+																					</div>
 			                            		</div>
 			                            	</div>
 			                            </div>
+
 			                            <div className="col-xs-3">
+
 			                            	<div className="localFav-card">
 			                            		<div className="localFav-cardTop">
 			                            			<img src="links/home.jpg" className="localFav-cardImg"/>
 			                            			<h3 className="localFav-cardItem">Food name</h3>
 			                            		</div>
 			                            		<div className="localFav-cardBottom">
-													<div className="row localFav-cardStarRating">
-														<div className="col-md-12">
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-														</div>
-													</div>
-													<div className="row localFav-cardInfo">
-														<div className="col-md-4 localFav-cardPrice">
-															<i className="fa fa-usd" aria-hidden="true"></i>
-															<i className="fa fa-usd" aria-hidden="true"></i>
-															<i className="fa fa-usd" aria-hidden="true"></i>
-														</div>
-														<div className="col-md-8 localFav-cardName">
-															Restaurant Name
-														</div>
-													</div>
+																					<div className="row localFav-cardStarRating">
+																						<div className="col-md-12">
+																							<i className="fa fa-star" aria-hidden="true"></i>
+																							<i className="fa fa-star" aria-hidden="true"></i>
+																							<i className="fa fa-star" aria-hidden="true"></i>
+																							<i className="fa fa-star" aria-hidden="true"></i>
+																						</div>
+																					</div>
+																					<div className="row localFav-cardInfo">
+																						<div className="col-md-4 localFav-cardPrice">
+																							<i className="fa fa-usd" aria-hidden="true"></i>
+																							<i className="fa fa-usd" aria-hidden="true"></i>
+																							<i className="fa fa-usd" aria-hidden="true"></i>
+																						</div>
+																						<div className="col-md-8 localFav-cardName">
+																							Restaurant Name
+																						</div>
+																					</div>
 			                            		</div>
 			                            	</div>
+
 			                            </div>
-			                            <div className="col-xs-3">
-			                            	<div className="localFav-card">
-			                            		<div className="localFav-cardTop">
-			                            			<img src="links/home.jpg" className="localFav-cardImg"/>
-			                            			<h3 className="localFav-cardItem">Food name</h3>
-			                            		</div>
-			                            		<div className="localFav-cardBottom">
-													<div className="row localFav-cardStarRating">
-														<div className="col-md-12">
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-														</div>
-													</div>
-													<div className="row localFav-cardInfo">
-														<div className="col-md-4 localFav-cardPrice">
-															<i className="fa fa-usd" aria-hidden="true"></i>
-															<i className="fa fa-usd" aria-hidden="true"></i>
-															<i className="fa fa-usd" aria-hidden="true"></i>
-														</div>
-														<div className="col-md-8 localFav-cardName">
-															Restaurant Name
-														</div>
-													</div>
-			                            		</div>
-			                            	</div>
-			                            </div>
+
 			                        </div>
 			                        {/* End Row */}
 			                    </div>
@@ -142,24 +159,24 @@ const LocalFav = React.createClass({
 			                            			<h3 className="localFav-cardItem">Food name</h3>
 			                            		</div>
 			                            		<div className="localFav-cardBottom">
-													<div className="row localFav-cardStarRating">
-														<div className="col-md-12">
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-														</div>
-													</div>
-													<div className="row localFav-cardInfo">
-														<div className="col-md-4 localFav-cardPrice">
-															<i className="fa fa-usd" aria-hidden="true"></i>
-															<i className="fa fa-usd" aria-hidden="true"></i>
-															<i className="fa fa-usd" aria-hidden="true"></i>
-														</div>
-														<div className="col-md-8 localFav-cardName">
-															Restaurant Name
-														</div>
-													</div>
+																				<div className="row localFav-cardStarRating">
+																					<div className="col-md-12">
+																						<i className="fa fa-star" aria-hidden="true"></i>
+																						<i className="fa fa-star" aria-hidden="true"></i>
+																						<i className="fa fa-star" aria-hidden="true"></i>
+																						<i className="fa fa-star" aria-hidden="true"></i>
+																					</div>
+																				</div>
+																				<div className="row localFav-cardInfo">
+																					<div className="col-md-4 localFav-cardPrice">
+																						<i className="fa fa-usd" aria-hidden="true"></i>
+																						<i className="fa fa-usd" aria-hidden="true"></i>
+																						<i className="fa fa-usd" aria-hidden="true"></i>
+																					</div>
+																					<div className="col-md-8 localFav-cardName">
+																						Restaurant Name
+																					</div>
+																				</div>
 			                            		</div>
 			                            	</div>
 			                            </div>
@@ -170,24 +187,24 @@ const LocalFav = React.createClass({
 			                            			<h3 className="localFav-cardItem">Food name</h3>
 			                            		</div>
 			                            		<div className="localFav-cardBottom">
-													<div className="row localFav-cardStarRating">
-														<div className="col-md-12">
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-														</div>
-													</div>
-													<div className="row localFav-cardInfo">
-														<div className="col-md-4 localFav-cardPrice">
-															<i className="fa fa-usd" aria-hidden="true"></i>
-															<i className="fa fa-usd" aria-hidden="true"></i>
-															<i className="fa fa-usd" aria-hidden="true"></i>
-														</div>
-														<div className="col-md-8 localFav-cardName">
-															Restaurant Name
-														</div>
-													</div>
+																				<div className="row localFav-cardStarRating">
+																					<div className="col-md-12">
+																						<i className="fa fa-star" aria-hidden="true"></i>
+																						<i className="fa fa-star" aria-hidden="true"></i>
+																						<i className="fa fa-star" aria-hidden="true"></i>
+																						<i className="fa fa-star" aria-hidden="true"></i>
+																					</div>
+																				</div>
+																				<div className="row localFav-cardInfo">
+																					<div className="col-md-4 localFav-cardPrice">
+																						<i className="fa fa-usd" aria-hidden="true"></i>
+																						<i className="fa fa-usd" aria-hidden="true"></i>
+																						<i className="fa fa-usd" aria-hidden="true"></i>
+																					</div>
+																					<div className="col-md-8 localFav-cardName">
+																						Restaurant Name
+																					</div>
+																				</div>
 			                            		</div>
 			                            	</div>
 			                            </div>
@@ -198,24 +215,24 @@ const LocalFav = React.createClass({
 			                            			<h3 className="localFav-cardItem">Food name</h3>
 			                            		</div>
 			                            		<div className="localFav-cardBottom">
-													<div className="row localFav-cardStarRating">
-														<div className="col-md-12">
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-														</div>
-													</div>
-													<div className="row localFav-cardInfo">
-														<div className="col-md-4 localFav-cardPrice">
-															<i className="fa fa-usd" aria-hidden="true"></i>
-															<i className="fa fa-usd" aria-hidden="true"></i>
-															<i className="fa fa-usd" aria-hidden="true"></i>
-														</div>
-														<div className="col-md-8 localFav-cardName">
-															Restaurant Name
-														</div>
-													</div>
+																				<div className="row localFav-cardStarRating">
+																					<div className="col-md-12">
+																						<i className="fa fa-star" aria-hidden="true"></i>
+																						<i className="fa fa-star" aria-hidden="true"></i>
+																						<i className="fa fa-star" aria-hidden="true"></i>
+																						<i className="fa fa-star" aria-hidden="true"></i>
+																					</div>
+																				</div>
+																				<div className="row localFav-cardInfo">
+																					<div className="col-md-4 localFav-cardPrice">
+																						<i className="fa fa-usd" aria-hidden="true"></i>
+																						<i className="fa fa-usd" aria-hidden="true"></i>
+																						<i className="fa fa-usd" aria-hidden="true"></i>
+																					</div>
+																					<div className="col-md-8 localFav-cardName">
+																						Restaurant Name
+																					</div>
+																				</div>
 			                            		</div>
 			                            	</div>
 			                            </div>
@@ -226,24 +243,24 @@ const LocalFav = React.createClass({
 			                            			<h3 className="localFav-cardItem">Food name</h3>
 			                            		</div>
 			                            		<div className="localFav-cardBottom">
-													<div className="row localFav-cardStarRating">
-														<div className="col-md-12">
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-															<i className="fa fa-star" aria-hidden="true"></i>
-														</div>
-													</div>
-													<div className="row localFav-cardInfo">
-														<div className="col-md-4 localFav-cardPrice">
-															<i className="fa fa-usd" aria-hidden="true"></i>
-															<i className="fa fa-usd" aria-hidden="true"></i>
-															<i className="fa fa-usd" aria-hidden="true"></i>
-														</div>
-														<div className="col-md-8 localFav-cardName">
-															Restaurant Name
-														</div>
-													</div>
+																				<div className="row localFav-cardStarRating">
+																					<div className="col-md-12">
+																						<i className="fa fa-star" aria-hidden="true"></i>
+																						<i className="fa fa-star" aria-hidden="true"></i>
+																						<i className="fa fa-star" aria-hidden="true"></i>
+																						<i className="fa fa-star" aria-hidden="true"></i>
+																					</div>
+																				</div>
+																				<div className="row localFav-cardInfo">
+																					<div className="col-md-4 localFav-cardPrice">
+																						<i className="fa fa-usd" aria-hidden="true"></i>
+																						<i className="fa fa-usd" aria-hidden="true"></i>
+																						<i className="fa fa-usd" aria-hidden="true"></i>
+																					</div>
+																					<div className="col-md-8 localFav-cardName">
+																						Restaurant Name
+																					</div>
+																				</div>
 
 			                            		</div>
 			                            	</div>
