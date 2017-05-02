@@ -77,6 +77,7 @@ const Sidebar = React.createClass({
           <div className="col-md-12 text-center">
             <hr />
             <form action="/users/stripe-charge" method="POST" id="stripe-form">
+              <input type="hidden" name="amount" value="1000"/>
               {/*Stripe Payment Button Gets Inserted Here*/}
             </form>
           </div>

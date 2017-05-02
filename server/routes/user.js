@@ -76,5 +76,5 @@ exports.authGoogle = passport.authenticate('google',
 exports.authGoogleCallback = passport.authenticate('google')
 
 exports.continueGoogle = function (req, res) {
-  res.redirect('/home')
+  res.redirect('/home#/customer/customer-dashboard/filter-search')
 }

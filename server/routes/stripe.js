@@ -6,8 +6,9 @@ module.exports = function stripeCharge(req, res) {
   console.log(req.body);
   // Token is created using Stripe.js or Checkout!
   // Get the payment token submitted by the form:
-  let {stripeToken, stripeEmail} = req.body; // Using Express
+  let {stripeToken, stripeEmail, amount} = req.body; // Using Express
 
+  amount = parseInt(amount);
   // Create a Customer:
   stripe.customers.create({
     email: stripeEmail,
@@ -15,13 +16,13 @@ module.exports = function stripeCharge(req, res) {
   }).then(function (customer) {
     // YOUR CODE: Save the customer ID and other info in a database for later.
     return stripe.charges.create({
-      amount: 999,
+      amount: amount,
       currency: "usd",
       customer: customer.id,
     });
   }).then(function (charge) {
     // Use and save the charge info.
-    res.redirect('/home#/customer/customer-dashboard')
+    res.redirect('/home#/customer/customer-dashboard/filter-search')
     console.log(charge);
   });
 }
