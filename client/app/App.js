@@ -10,13 +10,19 @@ const Footer = require("./components/common/footer");
 
 const App = React.createClass({
   getInitialState: function() {
-    return this.state = {};
+    return {
+      sidebarShown: false,
+    };
   },
 
+  handleShowSideBar: function(){
+    this.setState({ sidebarShown: !this.state.sidebarShown })
+  },
+  
   render: function() {
     return (
       <div>
-        <NavBar />
+        <NavBar sidebarShown={this.state.sidebarShown} sidebarHandler={this.handleShowSideBar.bind(this)}/>
         {this.props.children}
         <Footer />
       </div>
