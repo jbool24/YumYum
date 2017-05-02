@@ -2,9 +2,48 @@
 const React = require("react");
 
 const LocalFav = React.createClass({
+	getInitialState: function(){
+		return {
+			items: this.props.foodItems,
+		};
+	},
 
 	render: function() {
-		let foodCard = ()
+		const items = this.state.items;
+		let foodCards = items.map((item) => {
+			return (
+				<div key={item.id} className="col-xs-3">
+
+					<div className="localFav-card">
+						<div className="localFav-cardTop">
+							<img src="links/home.jpg" className="localFav-cardImg"/>
+							<h3 className="localFav-cardItem">{item.cuisine}</h3>
+						</div>
+
+						<div className="localFav-cardBottom">
+							<div className="row localFav-cardStarRating">
+								<div className="col-md-12">
+									<i className="fa fa-star" aria-hidden="true"></i>
+									<i className="fa fa-star" aria-hidden="true"></i>
+									<i className="fa fa-star" aria-hidden="true"></i>
+									<i className="fa fa-star" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div className="row localFav-cardInfo">
+								<div className="col-md-4 localFav-cardPrice">
+										{item.price}
+								</div>
+								<div className="col-md-8 localFav-cardName">
+									{item.itemName}
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			);
+		});
+
 
 
 		return (
@@ -21,134 +60,13 @@ const LocalFav = React.createClass({
 
 			                        <div className="row">
 
-			                            <div className="col-xs-3">
-
-			                            	<div className="localFav-card">
-			                            		<div className="localFav-cardTop">
-			                            			<img src="links/home.jpg" className="localFav-cardImg"/>
-			                            			<h3 className="localFav-cardItem">Food name</h3>
-			                            		</div>
-
-			                            		<div className="localFav-cardBottom">
-																					<div className="row localFav-cardStarRating">
-																						<div className="col-md-12">
-																							<i className="fa fa-star" aria-hidden="true"></i>
-																							<i className="fa fa-star" aria-hidden="true"></i>
-																							<i className="fa fa-star" aria-hidden="true"></i>
-																							<i className="fa fa-star" aria-hidden="true"></i>
-																						</div>
-																					</div>
-																					<div className="row localFav-cardInfo">
-																						<div className="col-md-4 localFav-cardPrice">
-																							<i className="fa fa-usd" aria-hidden="true"></i>
-																							<i className="fa fa-usd" aria-hidden="true"></i>
-																							<i className="fa fa-usd" aria-hidden="true"></i>
-																						</div>
-																						<div className="col-md-8 localFav-cardName">
-																							Restaurant Name
-																						</div>
-																					</div>
-			                            		</div>
-			                            	</div>
-
-			                            </div>
-
-			                            <div className="col-xs-3">
-
-			                            	<div className="localFav-card">
-			                            		<div className="localFav-cardTop">
-			                            			<img src="links/home.jpg" className="localFav-cardImg"/>
-			                            			<h3 className="localFav-cardItem">Food name</h3>
-			                            		</div>
-
-			                            		<div className="localFav-cardBottom">
-																					<div className="row localFav-cardStarRating">
-																						<div className="col-md-12">
-																							<i className="fa fa-star" aria-hidden="true"></i>
-																							<i className="fa fa-star" aria-hidden="true"></i>
-																							<i className="fa fa-star" aria-hidden="true"></i>
-																							<i className="fa fa-star" aria-hidden="true"></i>
-																						</div>
-																					</div>
-
-																					<div className="row localFav-cardInfo">
-																						<div className="col-md-4 localFav-cardPrice">
-																							<i className="fa fa-usd" aria-hidden="true"></i>
-																							<i className="fa fa-usd" aria-hidden="true"></i>
-																							<i className="fa fa-usd" aria-hidden="true"></i>
-																						</div>
-																						<div className="col-md-8 localFav-cardName">
-																							Restaurant Name
-																						</div>
-																					</div>
-			                            		</div>
-			                            	</div>
-
-			                            </div>
-
-			                            <div className="col-xs-3">
-			                            	<div className="localFav-card">
-			                            		<div className="localFav-cardTop">
-			                            			<img src="links/home.jpg" className="localFav-cardImg"/>
-			                            			<h3 className="localFav-cardItem">Food name</h3>
-			                            		</div>
-			                            		<div className="localFav-cardBottom">
-																					<div className="row localFav-cardStarRating">
-																						<div className="col-md-12">
-																							<i className="fa fa-star" aria-hidden="true"></i>
-																							<i className="fa fa-star" aria-hidden="true"></i>
-																							<i className="fa fa-star" aria-hidden="true"></i>
-																							<i className="fa fa-star" aria-hidden="true"></i>
-																						</div>
-																					</div>
-																					<div className="row localFav-cardInfo">
-																						<div className="col-md-4 localFav-cardPrice">
-																							<i className="fa fa-usd" aria-hidden="true"></i>
-																							<i className="fa fa-usd" aria-hidden="true"></i>
-																							<i className="fa fa-usd" aria-hidden="true"></i>
-																						</div>
-																						<div className="col-md-8 localFav-cardName">
-																							Restaurant Name
-																						</div>
-																					</div>
-			                            		</div>
-			                            	</div>
-			                            </div>
-
-			                            <div className="col-xs-3">
-
-			                            	<div className="localFav-card">
-			                            		<div className="localFav-cardTop">
-			                            			<img src="links/home.jpg" className="localFav-cardImg"/>
-			                            			<h3 className="localFav-cardItem">Food name</h3>
-			                            		</div>
-			                            		<div className="localFav-cardBottom">
-																					<div className="row localFav-cardStarRating">
-																						<div className="col-md-12">
-																							<i className="fa fa-star" aria-hidden="true"></i>
-																							<i className="fa fa-star" aria-hidden="true"></i>
-																							<i className="fa fa-star" aria-hidden="true"></i>
-																							<i className="fa fa-star" aria-hidden="true"></i>
-																						</div>
-																					</div>
-																					<div className="row localFav-cardInfo">
-																						<div className="col-md-4 localFav-cardPrice">
-																							<i className="fa fa-usd" aria-hidden="true"></i>
-																							<i className="fa fa-usd" aria-hidden="true"></i>
-																							<i className="fa fa-usd" aria-hidden="true"></i>
-																						</div>
-																						<div className="col-md-8 localFav-cardName">
-																							Restaurant Name
-																						</div>
-																					</div>
-			                            		</div>
-			                            	</div>
-
-			                            </div>
+																{	foodCards }
 
 			                        </div>
 			                        {/* End Row */}
 			                    </div>
+
+
 			                   {/* Start List of Items */}
 			                    <div className="item">
 			                        <div className="row">
