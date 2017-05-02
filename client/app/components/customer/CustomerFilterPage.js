@@ -9,8 +9,13 @@ const FilterPage = React.createClass({
     return {
         items: [
           { id: 1, itemName: "Turduckin", cusine: "Indian", price: "$8.00" },
-          { id: 2, itemName: "Tika Masala", cusine: "Indian", price: "$8.00" },
-          { id: 3, itemName: "Borscht", cusine: "Indian", price: "$8.00" },
+          { id: 2, itemName: "Tikka Masala", cusine: "Indian", price: "$8.00" },
+          { id: 3, itemName: "Tom Hoac Muc Chien Gion", cusine: "Vietnamese", price: "$8.95" },
+          { id: 4, itemName: "Pickle Soup", cusine: "Polish", price: "$3.00" },
+          { id: 5, itemName: "Ramen", cusine: "Japanese", price: "$12.00" },
+          { id: 6, itemName: "Kalua Pig", cusine: "Hawaiian", price: "$13.00" },
+          { id: 7, itemName: "Halea", cusine: "Peruvian", price: "$14.00" },
+          { id: 8, itemName: "Zuccini Bread", cusine: "Italian", price: "$2.00" },
         ]
       };
   },

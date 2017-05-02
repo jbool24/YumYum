@@ -35,7 +35,6 @@ const CookDetails = React.createClass({
     return (
       <div>
         {/* <SideBar /> */}
-        <CookHeader />
         { menuitems }
       </div>
     );
