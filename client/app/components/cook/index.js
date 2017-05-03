@@ -4,7 +4,6 @@ const React = require('react');
 
 // const CookSideBar = require('./cookSideBar');
 const CookHeader = require('./CookHeader');
-// const MenuItems   = require('./MenuItems');
 
 const Cook = React.createClass({
   getInitialState: function() {
@@ -12,16 +11,20 @@ const Cook = React.createClass({
   },
 
   render: function() {
+    const hash = window.location.hash;
+    const context = hash.slice(0, -(hash.length - hash.indexOf("?")));
+
+    let header = "";
+
+    if (context === "#/cook/cook-content")
+          header = <CookHeader />
 
     return (
         <div>
-          <CookHeader />
+          { header }
           {/* <CookSidebar /> */}
-          <h1>Cook Content</h1>
           {this.props.children}
-
-          {/* <MenuItems /> */}
-      </div>
+        </div>
     );
   }
 });
