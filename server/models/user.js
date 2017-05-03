@@ -23,6 +23,7 @@ var UserSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Customer"
   }
+
 });
 
 UserSchema.pre('save', function (next) {

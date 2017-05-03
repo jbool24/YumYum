@@ -7,8 +7,6 @@ const passport = require('./config/passport');
 exports.register = function (req, res) {
   var {username, password} = req.body;
 
-  console.log(req.body);
-
 //   // Validation
 //   req.checkBody('name', 'Name is required').notEmpty();
 //   req.checkBody('email', 'Email is required').notEmpty();
@@ -25,7 +23,6 @@ exports.register = function (req, res) {
 
   else {
     User.getUserByUsername(username, function (err, user) {
-      console.log("getting username");
       if (err) throw err;
       if (user) {
         return console.log('that username is already taken');
@@ -34,7 +31,6 @@ exports.register = function (req, res) {
           "local.username": username,
           "local.password": password
         });
-        console.log(newUser);
         newUser.save(function (err) {
           if (err) throw err
         })
@@ -67,14 +63,18 @@ exports.logout = function (req, res) {
   res.redirect('/');
 };
 
+//Local Authentication
 exports.authLocal = passport.authenticate('local',
   { successRedirect: '/home',
     failureRedirect: '/error.html',
     failureFlash: true })
 
+//Google Authentication
 exports.authGoogle = passport.authenticate('google',
   { scope: ['profile', 'email'] });
 
-exports.authGoogleCallback = passport.authenticate('google',
-  { successRedirect: '/home',
-    failureRedirect: '/error.html'});
+exports.authGoogleCallback = passport.authenticate('google')
+
+exports.continueGoogle = function (req, res) {
+  res.redirect('/home#/customer/customer-dashboard/filter-search')
+}

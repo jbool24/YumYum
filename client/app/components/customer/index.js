@@ -3,7 +3,7 @@ const React = require('react');
 
 const Customer = React.createClass({
   getInitialState: function() {
-    return this.state = {
+    return {
       // this data comes from DB in componentWillMount
       items: [
         { id: 1, name: "Turduckin" },
@@ -19,9 +19,9 @@ const Customer = React.createClass({
   },
 
   render: function() {
+
     return (
       <div>
-        {/* <CustomerSideBar /> */}
         {this.props.children}
       </div>
     );

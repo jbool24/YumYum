@@ -20,26 +20,26 @@ module.exports = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
 
-        <Route path="customer" component={Customer} >
-              <Route path="customer-dashboard" component={CustomerDash}>
+      <Route path="customer" component={Customer} >
+        <Route path="customer-dashboard" component={CustomerDash}>
 
-                    <Route path="filter-search" component={CustomerFilterPage} />
-                    <Route path="filter-results" component={CookDetails} />
+          <Route path="filter-search" component={CustomerFilterPage} />
+          <Route path="filter-results" component={CookDetails} />
 
-                    <IndexRoute component={CustomerFilterPage} />
-              </Route>
-
-              <Route path="customer-content" component={CustomerContent} />
-
-              <IndexRoute component={CustomerDash} />
+          <IndexRoute component={CustomerFilterPage} />
         </Route>
 
-        <Route path="cook" component={Cook}>
-            <Route path="cook-content" component={CookDetails} />
-            <IndexRoute component={CookDetails} />
-        </Route>
+        <Route path="customer-content" component={CustomerContent} />
 
-        <IndexRoute component={Customer} />
+        <IndexRoute component={CustomerDash} />
+      </Route>
+
+      <Route path="cook" component={Cook}>
+        <Route path="cook-content" component={CookDetails} />
+        <IndexRoute component={CookDetails} />
+      </Route>
+
+      <IndexRoute component={Customer} />
     </Route>
   </Router>
 );

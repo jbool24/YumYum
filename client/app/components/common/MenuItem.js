@@ -4,13 +4,24 @@ const React = require("react");
 // Creating the Footer component
 const MenuItem = React.createClass({
   getInitialState: function(){
-    return this.state = {
+    return {
       // isCook: true,
       // in here we can set up which kind of
       // menuItem cook's item or customer's item
       // A cook has edit buttons
       // A customer has add to order buttons
     };
+  },
+  componentWillMount: function(){
+    // axios.get("/cook/" + )
+    //   .then((response) => {
+    //     console.log(response);
+    //   })
+    //   .catch((error) => {
+    //     this.setState({
+    //       cook: "Opps. Something went wrong."
+    //     });
+    //   });
   },
   // Add the item to cart
   handleAddToCart: function (item) {
@@ -22,7 +33,7 @@ const MenuItem = React.createClass({
 
 
   render: function() {
-    const specialbutton = function(){
+    const specialbutton = function() {
       // Create a buttton to use based on cook or customer
       // if (this.state.isCook) {
       //  return <button onClick={this.handleRemoveItem}> Remove Item </button>;
@@ -30,16 +41,16 @@ const MenuItem = React.createClass({
       //  return <button onClick={this.handleAddToCart}>Add Item</button>;
       // }
       //** for Demo return generic button **//
-      return <button onClick={alert("you clicked the button")}> Click</button>;
+      return <button onClick={()=> alert("you clicked the button")}> Click Me!</button>;
     };
     return (
-      <div className="contentCook container-fluid">
+      <div className="menuItem contentCook container-fluid">
         <div className ="card">
           <img className="cardImgTop" src="http://placehold.it/100x100" alt="Card image cap" />
           <div className="cardBlock">
             <h4 className="cardTitle">Menu Item - {this.props.name}</h4>
             <p className="cardText">This is a really delicious meal my mother made me when I was young. And now I get to cook it for you.</p>
-            { specialbutton }
+            { specialbutton() }
           </div>
         </div>
       </div>
