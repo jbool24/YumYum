@@ -95,15 +95,15 @@ const Sidebar = React.createClass({
           return (
             <div key={items.item._id} className="row ordereditems-cart">
               <div className="col-md-1 removeItem">
-                <span onClick={()=> this.handleAddItem(items.item._id)} className="clickable">+<i className="fa fa-plus-circle" aria-hidden="true"></i></span>
+                <span onClick={()=> this.handleAddItem(items.item._id)} className="clickable"><i className="fa fa-plus-circle" aria-hidden="true"></i></span>
               </div>
 
               <div className="col-md-1 removeItem">
-                <span onClick={() => this.handleSubtractItem(items.item._id)} className="clickable">-<i className="fa fa-minus-circle" aria-hidden="true"></i></span>
+                <span onClick={() => this.handleSubtractItem(items.item._id)} className="clickable"><i className="fa fa-minus-circle" aria-hidden="true"></i></span>
               </div>
 
               <div className="col-md-1 removeItem">
-                <span onClick={() => this.handleDeleteItem(items.item._id)} className="clickable">t<i className="fa fa-trash-o" aria-hidden="true"></i></span>
+                <span onClick={() => this.handleDeleteItem(items.item._id)} className="clickable"><i className="fa fa-trash-o" aria-hidden="true"></i></span>
               </div>
 
               <div className="col-md-1" id="quantityOrd">
