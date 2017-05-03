@@ -10,6 +10,11 @@ const Customer = require("../models/Customer.js");
 // Update the average ratings for the cook. 
 // Update the total number of ratings given so far.
 
+//sample route: http://localhost:3000/addStarsToCook/59091959a45770221cbf82da   (_id of cook being rated)
+//sample body:  {
+//     "stars":4
+// }
+
 const addStarsToCook = function(req, res) {
     // var cookID = req.body.id;
     var newStars = req.body.stars;

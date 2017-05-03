@@ -5,6 +5,9 @@ const Customer = require("../models/Customer.js");
 
 // Get the cooks by the given zipcode
 
+//sample route:  http://localhost:3000/cook/07310
+//sample body:
+
 
 const cooksByZip = function(req, res) {
 

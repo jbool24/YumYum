@@ -9,6 +9,24 @@ const User = require("../models/user.js");
 
 //Save the cook
 
+//sample route: http://localhost:3000/saveCook
+//sample body:         {
+       //  "_id": "59091959a45770221cbf82da",
+       //  "bio" : "I’m John, a former financial analyst, now a full-time cook and blogger. Welcome to my space. I cook recipes gathered from my friends and family. I am passionate about South Indian food. I crazy love knives. A sharp knife is a girls best friend. Hope you like my meals. Happy Cooking.",
+       //  "phone" : "551-222-7043",
+       //  "address" : {
+       //          "line1" : "31 River Ct",
+       //          "line2" : "Apt 2503",
+       //          "city" : "Jersey City",
+       //          "state" : "NJ",
+       //          "zip" : "07310"
+       //  },
+       //  "userRef":"59091959a45770221cbf82da"
+       // }
+       
+       
+
+
 const saveCook = function(req, res) {
 
     var newCook = new Cook(req.body);

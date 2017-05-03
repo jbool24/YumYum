@@ -11,6 +11,11 @@ const Customer = require("../models/Customer.js");
 // Update the average ratings for the fooditem. 
 // Update the total number of ratings given so far.
 
+//sample route:  http://localhost:3000/addStarsToFooditem/59091c4ca45770221cbf82db
+//sample body:  {
+//     "stars":5
+// }
+
 const addStarsToFooditem = function(req, res) {
     // var cookID = req.body.id;
     var newStars = req.body.stars;

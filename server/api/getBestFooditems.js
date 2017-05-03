@@ -5,6 +5,9 @@ const Fooditem = require("../models/Fooditem.js");
 const Cook = require("../models/Cook.js");
 const Customer = require("../models/Customer.js");
 
+//sample route: http://localhost:3000/topFooditems
+//sample body:
+
 
 // Get 8 best fooditems by star ratings
 const getBestFooditems = function(req, res) {

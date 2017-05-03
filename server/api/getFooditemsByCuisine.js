@@ -9,6 +9,10 @@ const Customer = require("../models/Customer.js");
 
 
 // Get the fooditems by selected cuisine
+
+//sample route: http://localhost:3000/getfooditem/Indian
+//sample body:
+
 const getFooditemsByCuisine = function(req, res) {
    Fooditem.find({ "cuisine": req.params.cuisine }, function(error, doc) {
 
