@@ -44,19 +44,25 @@ const Sidebar = React.createClass({
 
   },
 
+  getCart: function () {
+    helper.getCart().then((data) => {
+      this.setState({ cart: data.cart, cartTotal: data.cartTotal });
+    })
+  },
+
   handleAddItem: function (itemId) {
     helper.addItem(itemId)
-      .then(() => this.forceUpdate())
+      .then(() => this.getCart())
   },
 
   handleSubtractItem: function (itemId) {
     helper.subtractItem(itemId)
-      .then(() => this.forceUpdate())
+      .then(() => this.getCart())
   },
 
   handleDeleteItem: function (itemId) {
     helper.deleteItem(itemId)
-      .then(() => this.forceUpdate())
+      .then(() => this.getCart())
   },
 
   renderEmptyCart: function () {
