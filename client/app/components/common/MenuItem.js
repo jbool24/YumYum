@@ -32,25 +32,22 @@ const MenuItem = React.createClass({
       //** for Demo return generic button **//
       return <button key={this.props.key} onClick={alert("you clicked the button")}> Click</button>;
     };
+
     return (
-      <div className="container copy-style">
-          <div className="row orders-body">
-            <div className="orders text-center center-block row-margin-sm">Current menu</div>
-              <div className="order-style">
-                <div className="row">
-                  <div className="col-sm-4 profile-img">
-                    <img src="links/cook1.jpg" className="img-responsive"></img>
-                  </div>
-                  <div className="col-sm-8 text-left">
-                    <h2>Menu Item - {this.props.name}</h2>
-                    <p>This is a really delicious meal my mother made me when I was young. And now I get to cook it for you.</p>
-                  { specialbutton }
-                  </div>
-              </div>
+
+        <div className = "row row-margin-sm">
+          <div className="col-sm-4 profile-img">
+            <img src="links/cook1.jpg" className="img-responsive"></img>
+          </div>
+          <div className="order-style">
+            <div className="col-sm-8 text-left">
+              <h2>Menu Item - {this.props.name}</h2>
+              <p>This is a really delicious meal my mother made me when I was young. And now I get to cook it for you.</p>
+            { specialbutton }
             </div>
           </div>
-        </div>
-      
+      </div>
+  
     );
   }
 });

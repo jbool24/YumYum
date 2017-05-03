@@ -33,7 +33,16 @@ const CookDetails = React.createClass({
     return (
       <div>
         {/* <SideBar /> */}
-        { menuitems }
+         <div className="container copy-style">
+          <div className="row">
+            <div className="orders-body">
+              <div className="orders text-center center-block row-margin-sm">Current menu</div>
+                
+                   { menuitems }
+              
+            </div> 
+          </div>
+        </div>
       </div>
     );
   }
