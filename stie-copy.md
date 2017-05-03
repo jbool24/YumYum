@@ -4,9 +4,7 @@
 
 We know the true value of community. In the best of times, a strong community
 drives new innovation and economic development. In the worst of times, community
-can suffer because of fear, misinformation, and uncertainty. This divide is extremely
-detrimental to a country like our good nation that was built on the unity of each other
-for a common cause. Xenophobia causes use to loose trust in our neighbors and we
+can suffer because of fear, misinformation, and uncertainty. If we loose trust in our neighbors, we
 become weaker not stronger.
 
 Our platform, <insert good name here>, aims to close that divide by providing a place
