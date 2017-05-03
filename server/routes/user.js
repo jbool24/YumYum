@@ -6,6 +6,7 @@ const passport = require('./config/passport');
 // Register User
 exports.register = function (req, res) {
   var {username, password} = req.body;
+  console.log(req.body);
 
 //   // Validation
 //   req.checkBody('name', 'Name is required').notEmpty();
@@ -23,6 +24,7 @@ exports.register = function (req, res) {
 
   else {
     User.getUserByUsername(username, function (err, user) {
+      console.log(user);
       if (err) throw err;
       if (user) {
         return console.log('that username is already taken');
@@ -37,19 +39,9 @@ exports.register = function (req, res) {
 
         //     req.flash('success_msg', 'You are registered and can now login');
 
-        res.redirect('/test-login.html');
+        res.redirect('/home#/customer/customer-dashboard/filter-search');
       }
     });
-
-    console.log(newUser);
-    newUser.save(function (err) {
-      if (err) throw err
-    })
-
-//     req.flash('success_msg', 'You are registered and can now login');
-
-    res.redirect('/test-login.html');
-
   }
 };
 
@@ -65,7 +57,8 @@ exports.logout = function (req, res) {
 
 //Local Authentication
 exports.authLocal = passport.authenticate('local',
-  { successRedirect: '/home',
+  {
+    successRedirect: '/home#/customer/customer-dashboard/filter-search',
     failureRedirect: '/error.html',
     failureFlash: true })
 

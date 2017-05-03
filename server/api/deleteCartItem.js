@@ -9,6 +9,6 @@ module.exports = function deleteCartItem(req, res) {
   cart.removeItem(itemId);
 
   req.session.cart = cart;
-  res.redirect('/home#/customer/customer-dashboard/filter-search')
+  res.send(req.session.cart)
   console.log(cart);
 }

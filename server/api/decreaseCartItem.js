@@ -9,6 +9,6 @@ module.exports = function decreaseCartItem(req, res) {
   cart.reduceByOne(itemId);
 
   req.session.cart = cart;
-  res.send('/home#/customer/customer-dashboard/filter-search')
+  res.send(req.session.cart)
   console.log(cart);
 }

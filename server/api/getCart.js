@@ -5,7 +5,7 @@ const Cart = require('../models/cart');
 module.exports = function getCart(req, res) {
   // console.log(res);
   if (!req.session.cart) {
-    return res.send({});
+    return res.send({cart:[], cartTotal: undefined});
   }
   let cart = new Cart(req.session.cart);
 

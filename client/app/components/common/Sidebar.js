@@ -44,6 +44,21 @@ const Sidebar = React.createClass({
 
   },
 
+  handleAddItem: function (itemId) {
+    helper.addItem(itemId)
+      .then(() => this.forceUpdate())
+  },
+
+  handleSubtractItem: function (itemId) {
+    helper.subtractItem(itemId)
+      .then(() => this.forceUpdate())
+  },
+
+  handleDeleteItem: function (itemId) {
+    helper.deleteItem(itemId)
+      .then(() => this.forceUpdate())
+  },
+
   renderEmptyCart: function () {
     return (
       <div className={`emptycart-cont ${this.state.sidebarStatus}`}>
@@ -74,15 +89,15 @@ const Sidebar = React.createClass({
           return (
             <div key={items.item._id} className="row ordereditems-cart">
               <div className="col-md-1 removeItem">
-                <a href={`/cart/add-item/${items.item._id}`}><i className="fa fa-plus-circle" aria-hidden="true"></i></a>
+                <span onClick={()=> this.handleAddItem(items.item._id)} className="clickable">+<i className="fa fa-plus-circle" aria-hidden="true"></i></span>
               </div>
 
               <div className="col-md-1 removeItem">
-                <a href={`/cart/decrease-item/${items.item._id}`}><i className="fa fa-minus-circle" aria-hidden="true"></i></a>
+                <span onClick={() => this.handleSubtractItem(items.item._id)} className="clickable">-<i className="fa fa-minus-circle" aria-hidden="true"></i></span>
               </div>
 
               <div className="col-md-1 removeItem">
-                <a href={`/cart/delete-item/${items.item._id}`}><i className="fa fa-trash-o" aria-hidden="true"></i></a>
+                <span onClick={() => this.handleDeleteItem(items.item._id)} className="clickable">t<i className="fa fa-trash-o" aria-hidden="true"></i></span>
               </div>
 
               <div className="col-md-1" id="quantityOrd">

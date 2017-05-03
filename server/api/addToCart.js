@@ -15,10 +15,10 @@ module.exports = function (req, res) {
       return res.redirect('/test-error.html')
     }
     console.log(food);
-    // console.log("food item query",food);
+    // console.log("food item query",food);z
     cart.add(food, food.id);
     req.session.cart = cart;
-    res.redirect('/home#/customer/customer-dashboard/filter-search')
+    res.send(req.session.cart)
     // console.log(cart);
   })
 }
