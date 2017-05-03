@@ -48,3 +48,4 @@ public/dist
 
 # Auth config files
 server/routes/config/config.js
+server/router/config/config.js
