@@ -13,6 +13,7 @@ const addReview=require('./addReview.js');
 const addStars=require('./addStars.js');
 
 const addToCart = require('./addToCart')
+const getCart = require('./getCart')
 
 
 module.exports = function(app) {
@@ -21,6 +22,7 @@ module.exports = function(app) {
 	app.get("/fooditem/:id", getFooditemsByCook);
 	app.get("/fooditem/:cuisine", getFooditemsByCuisine);
 	app.get("/add-to-cart/:id", addToCart)
+	app.get("/get-cart", getCart)
 
 	//post routes
 	app.post("/saveCook",saveCook);

@@ -1,12 +1,15 @@
 // Include React
 const React = require("react");
-
-const cart = true;
+const helper = require('../../helper');
 
 const Sidebar = React.createClass({
   
   getInitialState: function () {
-    return { sidebarStatus: "sidebar-closed" };
+    return {sidebarStatus: "sidebar-closed", cart: { items: {} } };
+  },
+
+  componentWillMount: function () {
+
   },
 
   componentWillReceiveProps: function () {
@@ -18,18 +21,28 @@ const Sidebar = React.createClass({
   },
 
   componentDidMount: function () {
-    //Creates stripe payment button
-    var script = document.createElement("script")
-    
-      script.setAttribute("src","https://checkout.stripe.com/checkout.js")
-      script.setAttribute("class","stripe-button")
-      script.setAttribute("data-key","pk_test_kWSuXV6D1USg0ziKSpne0TR9")
-      script.setAttribute("data-amount","999")
-      script.setAttribute("data-name","Demo Site")
-      script.setAttribute("data-description","Widget")
-      script.setAttribute("data-image","https://stripe.com/img/documentation/checkout/marketplace.png")
+
+    //Get items from req.session.cart
+    helper.getCart().then((cart) => {
+      console.log(cart);
+      this.setState({ cart });
+    }).then( () => {
+      var amount = this.state.cart.totalPrice * 100
+      var script = document.createElement("script")
+
+      script.setAttribute("src", "https://checkout.stripe.com/checkout.js")
+      script.setAttribute("class", "stripe-button")
+      script.setAttribute("data-key", "pk_test_kWSuXV6D1USg0ziKSpne0TR9")
+      script.setAttribute("data-amount", amount)
+      script.setAttribute("data-name", "Demo Site")
+      script.setAttribute("data-description", "Widget")
+      script.setAttribute("data-image", "https://stripe.com/img/documentation/checkout/marketplace.png")
 
       document.getElementById('stripe-form').appendChild(script)
+    });
+
+    //Creates stripe payment button
+
   },
 
   renderEmptyCart: function () {
@@ -46,6 +59,9 @@ const Sidebar = React.createClass({
   },
 
   renderCart: function () {
+    var cart = this.state.cart;
+    
+    // console.log(cart);
     return (
       <div className={`fullcart-cont ${this.state.sidebarStatus}`}>
         <div className="row orderHeader">
@@ -54,30 +70,34 @@ const Sidebar = React.createClass({
             <hr />
           </div>
         </div>
+        {Object.keys(cart.items).map((food) => {
+          console.log(cart.items[food]);
+          return (
+            <div className="row ordereditems-cart">
+            <div className="col-md-1 removeItem">
+              <i className="fa fa-minus-circle" aria-hidden="true"></i>
+            </div>
 
-        <div className="row ordereditems-cart">
-          <div className="col-md-1 removeItem">
-            <i className="fa fa-minus-circle" aria-hidden="true"></i>
-          </div>
+            <div className="col-md-1" id="quantityOrd">
+              <p>{cart.items[food].qty}</p>
+            </div>
 
-          <div className="col-md-1" id="quantityOrd">
-            <p>1</p>
-          </div>
+            <div className="col-md-7" id="itemName">
+              <p>{cart.items[food].item.itemName}</p>
+            </div>
 
-          <div className="col-md-7" id="itemName">
-            <p>Blah Blah Blah</p>
+            <div className="col-md-3" id="itemCost">
+              <p>{cart.items[food].price}</p>
+            </div>
           </div>
-
-          <div className="col-md-3" id="itemCost">
-            <p>$5.99</p>
-          </div>
-        </div>
+          )
+        })}
 
         <div className="row orderBtn-cont">
           <div className="col-md-12 text-center">
             <hr />
             <form action="/users/stripe-charge" method="POST" id="stripe-form">
-              <input type="hidden" name="amount" value="1000"/>
+              <input type="hidden" name="amount" value={`${this.state.cart.totalPrice}`}/>
               {/*Stripe Payment Button Gets Inserted Here*/}
             </form>
           </div>
@@ -88,7 +108,7 @@ const Sidebar = React.createClass({
   },
 
   render: function () {
-    if (!cart) {
+    if (!this.state.cart) {
       return (
         this.renderEmptyCart()
       )
