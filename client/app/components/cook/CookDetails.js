@@ -1,7 +1,11 @@
 // REACT MODULES ==================================
 const React = require('react');
 
-const Customer = React.createClass({
+const CookHeader = require('./CookHeader');
+const MenuItem   = require('../common/MenuItem');
+// const SideBar = require('../common/SideBar');
+
+const CookDetails = React.createClass({
   getInitialState: function() {
     return {
       // this data comes from DB in componentWillMount
@@ -9,7 +13,7 @@ const Customer = React.createClass({
         { id: 1, name: "Turduckin" },
         { id: 2, name: "Tika Masala" },
         { id: 3, name: "Borscht" },
-      ]
+      ],
     };
   },
 
@@ -20,13 +24,19 @@ const Customer = React.createClass({
 
   render: function() {
 
+    const items = this.state.items;
+
+    const menuitems = items.map((item) => {
+      return <MenuItem key={item.id} name={item.name} />;
+    });
+
     return (
       <div>
-        {/* <CustomerSideBar /> */}
-        {this.props.children}
+        {/* <SideBar /> */}
+        { menuitems }
       </div>
     );
   }
 });
 
-module.exports = Customer;
+module.exports = CookDetails;

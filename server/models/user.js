@@ -14,6 +14,14 @@ var UserSchema = new Schema({
     token: String,
     email: String,
     name: String
+  },
+  cook:{
+    type: Schema.Types.ObjectId,
+    ref: "Cook"
+  },
+  customer:{
+    type: Schema.Types.ObjectId,
+    ref: "Customer"
   }
 });
 

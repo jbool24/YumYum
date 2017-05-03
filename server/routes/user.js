@@ -21,8 +21,8 @@ exports.register = function (req, res) {
 
   if (errors) {
     res.send('/error.html')
-  } 
-  
+  }
+
   else {
     User.getUserByUsername(username, function (err, user) {
       console.log("getting username");
@@ -68,7 +68,7 @@ exports.logout = function (req, res) {
 };
 
 exports.authLocal = passport.authenticate('local',
-  { successRedirect: '/users',
+  { successRedirect: '/home',
     failureRedirect: '/error.html',
     failureFlash: true })
 
@@ -76,5 +76,5 @@ exports.authGoogle = passport.authenticate('google',
   { scope: ['profile', 'email'] });
 
 exports.authGoogleCallback = passport.authenticate('google',
-  { successRedirect: '/users',
+  { successRedirect: '/home',
     failureRedirect: '/error.html'});

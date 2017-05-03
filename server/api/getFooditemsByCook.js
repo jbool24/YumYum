@@ -13,7 +13,7 @@ const getFooditemsByCook = function(req, res) {
         .populate("fooditems")
         .exec(function(error, doc) {            
             if (error) {
-                console.log(error);
+                res.json({ error: "sorry no item found" });
             }
             // Otherwise, send the doc to the browser as a json object
             else {

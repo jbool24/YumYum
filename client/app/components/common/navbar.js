@@ -2,7 +2,8 @@ const React = require("react");
 
 const Navbar = React.createClass({
 
-	render: function(){
+	render: function() {
+
 		return(
 			<div className="nav-checkoutNav">
 

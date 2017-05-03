@@ -1,7 +1,7 @@
 
 const React = require("react");
 
-const CustomerHeader = React.createClass({
+const CustomerFilterHeader = React.createClass({
 
 	render: function(){
 		return(
@@ -26,4 +26,4 @@ const CustomerHeader = React.createClass({
 	}
 });
 
-module.exports = CustomerHeader;3
+module.exports = CustomerFilterHeader;

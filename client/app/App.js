@@ -10,8 +10,9 @@ const Footer = require("./components/common/footer");
 
 const App = React.createClass({
   getInitialState: function() {
-    return this.state = {};
+    return {};
   },
+
 
   render: function() {
     return (

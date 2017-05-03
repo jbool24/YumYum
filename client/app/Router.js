@@ -9,30 +9,36 @@ const IndexRoute = router.IndexRoute;
 
 const App = require('./App');
 const Cook = require('./components/cook');
+const CookDetails = require('./components/cook/CookDetails');
+
 const Customer = require('./components/customer');
-const FilterPage = require('./components/customer/customerFilterPage');
-const MenuItems = require('./components/common/menuItem');
-
-
-
+const CustomerDash = require('./components/customer/CustomerDash');
+const CustomerContent = require('./components/customer/CustomerContent');
+const CustomerFilterPage = require('./components/customer/CustomerFilterPage');
 
 module.exports = (
-  // The high level component is the Router component
   <Router history={hashHistory}>
     <Route path="/" component={App}>
 
-            <Route path="cook" component={Cook}>
-              <Route path="cook-content" component={MenuItems} />
-              <IndexRoute component={MenuItems} />
-            </Route>
+        <Route path="customer" component={Customer} >
+              <Route path="customer-dashboard" component={CustomerDash}>
 
-            <Route path="customer" component={Customer}>
-              <Route path="customer-content" component={MenuItems} />
-              <Route path="customer-dash" component={FilterPage} />
-              <IndexRoute component={FilterPage} />
-            </Route>
+                    <Route path="filter-search" component={CustomerFilterPage} />
+                    <Route path="filter-results" component={CookDetails} />
 
-        {/* This is only for Demo  */}
+                    <IndexRoute component={CustomerFilterPage} />
+              </Route>
+
+              <Route path="customer-content" component={CustomerContent} />
+
+              <IndexRoute component={CustomerDash} />
+        </Route>
+
+        <Route path="cook" component={Cook}>
+            <Route path="cook-content" component={CookDetails} />
+            <IndexRoute component={CookDetails} />
+        </Route>
+
         <IndexRoute component={Customer} />
     </Route>
   </Router>

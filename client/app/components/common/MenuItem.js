@@ -33,9 +33,8 @@ const MenuItem = React.createClass({
       return <button key={this.props.key} onClick={alert("you clicked the button")}> Click</button>;
     };
     return (
-      <div class="container copy-style">
-        <div class="row">
-          <div className="orders-body">
+      <div className="container copy-style">
+          <div className="row orders-body">
             <div className="orders text-center center-block row-margin-sm">Current menu</div>
               <div className="order-style">
                 <div className="row">
@@ -51,7 +50,7 @@ const MenuItem = React.createClass({
             </div>
           </div>
         </div>
-      </div>
+      
     );
   }
 });
