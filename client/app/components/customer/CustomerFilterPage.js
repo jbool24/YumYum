@@ -1,5 +1,6 @@
 // Include React
 const React = require("react");
+const axios = require('axios');
 
 const LocalFav = require('./LocalFav');
 const RecentOrders = require('./RecentOrders');
@@ -21,12 +22,12 @@ const FilterPage = React.createClass({
   },
 
   componentWillMount: function() {
-    // axios.get('/fooditem/top-eight').then((response) => {
-    //   console.log(response);
-    //   this.setState({items: response.items });
-    // }).catch((error) => {
-    //   this.setState({ items: "Sorry, No items yet."})
-    // });
+    axios.get('/fooditem/top-eight').then((response) => {
+      console.log("From the DB" + JSON.stringify(response));
+      // this.setState({items: response.items });
+    }).catch((error) => {
+      // this.setState({ items: "Sorry, No items yet."})
+    });
   },
 
   render: function() {
