@@ -35,10 +35,37 @@ body
 	font-size: 6em
 	padding: 8%
 
+.title-p
+	color: $blue
+
 .text-style 
 	@include margin-center
 	width: 85%
 	@include text-primary ($grey, $font-stack)
+	font-size: 1.5em
+	line-height: 1.25em
+	
+	@mixin border-blue
+		width: 90%
+		border: 2px solid $red
+		padding: 5px
+	.img-border
+		@include border-blue
+		margin: 5%
+		-ms-transform: rotate(5deg)
+		-webkit-transform: rotate(5deg)
+		transform: rotate(5deg)
+
+	.img-border-left
+		@include border-blue
+		margin: 5%
+		-ms-transform: rotate(-5deg)
+		-webkit-transform: rotate(-5deg)
+		transform: rotate(-5deg)
+	
+	.add-border
+		border: 1px solid $blue
+		padding: 15px
 
 .copy-style 
 	margin: 5% auto
@@ -48,7 +75,7 @@ body
 		margin: 15px auto 
 	
 		.icon-lg
-			width: 48px
+			width: 60px
 
 	.headline-small 
 		@include text-primary ($red, $font-stack)
@@ -94,3 +121,6 @@ body
 
 hr 
 	border-color: $grey
+
+.row-margin 
+	margin-top: 5%
