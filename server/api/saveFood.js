@@ -7,6 +7,19 @@ const Customer = require("../models/Customer.js");
 //Save the fooditem
 //Find the cook and push the new fooditem id into the cooks's fooditems array
 
+//sample route:  http://localhost:3000/saveFood/590916caa45770221cbf82d9  (_id of cook)
+//sample body:  {
+//         "itemName" : "Italian meatballs",
+//         "itemDescription" : "Meatball recipes are often challenged by chefs who claim, Mine are the best! Even though my meatballs ARE the best, I will make no such claim. Try them for yourself!",
+//         "price" : 8,
+//         "cuisine" : "Italian",
+//         "vegetarian" : false,
+//         "ingredients" : [
+//                 "beef","eggs"
+//         ],
+//         "cook":"590916caa45770221cbf82d9"
+// }
+
 
 const saveFood = function(req, res) {
 

@@ -5,6 +5,9 @@ const Fooditem = require("../models/Fooditem.js");
 const Cook = require("../models/Cook.js");
 const Customer = require("../models/Customer.js");
 
+//sample route: http://localhost:3000/fooditem/590916caa45770221cbf82d9    (_id of cook)
+//sample body:
+
 
 // Get the fooditems for the given cook
 const getFooditemsByCook = function(req, res) {

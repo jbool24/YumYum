@@ -1,8 +1,17 @@
 const React = require("react");
+const Sidebar = require('./Sidebar');
 
 const Navbar = React.createClass({
 
-	render: function() {
+	getInitialState: function(){
+    return {sidebarVisible: true};
+  },
+
+	handleSidebarView: function(){
+  	this.setState({sidebarVisible: !this.state.sidebarVisible});
+  },
+
+	render: function(){
 
 		return(
 			<div className="nav-checkoutNav">
@@ -32,12 +41,15 @@ const Navbar = React.createClass({
 						        </li>
 
 						        <li>
-						        	<a className="checkOut" href="#"><i className="fa fa-shopping-basket fa-1x " aria-hidden="true"></i></a>
+						        	<a onClick = {this.handleSidebarView} className="checkOut clickable"><i className="fa fa-shopping-basket fa-1x " aria-hidden="true"></i></a>
 						        </li>
 						    </ul>
 						</div>
 					</div>
 				</nav>
+
+				<Sidebar visible = {this.state.sidebarVisible} />
+
 			</div>
 		);
 	}

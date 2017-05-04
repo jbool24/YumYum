@@ -6,7 +6,6 @@ const passport = require('./config/passport');
 // Register User
 exports.register = function (req, res) {
   var {username, password} = req.body;
-
   console.log(req.body);
 
 //   // Validation
@@ -25,7 +24,7 @@ exports.register = function (req, res) {
 
   else {
     User.getUserByUsername(username, function (err, user) {
-      console.log("getting username");
+      console.log(user);
       if (err) throw err;
       if (user) {
         return console.log('that username is already taken');
@@ -34,26 +33,15 @@ exports.register = function (req, res) {
           "local.username": username,
           "local.password": password
         });
-        console.log(newUser);
         newUser.save(function (err) {
           if (err) throw err
         })
 
         //     req.flash('success_msg', 'You are registered and can now login');
 
-        res.redirect('/test-login.html');
+        res.redirect('/home#/customer/customer-dashboard/filter-search');
       }
     });
-
-    console.log(newUser);
-    newUser.save(function (err) {
-      if (err) throw err
-    })
-
-//     req.flash('success_msg', 'You are registered and can now login');
-
-    res.redirect('/test-login.html');
-
   }
 };
 
@@ -67,14 +55,19 @@ exports.logout = function (req, res) {
   res.redirect('/');
 };
 
+//Local Authentication
 exports.authLocal = passport.authenticate('local',
-  { successRedirect: '/home',
+  {
+    successRedirect: '/home#/customer/customer-dashboard/filter-search',
     failureRedirect: '/error.html',
     failureFlash: true })
 
+//Google Authentication
 exports.authGoogle = passport.authenticate('google',
   { scope: ['profile', 'email'] });
 
-exports.authGoogleCallback = passport.authenticate('google',
-  { successRedirect: '/home',
-    failureRedirect: '/error.html'});
+exports.authGoogleCallback = passport.authenticate('google')
+
+exports.continueGoogle = function (req, res) {
+  res.redirect('/home#/customer/customer-dashboard/filter-search')
+}
