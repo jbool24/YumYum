@@ -26,7 +26,7 @@ module.exports = function(app) {
 	app.get("/cook/:zip", cooksByZip);
 	app.get("/fooditem/:id", getFooditemsByCook);
 	app.get("/fooditem/:cuisine", getFooditemsByCuisine);
-	app.get("/topFooditems", getBestFooditems);
+	app.get("/fooditem/top-eight", getBestFooditems);
 
 	// Cart Items
 	app.get("/cart/add-item/:id", addToCart);
