@@ -1,4 +1,4 @@
-// addStars.js
+// addStarsToCook.js
 
 const Order = require("../models/Order.js");
 const Fooditem = require("../models/Fooditem.js");
@@ -10,7 +10,12 @@ const Customer = require("../models/Customer.js");
 // Update the average ratings for the cook. 
 // Update the total number of ratings given so far.
 
-const addStars = function(req, res) {
+//sample route: http://localhost:3000/addStarsToCook/59091959a45770221cbf82da   (_id of cook being rated)
+//sample body:  {
+//     "stars":4
+// }
+
+const addStarsToCook = function(req, res) {
     // var cookID = req.body.id;
     var newStars = req.body.stars;
 
@@ -42,4 +47,4 @@ const addStars = function(req, res) {
 
 }
 
-module.exports = addStars;
+module.exports = addStarsToCook;

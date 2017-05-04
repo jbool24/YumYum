@@ -32,6 +32,18 @@ var FooditemSchema = new Schema({
     type:Boolean,
     default:false
   },
+  stars:{
+    totalRatings:{
+      type:Number,
+      default:0
+    },
+    average:{
+    type: Number,
+    default:0,
+    min:0,
+    max:5
+    }
+  },
   //not sure how to handle availability of the food item
   // available:{
   //   type:Date

@@ -6,6 +6,12 @@ const Customer = require("../models/Customer.js");
 
 //add customer's review against the particular cook
 
+//sample route:   http://localhost:3000/addReview/59091959a45770221cbf82da    (_id of cook being reviewed)
+//sample body:  {
+//        "review":"The curry was yummy",
+//        "customerName":"Austen"
+// }
+
 const addReview = function(req, res) {
     var review = req.body.review;
     var customerName = req.body.customerName;

@@ -22,7 +22,6 @@ const Customer = React.createClass({
 
     return (
       <div>
-        {/* <CustomerSideBar /> */}
         {this.props.children}
       </div>
     );
