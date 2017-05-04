@@ -5,7 +5,7 @@ const helper = require('../../helper');
 const Sidebar = React.createClass({
   
   getInitialState: function () {
-    return {sidebarStatus: "sidebar-closed", cart: { items: {} } };
+    return {sidebarStatus: "sidebar-closed", cart: [], cartTotal: undefined };
   },
 
   componentWillMount: function () {
@@ -23,11 +23,11 @@ const Sidebar = React.createClass({
   componentDidMount: function () {
 
     //Get items from req.session.cart
-    helper.getCart().then((cart) => {
-      console.log(cart);
-      this.setState({ cart });
+    helper.getCart().then((data) => {
+      this.setState({ cart: data.cart, cartTotal: data.cartTotal });
     }).then( () => {
-      var amount = this.state.cart.totalPrice * 100
+    //Creates stripe payment button
+      var amount = this.state.cartTotal * 100
       var script = document.createElement("script")
 
       script.setAttribute("src", "https://checkout.stripe.com/checkout.js")
@@ -41,8 +41,28 @@ const Sidebar = React.createClass({
       document.getElementById('stripe-form').appendChild(script)
     });
 
-    //Creates stripe payment button
 
+  },
+
+  getCart: function () {
+    helper.getCart().then((data) => {
+      this.setState({ cart: data.cart, cartTotal: data.cartTotal });
+    })
+  },
+
+  handleAddItem: function (itemId) {
+    helper.addItem(itemId)
+      .then(() => this.getCart())
+  },
+
+  handleSubtractItem: function (itemId) {
+    helper.subtractItem(itemId)
+      .then(() => this.getCart())
+  },
+
+  handleDeleteItem: function (itemId) {
+    helper.deleteItem(itemId)
+      .then(() => this.getCart())
   },
 
   renderEmptyCart: function () {
@@ -59,7 +79,8 @@ const Sidebar = React.createClass({
   },
 
   renderCart: function () {
-    var cart = this.state.cart;
+    let cart = this.state.cart;
+    let amount = this.state.cartTotal * 100
     
     // console.log(cart);
     return (
@@ -70,26 +91,34 @@ const Sidebar = React.createClass({
             <hr />
           </div>
         </div>
-        {Object.keys(cart.items).map((food) => {
-          console.log(cart.items[food]);
+        {cart.map((items) => {
           return (
-            <div className="row ordereditems-cart">
-            <div className="col-md-1 removeItem">
-              <i className="fa fa-minus-circle" aria-hidden="true"></i>
-            </div>
+            <div key={items.item._id} className="row ordereditems-cart">
+              <div className="col-md-1 removeItem">
+                <span onClick={()=> this.handleAddItem(items.item._id)} className="clickable"><i className="fa fa-plus-circle" aria-hidden="true"></i></span>
+              </div>
 
-            <div className="col-md-1" id="quantityOrd">
-              <p>{cart.items[food].qty}</p>
-            </div>
+              <div className="col-md-1 removeItem">
+                <span onClick={() => this.handleSubtractItem(items.item._id)} className="clickable"><i className="fa fa-minus-circle" aria-hidden="true"></i></span>
+              </div>
 
-            <div className="col-md-7" id="itemName">
-              <p>{cart.items[food].item.itemName}</p>
-            </div>
+              <div className="col-md-1 removeItem">
+                <span onClick={() => this.handleDeleteItem(items.item._id)} className="clickable"><i className="fa fa-trash-o" aria-hidden="true"></i></span>
+              </div>
 
-            <div className="col-md-3" id="itemCost">
-              <p>{cart.items[food].price}</p>
+              <div className="col-md-1" id="quantityOrd">
+                <p>{items.qty}</p>
+              </div>
+
+              <div className="col-md-5" id="itemName">
+                <p>{items.item.itemName}</p>
+              </div>
+
+              <div className="col-md-3" id="itemCost">
+                <p>${items.price}</p>
+              </div>
+
             </div>
-          </div>
           )
         })}
 
@@ -97,7 +126,7 @@ const Sidebar = React.createClass({
           <div className="col-md-12 text-center">
             <hr />
             <form action="/users/stripe-charge" method="POST" id="stripe-form">
-              <input type="hidden" name="amount" value={`${this.state.cart.totalPrice * 100}`}/>
+              <input type="hidden" name="amount" value={`${amount}`}/>
               {/*Stripe Payment Button Gets Inserted Here*/}
             </form>
           </div>

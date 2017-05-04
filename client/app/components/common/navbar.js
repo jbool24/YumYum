@@ -4,7 +4,7 @@ const Sidebar = require('./Sidebar');
 const Navbar = React.createClass({
 
 	getInitialState: function(){
-    return {sidebarVisible: false};
+    return {sidebarVisible: true};
   },
 
 	handleSidebarView: function(){
@@ -41,7 +41,7 @@ const Navbar = React.createClass({
 						        </li>
 
 						        <li>
-						        	<a onClick = {this.handleSidebarView} className="checkOut"><i className="fa fa-shopping-basket fa-1x " aria-hidden="true"></i></a>
+						        	<a onClick = {this.handleSidebarView} className="checkOut clickable"><i className="fa fa-shopping-basket fa-1x " aria-hidden="true"></i></a>
 						        </li>
 						    </ul>
 						</div>

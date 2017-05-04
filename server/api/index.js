@@ -18,7 +18,8 @@ const addStarsToFooditem=require('./addStarsToFooditem.js');
 
 const addToCart = require('./addToCart')
 const getCart = require('./getCart')
-
+const deleteCartItem = require('./deleteCartItem');
+const decreaseCartItem = require('./decreaseCartItem')
 
 module.exports = function(app) {
 	//get routes
@@ -27,8 +28,12 @@ module.exports = function(app) {
 	app.get("/fooditem/:cuisine", getFooditemsByCuisine);
 	app.get("/topFooditems", getBestFooditems);
 
-	app.get("/add-to-cart/:id", addToCart)
-	app.get("/get-cart", getCart)
+	// Cart Items
+	app.get("/cart/add-item/:id", addToCart);
+	app.get("/cart/get-items", getCart);
+	app.get("/cart/delete-item/:id", deleteCartItem);
+	app.get("/cart/decrease-item/:id", decreaseCartItem);
+
 
 	//post routes
 	app.post("/saveCook",saveCook);
@@ -42,6 +47,3 @@ module.exports = function(app) {
 	app.post("/addStarsToFooditem/:id",addStarsToFooditem);
 
 }
-
-
-
