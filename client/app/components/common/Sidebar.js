@@ -5,7 +5,7 @@ const helper = require('../../helper');
 const Sidebar = React.createClass({
   
   getInitialState: function () {
-    return {sidebarStatus: "sidebar-closed", cart: [], cartTotal: undefined };
+    return {sidebarStatus: "sidebar-closed", cart: [], cartQty: undefined, cartTotal: undefined };
   },
 
   componentWillMount: function () {
@@ -22,13 +22,15 @@ const Sidebar = React.createClass({
 
   componentDidMount: function () {
     //Get items from req.session.cart
-    this.getCart();
+    // if (this.state.cart.length !== 0) {
+      this.getCart();
+    // }
   },
 
   getCart: function () {
     helper.getCart()
       .then((data) => {
-        this.setState({ cart: data.cart, cartTotal: data.cartTotal })
+        this.setState({ cart: data.cart, cartTotal: data.cartTotal, cartQty: data.cartQty })
       })
         .then( () => {
 
@@ -71,7 +73,7 @@ const Sidebar = React.createClass({
 
   renderEmptyCart: function () {
     return (
-      <div className={`emptycart-cont ${this.state.sidebarStatus}`}>
+      <div className={`cart-cont ${this.state.sidebarStatus}`}>
         <div className="row">
           <div className="col-md-12 text-center">
             <i className="fa fa-shopping-cart fa-5x" aria-hidden="true"></i>
@@ -86,10 +88,11 @@ const Sidebar = React.createClass({
     let cart = this.state.cart;
     let stripeAmount = this.state.cartTotal * 100
     let total = parseInt(this.state.cartTotal).toFixed(2)
+    let totalQty = parseInt(this.state.cartQty)
     
     // console.log(cart);
     return (
-      <div className={`fullcart-cont ${this.state.sidebarStatus}`}>
+      <div className={`cart-cont ${this.state.sidebarStatus}`}>
         <div className="row order-header">
           <div className="col-md-12 text-center">
             <h3>Your Order</h3>
@@ -134,7 +137,7 @@ const Sidebar = React.createClass({
           <hr />
           <div className="row total-info">
             <div className="col-xs-1 col-xs-offset-1" id="total-ord">
-              <p>1</p>
+              <p>{totalQty}</p>
             </div>
             <div className="col-xs-6" id="total-ord">
               <p>Items</p>
@@ -169,7 +172,8 @@ const Sidebar = React.createClass({
   },
 
   render: function () {
-    if (this.state.cart == []) {
+    if (this.state.cart.length == 0) {
+      console.log(this.state.cart);
       return (
         this.renderEmptyCart()
       )
