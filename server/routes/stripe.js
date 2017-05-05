@@ -22,7 +22,7 @@ module.exports = function stripeCharge(req, res) {
     });
   }).then(function (charge) {
     // Use and save the charge info.
-    res.redirect('/home#/customer/customer-dashboard/filter-search')
+    res.redirect('/home#/customer/dashboard/search')
     console.log(charge);
   });
 }

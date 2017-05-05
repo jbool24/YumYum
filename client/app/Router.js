@@ -9,7 +9,7 @@ const IndexRoute = router.IndexRoute;
 
 const App = require('./App');
 const Cook = require('./components/cook');
-const CookDetails = require('./components/cook/CookDetails');
+const CookItem = require('./components/cook/CookItem');
 
 const Customer = require('./components/customer');
 const CustomerDash = require('./components/customer/CustomerDash');
@@ -21,10 +21,10 @@ module.exports = (
     <Route path="/" component={App}>
 
       <Route path="customer" component={Customer} >
-        <Route path="customer-dashboard" component={CustomerDash}>
+        <Route path="dashboard" component={CustomerDash}>
 
-          <Route path="filter-search" component={CustomerFilterPage} />
-          <Route path="filter-results" component={CookDetails} />
+          <Route path="search" component={CustomerFilterPage} />
+          {/*<Route path="cookinfo" component={CookInfo} />*/}
 
           <IndexRoute component={CustomerFilterPage} />
         </Route>
@@ -35,8 +35,8 @@ module.exports = (
       </Route>
 
       <Route path="cook" component={Cook}>
-        <Route path="cook-content" component={CookDetails} />
-        <IndexRoute component={CookDetails} />
+        <Route path="cook-content" component={CookItem} />
+        <IndexRoute component={CookItem} />
       </Route>
 
       <IndexRoute component={Customer} />

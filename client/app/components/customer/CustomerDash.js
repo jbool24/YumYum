@@ -12,7 +12,7 @@ const CustomerDash = React.createClass({
 
 		let header = "";
 
-		(context === "#/customer/customer-dashboard/filter-search")
+		(context === "#/customer/dashboard/search")
   				? header = <CustomerFilterHeader/>
 					: header = <CookHeader />
 

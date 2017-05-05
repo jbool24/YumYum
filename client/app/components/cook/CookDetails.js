@@ -2,7 +2,7 @@
 const React = require('react');
 
 const CookHeader = require('./CookHeader');
-const MenuItem   = require('../common/MenuItem');
+const CookItem   = require('./CookItem');
 // const SideBar = require('../common/SideBar');
 
 const CookDetails = React.createClass({
@@ -27,7 +27,7 @@ const CookDetails = React.createClass({
     const items = this.state.items;
 
     const menuitems = items.map((item) => {
-      return <MenuItem key={item.id} name={item.name} />;
+      return <Cookitem key={item.id} name={item.name} />;
     });
 
     return (

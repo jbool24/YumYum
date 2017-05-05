@@ -50,7 +50,7 @@ const register = function register(req, res) {
 
         //     req.flash('success_msg', 'You are registered and can now login');
 
-        res.redirect('/home#/customer/customer-dashboard/filter-search');
+        res.redirect('/home#/customer/dashboard/search');
       }
     });
   }
@@ -69,7 +69,7 @@ exports.logout = function (req, res) {
 //Local Authentication
 exports.authLocal = passport.authenticate('local',
   {
-    successRedirect: '/home#/customer/customer-dashboard/filter-search',
+    successRedirect: '/home#/customer/dashboard/search',
     failureRedirect: '/error.html',
     failureFlash: true })
 
@@ -80,5 +80,5 @@ exports.authGoogle = passport.authenticate('google',
 exports.authGoogleCallback = passport.authenticate('google')
 
 exports.continueGoogle = function (req, res) {
-  res.redirect('/home#/customer/customer-dashboard/filter-search')
+  res.redirect('/home#/customer/dashboard/search')
 }
