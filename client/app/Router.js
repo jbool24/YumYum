@@ -9,7 +9,7 @@ const IndexRoute = router.IndexRoute;
 
 const App = require('./App');
 const Cook = require('./components/cook');
-const CookDetails = require('./components/cook/CookDetails');
+const CookDetails = require('./components/cook/cookItem');
 
 const Customer = require('./components/customer');
 const CustomerDash = require('./components/customer/CustomerDash');

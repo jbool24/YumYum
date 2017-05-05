@@ -86,45 +86,68 @@ const Sidebar = React.createClass({
     return (
       <div className={`fullcart-cont ${this.state.sidebarStatus}`}>
         <div className="row orderHeader">
-          <div className="col-md-12 text-center">
-            <h3>Your Order</h3>
-            <hr />
-          </div>
+            <div className="col-md-12 text-center">
+              <h3>Your Order</h3>
+              <hr/>
+            </div>
         </div>
         {cart.map((items) => {
           return (
             <div key={items.item._id} className="row ordereditems-cart">
               <div className="col-md-1 removeItem">
-                <span onClick={()=> this.handleAddItem(items.item._id)} className="clickable"><i className="fa fa-plus-circle" aria-hidden="true"></i></span>
-              </div>
-
-              <div className="col-md-1 removeItem">
-                <span onClick={() => this.handleSubtractItem(items.item._id)} className="clickable"><i className="fa fa-minus-circle" aria-hidden="true"></i></span>
-              </div>
-
-              <div className="col-md-1 removeItem">
-                <span onClick={() => this.handleDeleteItem(items.item._id)} className="clickable"><i className="fa fa-trash-o" aria-hidden="true"></i></span>
+                <div onClick={()=> this.handleAddItem(items.item._id)} className="clickable">
+                          <i className="fa fa-plus-circle" aria-hidden="true"></i>
+                </div>
+                <div onClick={() => this.handleSubtractItem(items.item._id)} className="clickable">
+                  <i className="fa fa-minus-circle" aria-hidden="true"></i>
+                </div>
               </div>
 
               <div className="col-md-1" id="quantityOrd">
                 <p>{items.qty}</p>
               </div>
 
-              <div className="col-md-5" id="itemName">
+              <div className="col-md-7" id="itemName"ass="col-md-6" id="itemName">
                 <p>{items.item.itemName}</p>
               </div>
 
-              <div className="col-md-3" id="itemCost">
+              <div className="col-md-2" id="itemCost">
                 <p>${items.price}</p>
               </div>
 
-            </div>
+              <div className="col-md-1" id="deleteOrd">
+                    <span onClick={() => this.handleDeleteItem(items.item._id)} className="clickable">
+                      <i className="fa fa-trash-o" aria-hidden="true"></i>
+                    </span>
+              </div>
+          </div>
           )
         })}
 
+       <div className="total-cont">
+          <h4>Total</h4>
+          <hr/>
+          <div className="row totalInfo">
+            <div className="col-md-3" id="totalOrd">
+              <p>1</p>
+              </div>
+
+              <div className="col-md-3" id="totalCost">
+                <p>$5.99</p>
+              </div>
+
+              <div className="col-md-3" id="totalTax">
+                <p>0.79</p>
+              </div>
+
+              <div className="col-md-3" id="total">
+                <p>$6.78</p>
+              </div>
+          </div>
+        </div>
+
         <div className="row orderBtn-cont">
           <div className="col-md-12 text-center">
-            <hr />
             <form action="/users/stripe-charge" method="POST" id="stripe-form">
               <input type="hidden" name="amount" value={`${amount}`}/>
               {/*Stripe Payment Button Gets Inserted Here*/}
@@ -134,6 +157,9 @@ const Sidebar = React.createClass({
 
       </div>
     );
+
+
+
   },
 
   render: function () {

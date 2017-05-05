@@ -125,7 +125,7 @@ body {
 
 #checkoutNav {
   height: 100%;
-  width: 300px;
+  width: 350px;
   position: fixed;
   z-index: 1000;
   top: 0;
@@ -149,39 +149,83 @@ body {
     margin-left: 5px;
     margin-right: 5px;
     vertical-align: middle;
-    height: 35px; }
+    height: 50px; }
     #checkoutNav .fullcart-cont .ordereditems-cart .removeItem {
+      height: 100%;
       text-align: center;
       padding-left: 0px;
       padding-right: 0px;
-      font-size: 125%;
-      margin-top: 2px; }
+      font-size: 115%;
+      margin-top: 2px;
+      margin-bottom: 2px; }
       #checkoutNav .fullcart-cont .ordereditems-cart .removeItem .fa-minus-circle {
         vertical-align: middle; }
     #checkoutNav .fullcart-cont .ordereditems-cart #quantityOrd {
-      font-size: 150%;
+      font-size: 120%;
       text-align: center;
       padding-left: 0px;
-      padding-right: 0px; }
+      padding-right: 0px;
+      line-height: 50px;
+      margin-top: 2px;
+      margin-bottom: 2px; }
       #checkoutNav .fullcart-cont .ordereditems-cart #quantityOrd p {
         margin: 0px; }
     #checkoutNav .fullcart-cont .ordereditems-cart #itemName {
-      font-size: 150%;
+      font-size: 120%;
       padding-left: 0px;
-      padding-right: 0px; }
+      padding-right: 0px;
+      line-height: 50px;
+      margin-top: 2px;
+      margin-bottom: 2px; }
     #checkoutNav .fullcart-cont .ordereditems-cart #itemCost {
-      font-size: 150%;
+      font-size: 120%;
       padding-left: 0px;
-      padding-right: 0px; }
-  #checkoutNav .fullcart-cont .orderBtn-cont {
-    margin-top: 50px; }
-    #checkoutNav .fullcart-cont .orderBtn-cont .btn-default {
+      padding-right: 0px;
+      line-height: 50px;
+      margin-top: 2px;
+      margin-bottom: 2px; }
+    #checkoutNav .fullcart-cont .ordereditems-cart #deleteOrd {
+      font-size: 120%;
+      text-align: center;
+      padding-left: 0px;
+      padding-right: 0px;
+      line-height: 50px;
+      margin-top: 2px;
+      margin-bottom: 2px; }
+  #checkoutNav .fullcart-cont .total-cont {
+    margin-top: 50px;
+    padding-left: 25px;
+    padding-right: 25px; }
+    #checkoutNav .fullcart-cont .total-cont hr {
+      margin: 0px; }
+    #checkoutNav .fullcart-cont .total-cont .totalInfo {
+      margin-left: 0px;
+      margin-right: 0px;
+      height: 50px;
+      width: 100%; }
+      #checkoutNav .fullcart-cont .total-cont .totalInfo #totalOrd {
+        text-align: left;
+        font-size: 125%;
+        padding-left: 0px;
+        padding-right: 0px;
+        line-height: 50px;
+        margin-top: 2px;
+        margin-bottom: 2px; }
+      #checkoutNav .fullcart-cont .total-cont .totalInfo #totalCost, #checkoutNav .fullcart-cont .total-cont .totalInfo #totalTax, #checkoutNav .fullcart-cont .total-cont .totalInfo #total {
+        text-align: right;
+        font-size: 125%;
+        padding-left: 0px;
+        padding-right: 0px;
+        line-height: 50px;
+        margin-top: 2px;
+        margin-bottom: 2px; }
+    #checkoutNav .fullcart-cont .total-cont .orderBtn-cont .btn-default {
       font-family: "Nunito", sans-serif, FontAwesome;
       color: #FCFFEE;
       background-color: #FF4F00;
       border-color: #FF4F00;
-      width: 85%; }
-    #checkoutNav .fullcart-cont .orderBtn-cont .checkout-btn {
+      width: 100%; }
+    #checkoutNav .fullcart-cont .total-cont .orderBtn-cont .checkout-btn {
       border-radius: 1px;
       height: 40px; }
 

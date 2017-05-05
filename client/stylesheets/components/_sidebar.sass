@@ -1,63 +1,109 @@
 /* Sass Document */
-
 .fullcart-cont
-		position: absolute
-		z-index: 2
-		top: 50px
-
-		right: -300px
-		bottom: 0
-		width: 300px
-		background-color: #f13e2e
-		hr
-			border: none
-			height: 3px
-			margin-left: 25px
-			margin-right: 25px
-			color: $white
-			background-color: $white
-		.clickable
+	position: absolute
+	z-index: 3
+	top: 50px
+	right: -350px
+	height: 100%
+	width: 350px
+	background-color: #cc3f00
+	color: $white
+	hr
+		border: none
+		height: 3px
+		margin-left: 25px
+		margin-right: 25px
+		color: $white
+		background-color: $white
+	.clickable
 			cursor: pointer
-		.ordereditems-cart
-			margin-left: 5px
-			margin-right: 5px
-			vertical-align: middle
-			height: 35px
-			.removeItem
-				text-align: center
-				padding-left: 0px
-				padding-right: 0px
-				font-size: 125%
-				margin-top: 2px
-				i
-					vertical-align: middle
-			#quantityOrd
-				font-size: 150%
-				text-align: center
-				padding-left: 0px
-				padding-right: 0px
-				p
-					margin: 0px
-			#itemName
-				font-size: 150%
-				padding-left: 0px
-				padding-right: 0px
-			#itemCost
-				font-size: 150%
-				padding-left: 0px
-				padding-right: 0px
+	.ordereditems-cart
+		margin-left: 5px
+		margin-right: 5px
+		vertical-align: middle
+		height: 50px
+		.removeItem
+			height: 100%
+			text-align: center
+			padding-left: 0px
+			padding-right: 0px
+			font-size: 115%
+			margin-top: 2px
+			margin-bottom: 2px
+			.fa-minus-circle
+				vertical-align: middle
+		#quantityOrd
+			font-size: 120%
+			text-align: center
+			padding-left: 0px
+			padding-right: 0px
+			line-height: 50px
+			margin-top: 2px
+			margin-bottom: 2px
 
+			p
+				margin: 0px
+		#itemName
+			font-size: 120%
+			padding-left: 0px
+			padding-right: 0px
+			line-height: 50px
+			margin-top: 2px
+			margin-bottom: 2px
+		#itemCost
+			font-size: 120%
+			padding-left: 0px
+			padding-right: 0px
+			line-height: 50px
+			margin-top: 2px
+			margin-bottom: 2px
+		#deleteOrd
+			font-size: 120%
+			text-align: center
+			padding-left: 0px
+			padding-right: 0px
+			line-height: 50px
+			margin-top: 2px
+			margin-bottom: 2px
+	.total-cont
+		margin-top: 50px
+		padding-left: 25px
+		padding-right: 25px
+		hr 
+			margin: 0px
+
+		.totalInfo
+			margin-left: 0px
+			margin-right: 0px
+			height: 50px
+			width: 100%
+			#totalOrd
+				text-align: left
+				font-size: 125%
+				padding-left: 0px
+				padding-right: 0px
+				line-height: 50px
+				margin-top: 2px
+				margin-bottom: 2px
+			#totalCost, #totalTax, #total
+				text-align: right
+				font-size: 125%
+				padding-left: 0px
+				padding-right: 0px
+				line-height: 50px
+				margin-top: 2px
+				margin-bottom: 2px
 		.orderBtn-cont
-			margin-top: 50px
 			.btn-default
 				font-family: $font-stack, FontAwesome
 				color: $white
 				background-color: $red
 				border-color: $red
-				width: 85%
-			.checkout-btn
+				width: 100%
+			.checkout-btn	
 				border-radius: 1px
 				height: 40px
+
 				
 .emptycart-cont
 		margin-top: 60px
@@ -66,4 +112,4 @@
 		right: 0
 
 .sidebar-closed
-		right: -500px
+		right: -350px

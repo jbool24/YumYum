@@ -146,7 +146,7 @@ body
 			
 #checkoutNav
 	height: 100%
-	width: 300px
+	width: 350px
 	position: fixed
 	z-index: 1000
 	top: 0
@@ -173,42 +173,88 @@ body
 			margin-left: 5px
 			margin-right: 5px
 			vertical-align: middle
-			height: 35px
+			height: 50px
 			.removeItem
+				height: 100%
 				text-align: center
 				padding-left: 0px
 				padding-right: 0px
-				font-size: 125%
+				font-size: 115%
 				margin-top: 2px
+				margin-bottom: 2px
 				.fa-minus-circle
 					vertical-align: middle
 			#quantityOrd
-				font-size: 150%
+				font-size: 120%
 				text-align: center
 				padding-left: 0px
 				padding-right: 0px
+				line-height: 50px
+				margin-top: 2px
+				margin-bottom: 2px
+
 				p
 					margin: 0px
 			#itemName
-				font-size: 150%
+				font-size: 120%
 				padding-left: 0px
 				padding-right: 0px
+				line-height: 50px
+				margin-top: 2px
+				margin-bottom: 2px
 			#itemCost
-				font-size: 150%
+				font-size: 120%
 				padding-left: 0px
 				padding-right: 0px
-
-		.orderBtn-cont
+				line-height: 50px
+				margin-top: 2px
+				margin-bottom: 2px
+			#deleteOrd
+				font-size: 120%
+				text-align: center
+				padding-left: 0px
+				padding-right: 0px
+				line-height: 50px
+				margin-top: 2px
+				margin-bottom: 2px
+		.total-cont
 			margin-top: 50px
-			.btn-default
-				font-family: $font-stack, FontAwesome
-				color: $white
-				background-color: $red
-				border-color: $red
-				width: 85%
-			.checkout-btn	
-				border-radius: 1px
-				height: 40px
+			padding-left: 25px
+			padding-right: 25px
+			hr 
+				margin: 0px
+
+			.totalInfo
+				margin-left: 0px
+				margin-right: 0px
+				height: 50px
+				width: 100%
+				#totalOrd
+					text-align: left
+					font-size: 125%
+					padding-left: 0px
+					padding-right: 0px
+					line-height: 50px
+					margin-top: 2px
+					margin-bottom: 2px
+				#totalCost, #totalTax, #total
+					text-align: right
+					font-size: 125%
+					padding-left: 0px
+					padding-right: 0px
+					line-height: 50px
+					margin-top: 2px
+					margin-bottom: 2px
+			.orderBtn-cont
+				.btn-default
+					font-family: $font-stack, FontAwesome
+					color: $white
+					background-color: $red
+					border-color: $red
+					width: 100%
+				.checkout-btn	
+					border-radius: 1px
+					height: 40px
 
 // carousel
 .localFav-cont
