@@ -7,14 +7,7 @@ const MenuItem   = require('../common/MenuItem');
 
 const CookDetails = React.createClass({
   getInitialState: function() {
-    return {
-      // this data comes from DB in componentWillMount
-      items: [
-        { id: 1, name: "Turduckin" },
-        { id: 2, name: "Tika Masala" },
-        { id: 3, name: "Borscht" },
-      ],
-    };
+    return {};
   },
 
   componentWillMount: function() {
@@ -37,10 +30,10 @@ const CookDetails = React.createClass({
           <div className="row">
             <div className="orders-body">
               <div className="orders text-center center-block row-margin-sm">Current menu</div>
-                
+
                    { menuitems }
-              
-            </div> 
+
+            </div>
           </div>
         </div>
       </div>

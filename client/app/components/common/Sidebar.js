@@ -3,7 +3,7 @@ const React = require("react");
 const helper = require('../../helper');
 
 const Sidebar = React.createClass({
-  
+
   getInitialState: function () {
     return {sidebarStatus: "sidebar-closed", cart: [], cartTotal: undefined };
   },
@@ -12,8 +12,8 @@ const Sidebar = React.createClass({
 
   },
 
-  componentWillReceiveProps: function () {
-    if (this.props.visible) {
+  componentWillReceiveProps: function (nextProps) {
+    if (nextProps.visible) {
       this.setState({sidebarStatus: "sidebar-open"})
     } else {
       this.setState({sidebarStatus: "sidebar-closed"})
@@ -81,7 +81,7 @@ const Sidebar = React.createClass({
   renderCart: function () {
     let cart = this.state.cart;
     let amount = this.state.cartTotal * 100
-    
+
     // console.log(cart);
     return (
       <div className={`fullcart-cont ${this.state.sidebarStatus}`}>

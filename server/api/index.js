@@ -1,8 +1,8 @@
 
 
 
-const cooksByZip = require('./cooksByZip.js');
-const getFooditemsByCook=require('./getFooditemsByCook.js');
+const cooks = require('./cooks.js');
+const fooditems =require('./fooditems.js');
 const getFooditemsByCuisine=require('./getFooditemsByCuisine.js');
 const getBestFooditems=require('./getBestFooditems.js');
 
@@ -19,14 +19,15 @@ const addStarsToFooditem=require('./addStarsToFooditem.js');
 const addToCart = require('./addToCart')
 const getCart = require('./getCart')
 const deleteCartItem = require('./deleteCartItem');
-const decreaseCartItem = require('./decreaseCartItem')
+const decreaseCartItem = require('./decreaseCartItem');
 
 module.exports = function(app) {
 	//get routes
-	app.get("/cook/:zip", cooksByZip);
-	app.get("/fooditem/:id", getFooditemsByCook);
+	app.get("/cook/:zip", cooks.cooksByZip);
+	app.get("/cooks/:id", cooks.cooksByID);
+	app.get("/fooditems/:id", fooditems.getCookWithFoodItems);
 	app.get("/fooditem/:cuisine", getFooditemsByCuisine);
-	app.get("/fooditem/top-eight", getBestFooditems);
+	app.get("/top-food-items", getBestFooditems);
 
 	// Cart Items
 	app.get("/cart/add-item/:id", addToCart);
