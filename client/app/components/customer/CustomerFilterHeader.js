@@ -29,7 +29,6 @@ const CustomerFilterHeader = React.createClass({
 
 					<SvgAnim />
 					<h1>Search For Some Food</h1>
-					<h3> Find food by cuisine or zip code </h3>
 
 					<form className="navbar-form">
 				        <div className="form-group">						 

@@ -1,8 +1,13 @@
 const React = require("react");
 
 const CookHeader = React.createClass({
+	getInitialState: function(){
+		return {};
+	},
 
 	render: function(){
+		const cook = this.props.cook;
+		const address = `${cook.address.line1} ${cook.address.line2} ${cook.address.city}, ${cook.address.state} ${cook.address.zip}`
 		return(
 			<div className="cook-header">
 				<div className="cook-headerCont">
@@ -11,9 +16,10 @@ const CookHeader = React.createClass({
 							<a href="http://placehold.it"><img className="cook-img" src="links/cook1-headshot.jpg"/></a>
 						</div>
 			  			<div className="col-md-9 cook-info">
-			  				<h1>Restaurant Name</h1>
-			  				<h4>161 Newkirk St, Jersey City, NJ 07305</h4>
-			  				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam blandit ante at maximus. Vivamus odio ante, porttitor vitae gravida sodales, consectetur consectetur ante.</p>
+			  				<h1>{cook.name}</h1>
+			  				<h4>{address}</h4>
+			  				<h4>{cook.phone}</h4>
+			  				<p>{cook.bio}</p>
 			  			</div>
 					</div>
 				</div>

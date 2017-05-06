@@ -38,7 +38,7 @@ const LocalFav = React.createClass({
 			return (
 				<div key={idx} className="col-xs-3">
 
-					<a onClick={() => this.handleClick(item.cook)}>
+					<div onClick={() => this.handleClick(item.cook)}>
 						<div className="localFav-card">
 							<div className="localFav-cardTop">
 								<img src={item.image} className="localFav-cardImg img-responsive"/>
@@ -46,20 +46,15 @@ const LocalFav = React.createClass({
 
 							<div className="localFav-cardBottom">
 
-									<div className="row localFav-cardStarRating">
-										<div className="col-md-12">
-											<h4 className="localFav-cardItem">{item.cuisine}</h4>
-										</div>
-									</div>
 
 									<div className="localFav-cardBottom">
 										<div className="localFav-cardInfo">
 											<div className="row cardInfo-cont">
-												<div className="col-md-12 localFav-cardPrice">
-													<p className="item-price">{item.price}</p>
-												</div>
 												<div className="col-md-12 localFav-cardName">
-													<p className="item-name">{item.itemName}</p>
+													<p className="item-name"><strong>{item.itemName}</strong></p>
+												</div>
+												<div className="col-md-12 localFav-cardPrice">
+													<p className="item-price">${item.price}</p>
 												</div>
 											</div>
 	
@@ -70,7 +65,7 @@ const LocalFav = React.createClass({
 							</div>
 
 						</div>
-					</a>
+					</div>
 
 				</div>
 			);

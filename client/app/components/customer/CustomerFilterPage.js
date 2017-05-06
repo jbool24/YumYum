@@ -3,6 +3,7 @@ const React = require("react");
 const axios = require('axios');
 
 const LocalFav = require('./LocalFav');
+const RecentOrders = require('./RecentOrders')
 // const RecentOrders = require('./RecentOrders');
 
 const FilterPage = React.createClass({
@@ -34,11 +35,11 @@ const FilterPage = React.createClass({
   render: function() {
 
     return (
-
-      <div>
-        <LocalFav location={this.state.location} cuisine={this.state.location} items={this.state.items}/>
-        {/* <RecentOrders /> */}
-
+      <div className="wrapper">
+        <div>
+          <LocalFav location={this.state.location} cuisine={this.state.location} items={this.state.items}/>
+          <RecentOrders />
+        </div>
       </div>
     );
   }

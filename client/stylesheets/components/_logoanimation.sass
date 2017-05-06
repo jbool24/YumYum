@@ -8,13 +8,17 @@
   left: -45%
   margin: auto
   display: block
-  fill: #003536
-  stroke: #EEBE7B
+  fill: none
+  stroke: #FCFFEE
   stroke-miterlimit: 5
   stroke-width: 4
   #Draw-Steam
     fill: white
     border-color: $grey
+  #Draw-Mark
+     border: solid 2px #FCFFEE
+  #Draw-Cover
+     border: solid 2px #FCFFEE
 
 
 .Animate-Draw 
@@ -22,7 +26,7 @@
   animation-timing-function: ease-in-out
   animation-fill-mode: forwards
   animation-iteration: 1
-  animation-name: DrawLine, FadeStroke, FillIn
+  animation-name: DrawLine, FillIn
   animation-duration: 4s, 1s, 1s
   animation-delay: 0s, 3.5s, 3.5s
 
