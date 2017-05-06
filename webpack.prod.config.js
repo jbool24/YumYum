@@ -1,5 +1,8 @@
-const path = require('path')
-const webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -33,17 +36,41 @@ module.exports = {
   ],
 
   module: {
-    loaders: [
-      { test: /\.js?$/,
-        loader: 'babel',
-        exclude: /node_modules/ },
-      { test: /\.scss?$/,
-        loader: 'style!css!sass',
-        include: path.join(__dirname, 'src', 'styles') },
-      { test: /\.png$/,
-        loader: 'file' },
-      { test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-        loader: 'file'}
-    ]
-  }
+    rules: [
+      {
+        test: /\.js?$/,
+        exclude: '/node_modules/',
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.sass?$/,
+        use: ExtractTextPlugin
+          .extract({
+            fallback: 'style-loader',
+            use: [
+              { loader: 'css-loader', query: { modules: false, sourceMaps: true} },
+              { loader: 'sass-loader', query: { sourceMaps: true } },
+            ]
+          }),
+      },
+      {
+          test: /\.(jpg|png|gif)$/,
+          use: 'file-loader'
+      },
+    ],
+  },
+  plugins: [
+    // build optimization plugins
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunk: Infinity,
+      filename: '[name].bundle.js'
+    }),
+    new ExtractTextPlugin('[name].min.css'),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'public/react_app.html'),
+      filename: 'index.html',
+      inject: 'body',
+    }),
+  ],
 }
