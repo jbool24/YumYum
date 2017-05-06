@@ -8,7 +8,7 @@ const CookHeader = React.createClass({
 				<div className="cook-headerCont">
 					<div className="row cook-headerRow">
 						<div className="col-md-3 cook-profImg">
-							<a href="http://placehold.it"><img src="http://placehold.it/150x150"/></a>
+							<a href="http://placehold.it"><img className="cook-img" src="links/cook1-headshot.jpg"/></a>
 						</div>
 			  			<div className="col-md-9 cook-info">
 			  				<h1>Restaurant Name</h1>
@@ -18,7 +18,7 @@ const CookHeader = React.createClass({
 					</div>
 				</div>
 				<div className="cook-overlayOpacity"></div>
-				<img className="cook-headerImg" src="links/food6.jpg"/>
+				<img className="cook-headerImg" src="links/kitchen.jpg"/>
 			</div>
 		);
 	}

@@ -48,8 +48,9 @@ const CookItem = React.createClass({
 						</div>
 						<div className="col-md-6 menuItem-infoCont">
 							<div className="menuItem-info">
+								<i className="fa fa-times-circle exit-btn" aria-hidden="true"></i>
 								<h1> food name</h1>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis volutpat ac risus ultricies tempus. Vivamus semper congue dignissim. Nulla tempor diam a tellus facilisis efficitur. Pellentesque nec suscipit nunc, et faucibus libero. Quisque sagittis turpis in pulvinar pharetra. Fusce lacus nisi, gravida eget pretium sit amet, sodales et dui. Vestibulum quis facilisis orci. </p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis volutpat ac risus ultricies tempus. Vivamus semper congue dignissim.  </p>
 								<button type="submit" className="search-btn btn btn-default" data-toggle="modal" data-target="#myModal"><i className="fa fa-plus-square" aria-hidden="true"></i> Add to Cart</button>
 							</div>
 						</div>

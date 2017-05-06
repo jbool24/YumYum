@@ -36,11 +36,11 @@ const LocalFav = React.createClass({
 											</div>
 										</div>
 										<div className="row localFav-cardInfo">
-											<div className="col-md-4 localFav-cardPrice">
+											<div className="col-md-3 localFav-cardPrice">
 												{item.price}
 											</div>
-											<div className="col-md-8 localFav-cardName">
-												{item.itemName}
+											<div className="col-md-9 localFav-cardName">
+												<p className="item-name">{item.itemName}</p>
 											</div>
 										</div>
 									</div>

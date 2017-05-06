@@ -7,8 +7,7 @@ const CustomerFilterHeader = React.createClass({
 		return(
 			<div className="header">
 				<div className="headerCont">
-					<h1>Insert Text Here</h1>
-					<h3> blah blah blah blah description </h3>
+					<h1>Find authentic cuisines nearby!</h1>
 					<form className="navbar-form">
 				        <div className="form-group">
 				          <input type="text" className="form-control address-form" placeholder="&#xf124; City, State or Zip Code"/>
@@ -20,7 +19,7 @@ const CustomerFilterHeader = React.createClass({
 				      </form>
 				</div>
 				<div className="overlayOpacity"></div>
-				<img className="headerImg" src ="links/food6.jpg"/>
+				<img className="headerImg" src ="links/cust-header-img.jpg"/>
 			</div>
 		);
 	}

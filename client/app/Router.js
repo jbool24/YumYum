@@ -9,7 +9,7 @@ const IndexRoute = router.IndexRoute;
 
 const App = require('./App');
 const Cook = require('./components/cook');
-const CookDetails = require('./components/cook/cookItem');
+const CookItems = require('./components/cook/cookItem');
 
 const Customer = require('./components/customer');
 const CustomerDash = require('./components/customer/CustomerDash');
@@ -24,7 +24,7 @@ module.exports = (
         <Route path="customer-dashboard" component={CustomerDash}>
 
           <Route path="filter-search" component={CustomerFilterPage} />
-          <Route path="filter-results" component={CookDetails} />
+          <Route path="filter-results" component={CookItems} />
 
           <IndexRoute component={CustomerFilterPage} />
         </Route>
@@ -35,8 +35,8 @@ module.exports = (
       </Route>
 
       <Route path="cook" component={Cook}>
-        <Route path="cook-content" component={CookDetails} />
-        <IndexRoute component={CookDetails} />
+        <Route path="cook-content" component={CookItems} />
+        <IndexRoute component={CookItems} />
       </Route>
 
       <IndexRoute component={Customer} />

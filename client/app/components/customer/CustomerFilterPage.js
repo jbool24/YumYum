@@ -31,7 +31,7 @@ const FilterPage = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div className="wrapper">
         <LocalFav  foodItems={this.state.items} />
         <RecentOrders />
       </div>
