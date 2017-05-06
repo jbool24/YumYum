@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>YumYum</title>
+	<title>FoodFriends</title>
 	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- CSS link -->
@@ -25,7 +25,7 @@
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-					<a class="navbar-brand" href="#"><span><img src="links/Logo.png" class="image-responsive img-logo">YumYum</span></a>
+					<a class="navbar-brand" href="#"><span><img src="links/Logo.png" class="image-responsive img-logo">FoodFriends</span></a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="defaultNavbar1">
@@ -62,7 +62,7 @@
 				</div>
 			</div>
 
-			<div class="row row-margin">
+			<div class="row row-margin animation-element slide-left">
 
 				<div class="col-md-8">
 					<h1 class="text-center title-p">How We Help</h1>
@@ -78,7 +78,7 @@
 				</div>
 			</div>
 
-			<div class="row row-margin add-border">
+			<div class="row row-margin add-border animation-element slide-left">
 				<h1 class="text-center title-p">What You Find</h1>
 				<div class="col-md-4">
 					<img src="links/families.jpg" class="img-responsive img-border-left">
@@ -92,7 +92,7 @@
 			</div>
 		</div>
 
-		<div class="container copy-style">
+		<div class="container copy-style animation-element slide-left">
 			<div class="row">
 				<div class="col-md-12">
 					<h1 class="headline-small text-center">How this works</h1>
@@ -165,11 +165,50 @@
 
 		<div class="row footer-style">
 			<div class="text-center col-md-6 col-md-offset-3">
-				<p>Copyright &copy; 2017 &middot; All Rights Reserved &middot; <a href="http://yourwebsite.com/">YumYum</a></p>
+				<p>Copyright &copy; 2017 &middot; All Rights Reserved &middot; <a href="https://github.com/jbool24/YumYum">FoodFriends</a></p>
 
 			</div>
 		</div>
+<script>
+	$(document).ready(function() {
 
+  //window and animation items
+  var animation_elements = $.find('.animation-element');
+  var web_window = $(window);
+
+  //checks to see if any animation containers are currently in view
+  function check_if_in_view() {
+    //gets current window information
+    var window_height = web_window.height();
+    var window_top_position = web_window.scrollTop();
+    var window_bottom_position = (window_top_position + window_height);
+
+    //iterates through elements to see if its in view
+    $.each(animation_elements, function() {
+
+      //gets the element sinformation
+      var element = $(this);
+      var element_height = $(element).outerHeight();
+      var element_top_position = $(element).offset().top;
+      var element_bottom_position = (element_top_position + element_height);
+
+      //checks to see if this current container is visible (its viewable if it exists between the viewable space of the viewport)
+      if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
+        element.addClass('in-view');
+      }
+    });
+
+  }
+
+  //on or scroll, detect elements in view
+  $(window).on('scroll resize', function() {
+      check_if_in_view()
+    })
+    //trigger our scroll event on initial load
+  $(window).trigger('scroll');
+
+});
+	</script>
 
 </body>
 
