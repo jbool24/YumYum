@@ -10,7 +10,7 @@
     "build:dev": "webpack -w",
     "build:prod": "webpack -p",
     "start:dev": "npm run build:dev && node server",
-    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress",
+    "heroku-postbuild": "rm -rf /public/dist/* && webpack -p --config ./webpack.config.js --progress",
     "start": "node server"
   },
   "dependencies": {
