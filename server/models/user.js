@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-const Schema = mongoose.Schema;
+const mongoose  = require('mongoose');
+const bcrypt    = require('bcryptjs');
+const Schema    = mongoose.Schema;
+
 const saltRounds = 10;
 
 // User Schema

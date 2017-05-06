@@ -5,7 +5,6 @@ const hashHistory = require('react-router').hashHistory;
 
 const LocalFav = React.createClass({
 	getInitialState: function(){
-		console.log("Fav Init");
 		return {
 			location: null,
 			cuisine: null,
@@ -14,7 +13,6 @@ const LocalFav = React.createClass({
 	},
 
 	componentWillMount: function(){
-		console.log("Fav Will mount");
 		axios.get('/top-food-items').then((response) => {
 			this.setState({ items: response.data  });
 		}).catch((error) => { console.log(error) });
@@ -27,13 +25,12 @@ const LocalFav = React.createClass({
 	},
 
 	handleClick: function(cookid) {
-		hashHistory.push("/customer/cookinfo/" + cookid);
+		hashHistory.push(`/customer/cookinfo/${cookid}`);
 	},
 
 	render: function() {
 
 		const items = this.state.items;
-		console.log("Fav Did Render", items);
 
 		let foodCard = items.map((item, idx) => {
 			return (

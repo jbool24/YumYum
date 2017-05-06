@@ -11,7 +11,6 @@ const CookDetails = React.createClass({
   },
 
   componentWillMount: function() {
-    console.log(this.props.foodItems);
     this.setState({items: this.props.foodItems })
   },
 
@@ -21,12 +20,13 @@ const CookDetails = React.createClass({
 
     const menuitems = items.map((item) => {
       return <MenuItem
-        key={item._id}
-        itemID={item._id}
-        name={item.itemName}
-        description={item.itemDescription}
-        cuisine={item.cuisine}
-        price={item.price}/>;
+          key={item._id}
+          name={item.itemName}
+          price={item.price}
+          itemID={item._id}
+          cuisine={item.cuisine}
+          description={item.itemDescription}
+        />;
     });
 
     return (

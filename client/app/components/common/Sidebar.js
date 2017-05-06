@@ -8,10 +8,6 @@ const Sidebar = React.createClass({
     return {sidebarStatus: "sidebar-closed", cart: [], cartQty: undefined, cartTotal: undefined };
   },
 
-  componentWillMount: function () {
-
-  },
-
   componentWillReceiveProps: function (nextProps) {
     if (nextProps.visible) {
       this.setState({sidebarStatus: "sidebar-open"})
@@ -173,7 +169,6 @@ const Sidebar = React.createClass({
 
   render: function () {
     if (this.state.cart.length == 0) {
-      console.log(this.state.cart);
       return (
         this.renderEmptyCart()
       )
