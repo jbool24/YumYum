@@ -34,7 +34,7 @@ const CookInfo = React.createClass({
 			<div>
 				{ header }
 				{ details }
-	    	</div>
+	    </div>
 		)
 	}
 });

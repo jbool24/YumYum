@@ -19,7 +19,7 @@ const Navbar = React.createClass({
 				<nav className="navbar navbar-default navbar-fixed-top">
 					<div className="container-fluid">
 						<div className="navbar-header">
-							<a className="navbar-brand-loggedin" href="#">
+							<a className="navbar-brand-loggedin" href="/home#/customer/dashboard">
 								<img src="links/foodfriends.png" className="nav-img-logo"/>
 							</a>
 						</div>
