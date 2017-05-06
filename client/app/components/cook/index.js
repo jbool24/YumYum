@@ -26,7 +26,14 @@ const Cook = React.createClass({
         <div>
           { header }
           {/* <CookSidebar /> */}
-          {this.props.children}
+          <div className="wrapper">
+            <div className = "row menu-title-cont">
+              <div className="col-md-12 menu-title">
+                <img src="links/menu.png" className = "menu-img"/>
+              </div>
+            </div>
+            {this.props.children}
+          </div>
         </div>
     );
   }

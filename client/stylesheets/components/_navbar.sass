@@ -1,4 +1,7 @@
 /* Sass Document */
+.container-fluid
+	margin-left: 7%
+	margin-right: 7%
 
 .navbar
 	margin-bottom: 0px
@@ -8,7 +11,7 @@ a.clickable
 
 .navbar-default
 	height: 50px
-	background-color: $red
+	background-color: #e83b11
 	@include no-border
 	@include text-primary ($white, $font-stack)
 
@@ -19,11 +22,27 @@ a.clickable
 		color: $white
 		padding: 4px
 		margin-left: 0px
+		line-height: 50px
 
 		.img-logo
 			width: 45px
 			padding-bottom: 7px
 			padding-right: 5px
+	
+	.navbar-brand-loggedin
+		margin-left: 0px
+		float: left
+    	height: 100%
+   		padding: 15px 15px
+    	font-size: 18px
+    	line-height: 50px
+		.nav-img-logo
+			height: 25px
+			margin-top: 11px
+			fill :#464f56
+
+
+		
 
 	.navbar-nav
 		.nav-li

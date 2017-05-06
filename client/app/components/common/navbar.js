@@ -19,8 +19,8 @@ const Navbar = React.createClass({
 				<nav className="navbar navbar-default navbar-fixed-top">
 					<div className="container-fluid">
 						<div className="navbar-header">
-							<a className="navbar-brand" href="#">
-								<span><img src="links/Logo.png" className="image-responsive img-logo"/>YumYum</span>
+							<a className="navbar-brand-loggedin" href="/home#/customer/dashboard">
+								<img src="links/foodfriends.png" className="nav-img-logo"/>
 							</a>
 						</div>
 
@@ -28,7 +28,7 @@ const Navbar = React.createClass({
 							<ul className="nav navbar-nav navbar-right">
 						        <li>
 							        <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-							        	<img src="https://lh3.googleusercontent.com/dB3Dvgf3VIglusoGJAfpNUAANhTXW8K9mvIsiIPkhJUAbAKGKJcEMPTf0mkSexzLM5o=w300" alt="" className="clip-circle img-logo"/>
+							        	<img src="links/profpic.jpg" alt="" className="clip-circle img-logo"/>
 							        </a>
 
 							        <ul className="dropdown-menu">

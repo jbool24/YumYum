@@ -26,11 +26,11 @@ const MenuItem = React.createClass({
 
         <div className = "row row-margin-sm">
           <div className="col-sm-4 profile-img">
-            <img src="links/cook1.jpg" className="img-responsive"></img>
+            <img src={this.props.img} className="img-responsive"></img>
           </div>
           <div className="order-style">
             <div className="col-sm-8 text-left">
-              <h2>Menu Item - {this.props.name}</h2>
+              <h2>{this.props.name}</h2>
               <p>{this.props.cusine}</p>
               <p>{this.props.description}</p>
               <p>${this.props.price}.00</p>

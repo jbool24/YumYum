@@ -12,6 +12,7 @@ const LocalFav = React.createClass({
 		};
 	},
 
+
 	componentWillMount: function(){
 		axios.get('/top-food-items').then((response) => {
 			this.setState({ items: response.data  });
@@ -28,6 +29,7 @@ const LocalFav = React.createClass({
 		hashHistory.push(`/customer/cookinfo/${cookid}`);
 	},
 
+
 	render: function() {
 
 		const items = this.state.items;
@@ -36,7 +38,7 @@ const LocalFav = React.createClass({
 			return (
 				<div key={idx} className="col-xs-3">
 
-					<a onClick={() => this.handleClick(item.cook)}>
+					<div onClick={() => this.handleClick(item.cook)}>
 						<div className="localFav-card">
 							<div className="localFav-cardTop">
 								<img src={item.image} className="localFav-cardImg img-responsive"/>
@@ -44,25 +46,26 @@ const LocalFav = React.createClass({
 
 							<div className="localFav-cardBottom">
 
-									<div className="row localFav-cardStarRating">
-										<div className="col-md-12">
-											<h4 className="localFav-cardItem">{item.cuisine}</h4>
-										</div>
-									</div>
 
-									<div className="row localFav-cardInfo">
-										<div className="col-md-4 localFav-cardPrice">
-											${item.price}
-										</div>
-										<div className="col-md-8 localFav-cardName">
-											{item.itemName}
+									<div className="localFav-cardBottom">
+										<div className="localFav-cardInfo">
+											<div className="row cardInfo-cont">
+												<div className="col-md-12 localFav-cardName">
+													<p className="item-name"><strong>{item.itemName}</strong></p>
+												</div>
+												<div className="col-md-12 localFav-cardPrice">
+													<p className="item-price">${item.price}</p>
+												</div>
+											</div>
+	
+
 										</div>
 									</div>
 
 							</div>
 
 						</div>
-					</a>
+					</div>
 
 				</div>
 			);
@@ -74,7 +77,9 @@ const LocalFav = React.createClass({
 		return (
 			<div className="container localFav-cont">
 			    <div className="col-xs-12">
-			         <h2>Local Favorites</h2>
+			         <div className="localfav-title">
+			         	<img src="links/localfavs.png" className="localfav-img"/>
+			         </div>
 
 			        <div className="well">
 			            <div id="myCarousel" className="carousel slide">
@@ -82,7 +87,10 @@ const LocalFav = React.createClass({
 			                {/* Carousel Items */}
 			                <div className="carousel-inner">
 			                    <div className="item active">
-			                        <div className="row">
+
+
+			                        <div className="row carousel-div">
+
 
 										{ firstSet }
 

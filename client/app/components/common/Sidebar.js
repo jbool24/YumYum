@@ -88,6 +88,7 @@ const Sidebar = React.createClass({
     
     // console.log(cart);
     return (
+
       <div className={`cart-cont ${this.state.sidebarStatus}`}>
         <div className="row order-header">
           <div className="col-md-12 text-center">
@@ -101,11 +102,13 @@ const Sidebar = React.createClass({
               <div className="col-xs-1 remove-item">
                 <div onClick={() => this.handleAddItem(items.item._id)} className="clickable">
                   <i className="fa fa-plus-circle" aria-hidden="true"></i>
+
                 </div>
                 <div onClick={() => this.handleSubtractItem(items.item._id)} className="clickable">
                   <i className="fa fa-minus-circle" aria-hidden="true"></i>
                 </div>
               </div>
+
 
               <div className="col-xs-1" id="quantity-ord">
                 <p>{items.qty}</p>
@@ -153,8 +156,8 @@ const Sidebar = React.createClass({
         </div>
 
         <div className="row order-btn-cont">
+
           <div className="col-md-12 text-center">
-            <hr />
             <form action="/users/stripe-charge" method="POST" id="stripe-form">
               <input type="hidden" name="amount" value={`${stripeAmount}`}/>
               {/*<div className="stripe-button-el"></div>*/}
@@ -165,6 +168,9 @@ const Sidebar = React.createClass({
 
       </div>
     );
+
+
+
   },
 
   render: function () {

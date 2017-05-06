@@ -1,4 +1,5 @@
 const React = require("react");
+const SvgAnim = require("../common/SvgAnim")
 
 const CustomerFilterHeader = React.createClass({
 	getInitialState: function() {
@@ -25,8 +26,10 @@ const CustomerFilterHeader = React.createClass({
 		return(
 			<div className="header">
 				<div className="headerCont">
+
+					<SvgAnim />
 					<h1>Search For Some Food</h1>
-					<h3> Find food by cuisine or zip code </h3>
+
 					<form className="navbar-form">
 				        <div className="form-group">						 
 							  <select className="form-control cuisine-form" 
@@ -50,7 +53,7 @@ const CustomerFilterHeader = React.createClass({
 				  </form>
 				</div>
 				<div className="overlayOpacity"></div>
-				<img className="headerImg" src ="links/food6.jpg"/>
+				<img className="headerImg" src ="links/cust-header-img.jpg"/>
 			</div>
 		);
 	}

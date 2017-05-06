@@ -1,13 +1,16 @@
 /* Sass Document */
+
 .cart-cont
 	position: absolute
 	z-index: 3
 	top: 50px
 	right: -350px
-	height: 100%
+	// height: 100%
 	width: 350px
-	background-color: #cc3f00
+	background-color: rgba(black, 0.5)
 	color: $white
+	#stripe-form
+		margin: 10px
 	hr
 		border: none
 		height: 3px
@@ -17,6 +20,7 @@
 		background-color: $white
 	.clickable
 			cursor: pointer
+
 	.ordered-items-cart
 		margin-left: 5px
 		margin-right: 5px
@@ -31,6 +35,7 @@
 			margin-bottom: 2px
 			.fa-minus-circle
 				vertical-align: middle
+
 		#quantity-ord
 			font-size: 120%
 			text-align: center
@@ -42,6 +47,7 @@
 
 			p
 				margin: 0px
+
 		#item-name
 			font-size: 120%
 			padding-left: 0px
@@ -49,6 +55,7 @@
 			line-height: 50px
 			margin-top: 2px
 			margin-bottom: 2px
+
 		#item-cost
 			font-size: 120%
 			padding-left: 0px
@@ -56,6 +63,7 @@
 			line-height: 50px
 			margin-top: 2px
 			margin-bottom: 2px
+
 		#delete-ord
 			font-size: 120%
 			text-align: center
@@ -71,11 +79,13 @@
 		hr 
 			margin: 0px
 
+
 		.total-info
 			margin-left: 0px
 			margin-right: 0px
 			height: 50px
 			width: 100%
+
 			#total-ord
 				text-align: left
 				font-size: 125%
@@ -84,6 +94,7 @@
 				line-height: 50px
 				margin-top: 2px
 				margin-bottom: 2px
+
 			#total-cost, #total-tax, #total
 				text-align: right
 				font-size: 125%
@@ -92,6 +103,7 @@
 				line-height: 50px
 				margin-top: 2px
 				margin-bottom: 2px
+
 		.order-btn-cont
 			.btn-default
 				font-family: $font-stack, FontAwesome
@@ -102,7 +114,7 @@
 			.checkout-btn	
 				border-radius: 1px
 				height: 40px
-		
+
 .sidebar-open
 		right: 0
 
