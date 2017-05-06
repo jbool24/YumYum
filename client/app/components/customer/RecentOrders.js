@@ -6,9 +6,9 @@ const RecentOrders = React.createClass({
   render: function() {
     return (
           <div className="container recentOrders">
-    	 	     <div className="row">
+    	 	     <div className="row recentorders-title-cont">
         		    <div className="col-md-12 recentOrders-title">
-        		         <h2>Recent Orders</h2>
+                  <img src="links/recentord.png" className="recentorg-img"/>
         		    </div>
       	    </div>
 

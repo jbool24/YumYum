@@ -27,17 +27,9 @@ const LocalFav = React.createClass({
 									</div>
 
 									<div className="localFav-cardBottom">
-										<div className="row localFav-cardStarRating">
-											<div className="col-md-12">
-												<i className="fa fa-star" aria-hidden="true"></i>
-												<i className="fa fa-star" aria-hidden="true"></i>
-												<i className="fa fa-star" aria-hidden="true"></i>
-												<i className="fa fa-star" aria-hidden="true"></i>
-											</div>
-										</div>
 										<div className="row localFav-cardInfo">
 											<div className="col-md-3 localFav-cardPrice">
-												{item.price}
+												<p className="item-price">{item.price}</p>
 											</div>
 											<div className="col-md-9 localFav-cardName">
 												<p className="item-name">{item.itemName}</p>
@@ -58,7 +50,9 @@ const LocalFav = React.createClass({
 		return (
 			<div className="container localFav-cont">
 			    <div className="col-xs-12">
-			         <h2>Local Favorites</h2>
+			         <div className="localfav-title">
+			         	<img src="links/localfavs.png" className="localfav-img"/>
+			         </div>
 
 			        <div className="well">
 			            <div id="myCarousel" className="carousel slide">
@@ -67,7 +61,7 @@ const LocalFav = React.createClass({
 			                <div className="carousel-inner">
 			                    <div className="item active">
 
-			                        <div className="row">
+			                        <div className="row carousel-div">
 
 																{	firstSet }
 
