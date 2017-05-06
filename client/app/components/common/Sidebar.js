@@ -11,6 +11,7 @@ const Sidebar = React.createClass({
   componentWillReceiveProps: function (nextProps) {
     if (nextProps.visible) {
       this.setState({sidebarStatus: "sidebar-open"})
+      this.getCart()
     } else {
       this.setState({sidebarStatus: "sidebar-closed"})
     }

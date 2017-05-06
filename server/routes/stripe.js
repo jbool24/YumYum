@@ -51,8 +51,7 @@ module.exports = function stripeCharge(req, res) {
           if (err) {
             res.send(err);
           } else {
-            res.redirect('/home#/customer/dashboard/search')
-
+            res.redirect('/home#/customer/dashboard/')
           }
         })
       }
