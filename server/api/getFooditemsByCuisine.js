@@ -1,7 +1,5 @@
 // getFooditemByCuisine.js
 
-
-
 const Order = require("../models/Order.js");
 const Fooditem = require("../models/Fooditem.js");
 const Cook = require("../models/Cook.js");
@@ -14,7 +12,8 @@ const Customer = require("../models/Customer.js");
 //sample body:
 
 const getFooditemsByCuisine = function(req, res) {
-   Fooditem.find({ "cuisine": req.params.cuisine }, function(error, doc) {
+  console.log(req.params.cuisine)
+   Fooditem.find({ "cuisine": { $regex : new RegExp(req.params.cuisine, "i") } }, function(error, doc) {
 
         // Log any errors
         if (error) {

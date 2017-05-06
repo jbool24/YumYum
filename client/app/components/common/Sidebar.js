@@ -3,7 +3,7 @@ const React = require("react");
 const helper = require('../../helper');
 
 const Sidebar = React.createClass({
-  
+
   getInitialState: function () {
     return {sidebarStatus: "sidebar-closed", cart: [], cartQty: undefined, cartTotal: undefined };
   },

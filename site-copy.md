@@ -7,7 +7,7 @@ drives new innovation and economic development. In the worst of times, community
 can suffer because of fear, misinformation, and uncertainty. If we loose trust in our neighbors, we
 become weaker not stronger.
 
-Our platform, __insert good name here__, aims to close that divide by providing a place
+Our platform, FoodFriends, aims to close that divide by providing a place
 for people to regain trust in our neighbors through the cultural ritual of food.
 It is through this necessity of sustenance we can break down the walls between us.
 
@@ -16,7 +16,7 @@ but also education about the traditions and culture of our neighbors through hom
 Meals made fresh with love and care made by real people and perfected over generations
 and not machines made in mass.
 
-With __our app name__ as a cook you can share you passion and culture with others in
+With FoodFriends as a cook you can share you passion and culture with others in
 you local community and also find information and tips on how to stay compliant with
 local regulations and ordinances. Many gifted cooks may find it hard to start a new restaurant
 for various reasons. Entry into the industry requires too much capital upfront or maybe
@@ -29,7 +29,7 @@ As customers you can find amazing new foods to experience like no other restaura
 Learn about new food traditions and find out how different cultures prepare and have celebrated
 with food for centuries.
 
-__Our app name__ will be a place where people can meet, share culture, make connections
+FoodFriends will be a place where people can meet, share culture, make connections
 with neighbors and create a network of like no other place in the country.
 Its true that the entry to the heart is through the stomach. Join us now and find out how
 you fit in to the melting pot.

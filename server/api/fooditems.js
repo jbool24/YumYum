@@ -14,7 +14,7 @@ const getFooditemsByCook = function(req, res) {
     Cook.findOne({ "_id": req.params.id })
         // ..and populate all of the fooditems associated with it
         .populate("fooditems")
-        .exec(function(error, doc) {            
+        .exec(function(error, doc) {
             if (error) {
                 res.json({ error: "sorry no item found" });
             }
@@ -23,6 +23,21 @@ const getFooditemsByCook = function(req, res) {
                 res.json(doc.fooditems);
             }
         });
-}
+};
 
-module.exports = getFooditemsByCook;
+const getCookWithFoodItems = function(req, res) {
+    Cook.findOne({ "_id": req.params.id })
+        // ..and populate all of the fooditems associated with it
+        .populate("fooditems")
+        .exec(function(error, doc) {
+            if (error) {
+                res.json({ error: "sorry no item found" });
+            }
+            // Otherwise, send the doc to the browser as a json object
+            else {
+                res.json(doc);
+            }
+        });
+};
+
+module.exports = {getFooditemsByCook, getCookWithFoodItems};

@@ -69,7 +69,7 @@ exports.logout = function (req, res) {
 //Local Authentication
 exports.authLocal = passport.authenticate('local',
   {
-    successRedirect: '/home#/customer/dashboard/search',
+    successRedirect: '/home#/customer/dashboard',
     failureRedirect: '/error.html',
     failureFlash: true })
 
@@ -80,5 +80,5 @@ exports.authGoogle = passport.authenticate('google',
 exports.authGoogleCallback = passport.authenticate('google')
 
 exports.continueGoogle = function (req, res) {
-  res.redirect('/home#/customer/dashboard/search')
+  res.redirect('/home#/customer/dashboard')
 }

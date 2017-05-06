@@ -5,11 +5,6 @@ const Customer = React.createClass({
   getInitialState: function() {
     return {
       // this data comes from DB in componentWillMount
-      items: [
-        { id: 1, name: "Turduckin" },
-        { id: 2, name: "Tika Masala" },
-        { id: 3, name: "Borscht" },
-      ]
     };
   },
 

@@ -8,8 +8,9 @@
   "scripts": {
     "test": "echo 'No test engine setup \n'",
     "build:dev": "rm -rf public/dist/* && webpack -w",
-    "start:dev": "npm run build:dev && nodemon server",
-    "start": "nodemon server"
+    "start:dev": "npm run build:dev && node server",
+    "start": "node server"
+
   },
   "dependencies": {
     "axios": "^0.16.1",
