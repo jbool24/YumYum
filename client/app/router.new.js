@@ -9,10 +9,10 @@ const IndexRoute = router.IndexRoute;
 
 const App = require('./App');
 const Cook = require('./components/cook');
-const CookItem = require('./components/cook/CookItem');
+const CookDetails = require('./components/cook/CookDetails');
 
 const Customer = require('./components/customer');
-const CookInfo = require('./components/customer/CookInfo');
+const CookInfo = require('./compnents/customer/CookInfo');
 const CustomerDash = require('./components/customer/CustomerDash');
 const CustomerFilterPage = require('./components/customer/CustomerFilterPage');
 
@@ -22,16 +22,22 @@ module.exports = (
     <Route path="/" component={App}>
 
       <Route path="customer" component={Customer} >
+        <Route path="dashboard" component={CustomerDash}>
 
-        <Route path="dashboard" component={CustomerDash} />
-        <Route path="cookinfo/:cookid" component={CookInfo} />
+          <Route path="search" component={CustomerFilterPage} />
+          <Route path="cookinfo" component={CookInfo} />
+
+          <IndexRoute component={CustomerFilterPage} />
+        </Route>
+
+        <Route path="customer-content" component={CustomerContent} />
 
         <IndexRoute component={CustomerDash} />
       </Route>
 
       <Route path="cook" component={Cook}>
-        <Route path="cook-content" component={CookItem} />
-        <IndexRoute component={CookItem} />
+        <Route path="cook-content" component={CookDetails} />
+        <IndexRoute component={CookDetails} />
       </Route>
 
       <IndexRoute component={Customer} />

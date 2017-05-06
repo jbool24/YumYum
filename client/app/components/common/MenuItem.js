@@ -1,37 +1,26 @@
 // Include React
-const React = require("react");
+const React = require('react');
+const axios = require('axios');
 
 // Creating the Footer component
 const MenuItem = React.createClass({
   getInitialState: function(){
-    return this.state = {
-      // isCook: true,
-      // in here we can set up which kind of
-      // menuItem cook's item or customer's item
-      // A cook has edit buttons
-      // A customer has add to order buttons
-    };
+    return { };
   },
   // Add the item to cart
   handleAddToCart: function (item) {
     // call to DB to add item to customer order
+    axios.get("/cart/add-item/"+ item)
+    .then(() => {
+      alert("Added To Cart")
+    }).catch(err => console.log(err))
   },
-  handleRemoveItem: function (item){
+
+  handleRemoveItem: function (item) {
     // call to DB to pop off item from cook items list
   },
 
-
   render: function() {
-    const specialbutton = function(){
-      // Create a buttton to use based on cook or customer
-      // if (this.state.isCook) {
-      //  return <button onClick={this.handleRemoveItem}> Remove Item </button>;
-      // } else {
-      //  return <button onClick={this.handleAddToCart}>Add Item</button>;
-      // }
-      //** for Demo return generic button **//
-      return <button key={this.props.key} onClick={alert("you clicked the button")}> Click</button>;
-    };
 
     return (
 
@@ -42,12 +31,14 @@ const MenuItem = React.createClass({
           <div className="order-style">
             <div className="col-sm-8 text-left">
               <h2>Menu Item - {this.props.name}</h2>
-              <p>This is a really delicious meal my mother made me when I was young. And now I get to cook it for you.</p>
-            { specialbutton }
+              <p>{this.props.cusine}</p>
+              <p>{this.props.description}</p>
+              <p>${this.props.price}.00</p>
+              <button onClick={() => this.handleAddToCart(this.props.itemID)}>Add One To Cart</button>
             </div>
           </div>
       </div>
-  
+
     );
   }
 });
