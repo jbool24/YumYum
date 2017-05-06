@@ -7,9 +7,10 @@
   "license": "MIT",
   "scripts": {
     "test": "echo 'No test engine setup \n'",
-    "build:dev": "rm -rf public/dist/* && webpack -w",
+    "build:dev": "webpack -w",
     "build:prod": "rm -rf public/dist/* && webpack -p",
     "start:dev": "npm run build:dev && node server",
+    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress",
     "start": "node server"
   },
   "dependencies": {
