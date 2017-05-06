@@ -28,10 +28,10 @@ const CustomerDash = React.createClass({
 
 		return(
 			<div>
-	      <CustomerFilterHeader formHandler={(query) => this.formHandler(query)}/>
+				<CustomerFilterHeader formHandler={(query) => this.formHandler(query)}/>
 				<CustomerFilterPage
-					location={this.state.location}
-					cuisine={this.state.cuisine}
+						location={this.state.location}
+						cuisine={this.state.cuisine}
 				/>
 			</div>
 		);

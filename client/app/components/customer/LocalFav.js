@@ -24,35 +24,8 @@ const LocalFav = React.createClass({
 		console.log("Fav Did mount");
 	},
 
-	// refreshData: function() {
-	// 	console.log("refreshData called");
-	// 	if (this.state.location) {
-	// 		console.log("Called with location");
-	// 			axios.get('/cook/'+ this.state.location).then((response) => {
-	// 					console.log("Called for location based item", response.data)
-	// 					this.setState({
-	// 						items: response.data.fooditems,
-	// 					});
-	// 			}).catch((error) => {	console.log(error) });
-	// 	} else if (this.state.cuisine) {
-	// 		console.log("Called with cuisine");
-	// 			axios.get('/fooditem/'+ this.state.cuisine).then((response) => {
-	// 					console.log(("Called for cuisine based item"),response.data)
-	// 					this.setState({
-	// 						items: response.data
-	// 					});
-	// 		}).catch((error) => { console.log(error) });
-	// 	}
-	// },
-
-	componentWillReceiveProps: function(nextProps) {
-		// if(nextProps.location !== this.props.location){
-		// 	console.log("Fav Will reveive loc");
-		// 	this.setState({ location: nextProps.location });
-		// } else if (nextProps.cuisine !== this.props.cuisine) {
-		// 	console.log("Fav Will reveive cusine");
-		// 	this.setState({	cuisine: nextProps.cuisine 	});
-		// }
+	refreshData: function() {
+		console.log("refreshData called");
 		if (this.state.location) {
 			console.log("Called with location");
 				axios.get('/cook/'+ this.state.location).then((response) => {
@@ -72,14 +45,49 @@ const LocalFav = React.createClass({
 		}
 	},
 
+	shouldComponentUpdate: function(){
+		console.log("Fav Comp Should Update called")
+		if(this.state.items){
+			return true;
+		}
+		return false;
+	},
+
+	componentWillReceiveProps: function(nextProps) {
+		if(nextProps.location !== this.props.location) {
+			console.log("Fav Will reveive loc", nextProps.location);
+			this.setState({ location: nextProps.location });
+		} else if (nextProps.cuisine !== this.props.cuisine) {
+			console.log("Fav Will reveive cusine");
+			this.setState({	cuisine: nextProps.cuisine 	});
+		}
+		this.refreshData();
+		// if (nextProps.location) {
+		// 	console.log("Called with location");
+		// 		axios.get('/cook/'+ this.state.location).then((response) => {
+		// 				console.log("Called for location based item", response.data)
+		// 				this.setState({
+		// 					items: response.data.fooditems,
+		// 				});
+		// 		}).catch((error) => {	console.log(error) });
+		// } else if (nextProps.cuisine) {
+		// 	console.log("Called with cuisine");
+		// 		axios.get('/fooditem/'+ this.state.cuisine).then((response) => {
+		// 				console.log(("Called for cuisine based item"),response.data)
+		// 				this.setState({
+		// 					items: response.data
+		// 				});
+		// 	}).catch((error) => { console.log(error) });
+	},
+
 	handleClick: function(cookid) {
 		hashHistory.push("/customer/cookinfo/" + cookid);
 	},
 
 	render: function() {
-		console.log("Fav Did Render");
 
 		const items = this.state.items;
+		console.log("Fav Did Render", items);
 
 		let foodCard = items.map((item, idx) => {
 			return (
