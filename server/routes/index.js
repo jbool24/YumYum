@@ -7,15 +7,15 @@ const {
   authLocal,
   authGoogle,
   authGoogleCallback,
-  continueGoogle
+  continueGoogle,
+  checkRegister
 } = user;
 
 const stripeCharge = require('./stripe')
 
 module.exports = function (app) {
-  app.post('/register', register);
-  app.post('/login', authLocal);
-  app.get('/users/logout', logout);
+  app.post('/user/authentication', checkRegister, authLocal);
+  app.get('/user/logout', logout);
   app.get('/auth/google', authGoogle);
     
   app.get('/auth/google/callback', authGoogleCallback, continueGoogle)

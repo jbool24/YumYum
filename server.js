@@ -84,8 +84,6 @@ app.use(function (req, res, next) {
 // const compiler = webpack(configWebpack(env));
 
 // Middleware Setup ========================================
-//app.use("/public", express.static(path.resolve(__dirname + "/public")));
-//app.use("/public", express.static(path.resolve(__dirname + "/public/dist")));
 app.use("/", express.static(path.resolve(__dirname + "/public")));
 // app.use(webpackMiddleware(compiler));
 
@@ -127,9 +125,9 @@ if (env === 'development')
 // Routes ======================
 require('./server/routes')(app);
 require('./server/api')(app);
-const authenticated = require('./server/routes/config/auth');
 
 // Main files ==========================================
+const authenticated = require('./server/routes/config/auth');
 app.get("/home/", authenticated, (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'dist', 'index.html'));
 });

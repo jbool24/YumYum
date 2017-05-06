@@ -4,7 +4,7 @@ const Sidebar = require('./Sidebar');
 const Navbar = React.createClass({
 
 	getInitialState: function(){
-    return {sidebarVisible: true};
+    return {sidebarVisible: false};
   },
 
 	handleSidebarView: function(){
@@ -36,7 +36,7 @@ const Navbar = React.createClass({
 							            <li><a href="#">Account Settings</a></li>
 							            <li><a href="#">About</a></li>
 							            <li role="separator" className="divider"></li>
-							        	<li><a href="/users/logout">Sign Out</a></li>
+							        	<li><a href="/user/logout">Sign Out</a></li>
 							        </ul>
 						        </li>
 

@@ -1,18 +1,17 @@
 // REACT MODULES ==================================
 const React = require('react');
 
-const CookHeader = require('./CookHeader');
-const CookItem   = require('./CookItem');
-// const SideBar = require('../common/SideBar');
+const MenuItem   = require('../common/MenuItem');
 
 const CookDetails = React.createClass({
   getInitialState: function() {
-    return {};
+    return {
+      items: [],
+    };
   },
 
   componentWillMount: function() {
-    // Call DB to get items
-    // this.setState({items: results of db call })
+    this.setState({items: this.props.foodItems })
   },
 
   render: function() {
@@ -20,12 +19,18 @@ const CookDetails = React.createClass({
     const items = this.state.items;
 
     const menuitems = items.map((item) => {
-      return <Cookitem key={item.id} name={item.name} />;
+      return <MenuItem
+          key={item._id}
+          name={item.itemName}
+          price={item.price}
+          itemID={item._id}
+          cuisine={item.cuisine}
+          description={item.itemDescription}
+        />;
     });
 
     return (
       <div>
-        {/* <SideBar /> */}
          <div className="container copy-style">
           <div className="row">
             <div className="orders-body">

@@ -7,7 +7,10 @@ const CookHeader = require('./CookHeader');
 
 const Cook = React.createClass({
   getInitialState: function() {
-    return this.state = {};
+    return {};
+  },
+  componentWillMount: function() {
+
   },
 
   render: function() {
@@ -17,7 +20,7 @@ const Cook = React.createClass({
     let header = "";
 
     if (context === "#/cook/cook-content")
-          header = <CookHeader />
+          header = <CookHeader/>
 
     return (
         <div>

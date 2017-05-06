@@ -10,9 +10,27 @@ const Customer = require("../models/Customer.js");
 
 
 const cooksByZip = function(req, res) {
+    Cook
+      .find({ "address.zip": req.params.zip })
+      .populate("fooditems")
+      .exec(function(error, doc) {
+          // Log any errors
+          if (error) {
+              console.log(error);
+          }
+          // Otherwise, send the doc to the browser as a json object
+          else {
+              res.json(doc);
+          }
+      });
 
-    Cook.find({ "address.zip": req.params.zip }, function(error, doc) {
+};
 
+const cooksByID = function(req, res) {
+    Cook
+      .find({ "_id": req.params.id })
+      .populate("fooditems")
+      .exec(function(error, doc) {
         // Log any errors
         if (error) {
             console.log(error);
@@ -22,8 +40,6 @@ const cooksByZip = function(req, res) {
             res.json(doc);
         }
     });
+};
 
-
-}
-
-module.exports=cooksByZip;
+module.exports = { cooksByZip, cooksByID };

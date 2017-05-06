@@ -2,6 +2,7 @@ const React = require("react");
 
 const CookItem = React.createClass({
 
+
 	render: function(){
 		return(
 			<div>
@@ -51,6 +52,7 @@ const CookItem = React.createClass({
 								<i className="fa fa-times-circle exit-btn" aria-hidden="true"></i>
 								<h1> food name</h1>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis volutpat ac risus ultricies tempus. Vivamus semper congue dignissim.  </p>
+
 								<button type="submit" className="search-btn btn btn-default" data-toggle="modal" data-target="#myModal"><i className="fa fa-plus-square" aria-hidden="true"></i> Add to Cart</button>
 							</div>
 						</div>
