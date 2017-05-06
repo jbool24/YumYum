@@ -1,20 +1,19 @@
-
 const React = require("react");
 
 const CustomerFilterHeader = React.createClass({
 	getInitialState: function() {
-			return {
-				cuisine: '',
-				location: '',
-			};
+		return {
+			cuisine: '',
+			location: '',
+		};
 	},
 
 	handleChange: function(event){
-			if (event.target.name === "CityStateZip") {
-				this.setState({location: event.target.value });
-			} else if ( event.target.name === "Cuisine") {
-				this.setState({cuisine: event.target.value });
-			}
+		if (event.target.name === "CityStateZip") {
+			this.setState({location: event.target.value });
+		} else if ( event.target.name === "Cuisine") {
+			this.setState({cuisine: event.target.value });
+		}
 	},
 
 	formSubmit: function(){
@@ -29,21 +28,25 @@ const CustomerFilterHeader = React.createClass({
 					<h1>Search For Some Food</h1>
 					<h3> Find food by cuisine or zip code </h3>
 					<form className="navbar-form">
-				        <div className="form-group">
-									<input type="text"
-												 name="Cuisine"
-												 onChange={this.handleChange}
-												 className="form-control cuisine-form"
-												 placeholder="&#xf1b1; Japanese, American, e.g."/>
+				        <div className="form-group">						 
+							  <select className="form-control cuisine-form" 
+							  		  name="Cuisine"
+									  onChange={this.handleChange} 
+									  placeholder="&#xf1b1; Japanese, American, e.g."
+							  >
+									<option value="Indian">Indian</option>
+									<option value="Italian">Italian</option>
+									<option value="Global">Global</option>
+							  </select>
 				        </div>
 				        <div className="form-group">
-									<input type="text"
-												 name="CityStateZip"
-												 onChange={this.handleChange}
-												 className="form-control address-form"
-												 placeholder="&#xf124; City, State or Zip Code"/>
+							<input type="text"
+								   name="CityStateZip"
+								   onChange={this.handleChange}
+								   className="form-control address-form"
+								   placeholder="&#xf124; City, State or Zip Code"/>
 				        </div>
-								<button type="button" onClick={() => this.formSubmit()} className="search-btn btn btn-default">&#xf002; Submit</button>
+						<button type="button" onClick={() => this.formSubmit()} className="search-btn btn btn-default">&#xf002; Submit</button>
 				  </form>
 				</div>
 				<div className="overlayOpacity"></div>

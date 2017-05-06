@@ -25,6 +25,21 @@ const getFooditemsByCook = function(req, res) {
         });
 };
 
+const getFooditemsByZip = function(req, res) {
+    Cook.findOne({ "address.zip": req.params.zip })
+        // ..and populate all of the fooditems associated with it
+        .populate("fooditems")
+        .exec(function(error, doc) {
+            if (error) {
+                res.json({ error: "sorry no item found" });
+            }
+            // Otherwise, send the doc to the browser as a json object
+            else {
+                res.json(doc.fooditems);
+            }
+        });
+};
+
 const getCookWithFoodItems = function(req, res) {
     Cook.findOne({ "_id": req.params.id })
         // ..and populate all of the fooditems associated with it
@@ -40,4 +55,4 @@ const getCookWithFoodItems = function(req, res) {
         });
 };
 
-module.exports = {getFooditemsByCook, getCookWithFoodItems};
+module.exports = {getFooditemsByCook, getCookWithFoodItems, getFooditemsByZip};

@@ -2,9 +2,10 @@
 
 
 const cooks = require('./cooks.js');
-const fooditems =require('./fooditems.js');
-const getFooditemsByCuisine=require('./getFooditemsByCuisine.js');
-const getBestFooditems=require('./getBestFooditems.js');
+const fooditems = require('./fooditems.js');
+const getFooditemsByCuisine = require('./getFooditemsByCuisine.js');
+const getBestFooditems = require('./getBestFooditems.js');
+
 
 
 const saveCook=require('./saveCook.js');
@@ -26,6 +27,7 @@ module.exports = function(app) {
 	app.get("/cook/:zip", cooks.cooksByZip);
 	app.get("/cooks/:id", cooks.cooksByID);
 	app.get("/fooditems/:id", fooditems.getCookWithFoodItems);
+	app.get("/fooditem/zip/:zip", fooditems.getFooditemsByZip);
 	app.get("/fooditem/:cuisine", getFooditemsByCuisine);
 	app.get("/top-food-items", getBestFooditems);
 

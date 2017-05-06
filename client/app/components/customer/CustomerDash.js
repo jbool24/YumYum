@@ -1,9 +1,9 @@
 const React = require("react");
 const axios = require('axios');
 
-const CookHeader = require('../cook/CookHeader');
-const CustomerFilterHeader = require('./CustomerFilterHeader');
-const CustomerFilterPage = require('./CustomerFilterPage');
+const CookHeader 			= require('../cook/CookHeader');
+const CustomerFilterPage 	= require('./CustomerFilterPage');
+const CustomerFilterHeader 	= require('./CustomerFilterHeader');
 
 const CustomerDash = React.createClass({
 	getInitialState: function(){
@@ -24,15 +24,11 @@ const CustomerDash = React.createClass({
 	},
 
 	render: function(){
-		console.log("Dash Rendered");
 
 		return(
 			<div>
 				<CustomerFilterHeader formHandler={(query) => this.formHandler(query)}/>
-				<CustomerFilterPage
-						location={this.state.location}
-						cuisine={this.state.cuisine}
-				/>
+				<CustomerFilterPage	location={this.state.location}	cuisine={this.state.cuisine}/>
 			</div>
 		);
 	}

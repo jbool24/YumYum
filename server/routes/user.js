@@ -50,7 +50,7 @@ const register = function register(req, res) {
 
         //     req.flash('success_msg', 'You are registered and can now login');
 
-        res.redirect('/home#/customer/dashboard/search');
+        res.redirect('/home#/customer/dashboard');
       }
     });
   }

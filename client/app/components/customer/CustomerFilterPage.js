@@ -3,7 +3,7 @@ const React = require("react");
 const axios = require('axios');
 
 const LocalFav = require('./LocalFav');
-const RecentOrders = require('./RecentOrders');
+// const RecentOrders = require('./RecentOrders');
 
 const FilterPage = React.createClass({
   getInitialState: function() {
@@ -13,24 +13,29 @@ const FilterPage = React.createClass({
      };
   },
 
-  componentWillMount: function() {
-    // axios.get('/top-food-items').then((response) => {
-    //   this.setState({ items: response.data  });
-    // }).catch((error) => { console.log(error) });
-  },
-
   componentWillReceiveProps: function(nextProps){
-    this.setState({
-      location: nextProps.location,
-      cuisine: nextProps.cuisine
-    });
+    if(nextProps.location){
+        axios.get(`/fooditem/zip/${nextProps.location}`).then((response) => {
+          this.setState({
+            items: response.data,
+            location: nextProps.location,
+          });
+        })
+    } else if (nextProps.cuisine) {
+        axios.get(`/fooditem/${nextProps.cuisine}`).then((response) => {
+          this.setState({
+            items: response.data,
+            cuisine: nextProps.cuisine
+          });
+        })
+    }
   },
 
   render: function() {
 
     return (
       <div>
-        <LocalFav location={this.state.location} cuisine={this.state.location}/>
+        <LocalFav location={this.state.location} cuisine={this.state.location} items={this.state.items}/>
         {/* <RecentOrders /> */}
       </div>
     );

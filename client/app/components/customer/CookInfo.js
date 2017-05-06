@@ -1,8 +1,8 @@
 const React = require("react");
 const axios = require('axios');
 
-const CookDetails = require('./CookDetails');
-const CookHeader = require('./CookHeader');
+const CookHeader 	= require('./CookHeader');
+const CookDetails 	= require('./CookDetails');
 const GenericHeader	= require('./GenericHeader');
 
 const CookInfo = React.createClass({
@@ -13,10 +13,7 @@ const CookInfo = React.createClass({
 	},
 
 	componentWillMount: function() {
-		const cook_id = this.props.params.cookid;
-
-		axios.get("/fooditems/" + cook_id)
-			.then((response) => {
+		axios.get(`/fooditems/${this.props.params.cookid}`).then((response) => {
 			this.setState({cook: response.data });
 		}).catch((err) => { console.log(err) });
 	},
@@ -37,7 +34,7 @@ const CookInfo = React.createClass({
 			<div>
 				{ header }
 				{ details }
-	    </div>
+	    	</div>
 		)
 	}
 });

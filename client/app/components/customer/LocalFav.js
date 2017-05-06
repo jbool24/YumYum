@@ -20,64 +20,10 @@ const LocalFav = React.createClass({
 		}).catch((error) => { console.log(error) });
 	},
 
-	componentDidMount: function(){
-		console.log("Fav Did mount");
-	},
-
-	refreshData: function() {
-		console.log("refreshData called");
-		if (this.state.location) {
-			console.log("Called with location");
-				axios.get('/cook/'+ this.state.location).then((response) => {
-						console.log("Called for location based item", response.data)
-						this.setState({
-							items: response.data.fooditems,
-						});
-				}).catch((error) => {	console.log(error) });
-		} else if (this.state.cuisine) {
-			console.log("Called with cuisine");
-				axios.get('/fooditem/'+ this.state.cuisine).then((response) => {
-						console.log(("Called for cuisine based item"),response.data)
-						this.setState({
-							items: response.data
-						});
-			}).catch((error) => { console.log(error) });
-		}
-	},
-
-	shouldComponentUpdate: function(){
-		console.log("Fav Comp Should Update called")
-		if(this.state.items){
-			return true;
-		}
-		return false;
-	},
-
 	componentWillReceiveProps: function(nextProps) {
-		if(nextProps.location !== this.props.location) {
-			console.log("Fav Will reveive loc", nextProps.location);
-			this.setState({ location: nextProps.location });
-		} else if (nextProps.cuisine !== this.props.cuisine) {
-			console.log("Fav Will reveive cusine");
-			this.setState({	cuisine: nextProps.cuisine 	});
+		if(nextProps.items) {
+			this.setState({ items: nextProps.items });
 		}
-		this.refreshData();
-		// if (nextProps.location) {
-		// 	console.log("Called with location");
-		// 		axios.get('/cook/'+ this.state.location).then((response) => {
-		// 				console.log("Called for location based item", response.data)
-		// 				this.setState({
-		// 					items: response.data.fooditems,
-		// 				});
-		// 		}).catch((error) => {	console.log(error) });
-		// } else if (nextProps.cuisine) {
-		// 	console.log("Called with cuisine");
-		// 		axios.get('/fooditem/'+ this.state.cuisine).then((response) => {
-		// 				console.log(("Called for cuisine based item"),response.data)
-		// 				this.setState({
-		// 					items: response.data
-		// 				});
-		// 	}).catch((error) => { console.log(error) });
 	},
 
 	handleClick: function(cookid) {
@@ -139,23 +85,20 @@ const LocalFav = React.createClass({
 			                {/* Carousel Items */}
 			                <div className="carousel-inner">
 			                    <div className="item active">
-
 			                        <div className="row">
 
-																{	firstSet }
+										{ firstSet }
 
 			                        </div>
-			                        {/* End Row */}
 			                    </div>
 
 			                   {/* Start List of Items */}
 			                    <div className="item">
-
 			                        <div className="row">
-																	{ secondSet }
+
+										{ secondSet }
 
 			                        </div>
-			                        {/* End Row */}
 			                    </div>
 			                </div>
 
