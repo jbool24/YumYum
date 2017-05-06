@@ -26,6 +26,7 @@ const CookDetails = React.createClass({
           itemID={item._id}
           cuisine={item.cuisine}
           description={item.itemDescription}
+          img = {item.image}
         />;
     });
 
@@ -34,8 +35,11 @@ const CookDetails = React.createClass({
          <div className="container copy-style">
           <div className="row">
             <div className="orders-body">
-              <div className="orders text-center center-block row-margin-sm">Current menu</div>
-
+              <div className = "row menu-title-cont">
+                <div className="col-md-12 menu-title">
+                  <img src="links/menu.png" className = "menu-img"/>
+                </div>
+              </div>
                    { menuitems }
 
             </div>
