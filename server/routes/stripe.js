@@ -1,6 +1,8 @@
 // Set your secret key: remember to change this to your live secret key in production
 // See your keys here: https://dashboard.stripe.com/account/apikeys
 const stripe = require("stripe")("sk_test_wNAPV3SxRZ0awcrfiP4mdT8f");
+const Order = require('../models/Order');
+const Customer = require('../models/Customer')
 
 module.exports = function stripeCharge(req, res) {
   console.log(req.body);
@@ -22,6 +24,10 @@ module.exports = function stripeCharge(req, res) {
     });
   }).then(function (charge) {
     // Use and save the charge info.
+    // let order = {
+    //   customer: 
+    // }
+    let newOrder = new Order()
     res.redirect('/home#/customer/dashboard/search')
     console.log(charge);
   });
