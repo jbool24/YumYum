@@ -11,7 +11,7 @@ const LocalFav = React.createClass({
 		if (nextProps.foodItems[0]._id !== this.props.foodItems[0]._id )
 			this.setState({ items: nextProps.foodItems });
 			console.log("called willReveiveProps")
-	},
+	}, 
 	render: function() {
 		const items = this.props.foodItems;
 
@@ -27,13 +27,16 @@ const LocalFav = React.createClass({
 									</div>
 
 									<div className="localFav-cardBottom">
-										<div className="row localFav-cardInfo">
-											<div className="col-md-3 localFav-cardPrice">
-												<p className="item-price">{item.price}</p>
+										<div className="localFav-cardInfo">
+											<div className="row cardInfo-cont">
+												<div className="col-md-12 localFav-cardPrice">
+													<p className="item-price">{item.price}</p>
+												</div>
+												<div className="col-md-12 localFav-cardName">
+													<p className="item-name">{item.itemName}</p>
+												</div>
 											</div>
-											<div className="col-md-9 localFav-cardName">
-												<p className="item-name">{item.itemName}</p>
-											</div>
+	
 										</div>
 									</div>
 								</div>

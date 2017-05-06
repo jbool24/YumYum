@@ -1,5 +1,6 @@
 
 const React = require("react");
+const SvgAnim = require("../common/SvgAnim")
 
 const CustomerFilterHeader = React.createClass({
 
@@ -7,6 +8,7 @@ const CustomerFilterHeader = React.createClass({
 		return(
 			<div className="header">
 				<div className="headerCont">
+					<SvgAnim />
 					<h1>Find authentic cuisines nearby!</h1>
 					<form className="navbar-form">
 				        <div className="form-group">

@@ -22,8 +22,11 @@ const RecentOrders = React.createClass({
       	    	<div className="row prevOrders">
       	    		<div className="col-md-4 prevOrder-cont">
         					<div className="prevOrder-Card">
-        						<h3 className="prevOrder-CardName">Restaurant</h3>
-        						<hr/>
+        						<h4 className="prevOrder-CardName">Restaurant</h4>
+                    <div className = "card-footer">
+                      <h4>Total</h4>
+          						<hr/>
+                    </div>
         					</div>
       	    		</div>
       	    		<div className="col-md-4 prevOrder-cont">
