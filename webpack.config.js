@@ -32,7 +32,7 @@ module.exports = {
             fallback: 'style-loader',
             use: [
               { loader: 'css-loader', query: { modules: false, sourceMaps: true} },
-              { loader: 'sass-loader', query: { sourceMaps: true } },
+              { loader: 'sass-loader', query: { modules: false, sourceMaps: true } },
             ]
           }),
       },
