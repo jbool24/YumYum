@@ -1,4 +1,5 @@
 const user = require('./user');
+const stripeCharge = require('./stripe')
 
 const {
   logout,
@@ -9,7 +10,6 @@ const {
   checkRegister
 } = user;
 
-const stripeCharge = require('./stripe')
 
 module.exports = function (app) {
   app.post('/user/authentication', checkRegister, authLocal);
