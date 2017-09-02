@@ -8,9 +8,9 @@
   "scripts": {
     "test": "echo 'No test engine setup \n'",
     "build:dev": "webpack-dashboard --title Packitup -- webpack-dev-server --content-base ./ --inline --hot",
-    "build:prod": "webpack -p",
+    "build:prod": "webpack -p --config ./webpack.prod.config.js",
     "start:dev": "npm run build:dev && node server",
-    "heroku-postbuild": "rm -rf ./public/dist/* && webpack -p --config ./webpack.prod.config.js",
+    "postinstall": "rm -rf ./public/dist/* && webpack -p --config ./webpack.prod.config.js",
     "start": "node server"
   },
   "dependencies": {
