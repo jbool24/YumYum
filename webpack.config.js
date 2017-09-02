@@ -3,6 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const DashboardPlugin   = require('webpack-dashboard/plugin');
 
 module.exports = {
   context: path.resolve(__dirname),
@@ -50,6 +51,7 @@ module.exports = {
       filename: '[name].bundle.js'
     }),
     new ExtractTextPlugin('[name].min.css'),
+    new DashboardPlugin(),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public/react_app.html'),
       filename: 'index.html',

@@ -2,11 +2,8 @@
 
 @import components/all
 
-
-
 a[href] input[type='submit'] input[type='image'] label[for] select button .pointer
 	cursor: pointer
-
 
 body 
 	background-color: $white
@@ -14,13 +11,13 @@ body
 	-webkit-user-select: none
 	-moz-user-select: none
 	-ms-user-select: none
-	user-select: none           
-	
-.parallax 
+	user-select: none
+
+.parallax
 	overflow-x: hidden
 	overflow-y: auto
 	background-image: url(/links/home.jpg)
-	min-height: 80% 
+	min-height: 80%
 	background-attachment: fixed
 	background-position: center
 	background-repeat: no-repeat
@@ -37,7 +34,7 @@ body
 		margin-top: 15px
 
 /* copy */
-.headline 
+.headline
 	@include text-primary ($white, $font-stack)
 	font-size: 6em
 	padding: 8%
@@ -45,13 +42,13 @@ body
 .title-p
 	color: $blue
 
-.text-style 
+.text-style
 	@include margin-center
 	width: 85%
 	@include text-primary ($grey, $font-stack)
 	font-size: 1.5em
 	line-height: 1.25em
-	
+
 	@mixin border-blue
 		width: 90%
 		border: 2px solid $red
@@ -69,25 +66,25 @@ body
 		-ms-transform: rotate(-5deg)
 		-webkit-transform: rotate(-5deg)
 		transform: rotate(-5deg)
-	
+
 	.add-border
 		border: 1px solid $blue
 		padding: 15px
 
-.copy-style 
+.copy-style
 	margin: 5% auto
-	
+
 	.icon-center
 		width: 50px
-		margin: 15px auto 
-	
+		margin: 15px auto
+
 		.icon-lg
 			width: 60px
 
-	.headline-small 
+	.headline-small
 		@include text-primary ($red, $font-stack)
 		font-size: 3em
-		
+
 
 	.circles-style
 		display: flex
@@ -95,8 +92,8 @@ body
 		@media screen and (max-width: $break-md)
 			justify-content: center
 			flex-direction: column
-		
-		.round 
+
+		.round
 			align-self: center
 			width: $circle-width
 			height: $circle-width
@@ -106,30 +103,30 @@ body
 			margin: 15px
 			@include text-primary ($blue, $font-stack)
 			font-weight: bold
-	
+
 			.how-to-icons
 				width: $circle-width / 2
 				margin: auto
-			
 
-	.headline-tiny 
+
+	.headline-tiny
 		@include text-primary ($grey, $font-stack)
 		font-size: 20pt
 		margin: 3%
-		
-	.social-icons 
+
+	.social-icons
 		width: 170px
 		margin: 5% auto 0 auto
-			
+
 		.icon-lg
 			width: 48px
 			float: left
 			margin: 3px
 
-hr 
+hr
 	border-color: $grey
 
-.row-margin 
+.row-margin
 	margin-top: 5%
 
 /*animation element sliding up*/
@@ -150,7 +147,7 @@ hr
 	transform: translate3d(0px, 100px, 0px)
 
 
-.animation-element.slide-left.in-view 
+.animation-element.slide-left.in-view
 	opacity: 1
 	-moz-transform: translate3d(0px, 0px, 0px)
 	-webkit-transform: translate3d(0px, 0px, 0px)

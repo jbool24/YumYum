@@ -10,7 +10,7 @@ const favicon           = require('serve-favicon');
 const webpack           = require('webpack');
 const mongoose          = require('mongoose');
 const expressValidator  = require('express-validator');
-const flash             = require('connect-flash');
+// const flash             = require('connect-flash');
 const session           = require('express-session');
 const passport          = require('passport');
 const LocalStrategy     = require('passport-local');
@@ -18,11 +18,8 @@ const MongoStore        = require('connect-mongo')(session)
 
 mongoose.Promise = global.Promise;
 
-// const configWebpack     = require('./webpack.config.js');
-// const webpackMiddleware = require('webpack-dev-middleware');
-
 /***********************************************************
-*  ENVIRONEMENT SETUP
+*** ENVIRONEMENT SETUP ************************************
 ************************************************************/
 if (process.env.NODE_ENV === undefined)
     // development env variables
@@ -81,21 +78,21 @@ app.use(function (req, res, next) {
   res.locals.session = req.session;
   next();
 })
-// const compiler = webpack(configWebpack(env));
 
-// Middleware Setup ========================================
+//==========================================================
+//=== Middleware Setup =====================================
+//==========================================================
 app.use("/", express.static(path.resolve(__dirname + "/public")));
-// app.use(webpackMiddleware(compiler));
 
 
 // Express Validator
 app.use(expressValidator({
-  errorFormatter: function(param, msg, value) {
-      var namespace = param.split('.')
-      , root    = namespace.shift()
-      , formParam = root;
+  errorFormatter: (param, msg, value) => {
+    const namespace = param.split('.');
+    const root = namespace.shift();
+    let formParam = root;
 
-    while(namespace.length) {
+    while (namespace.length) {
       formParam += '[' + namespace.shift() + ']';
     }
     return {
@@ -106,19 +103,19 @@ app.use(expressValidator({
   }
 }));
 
-//Connect Flash
-app.use(flash());
+//---Connect Flash--------------------------------------
+// app.use(flash());
 
 // Global Variables for Flash
-app.use(function (req, res, next) {
-  res.locals.success_msg = req.flash('success_msg');
-  res.locals.error_msg = req.flash('error_msg');
-  res.locals.error = req.flash('error');
-  res.locals.user = req.user || null;
-  next();
-});
+// app.use(function (req, res, next) {
+//   res.locals.success_msg = req.flash('success_msg');
+//   res.locals.error_msg = req.flash('error_msg');
+//   res.locals.error = req.flash('error');
+//   res.locals.user = req.user || null;
+//   next();
+// });
 
-// Morgan Logger
+//---Morgan Logger--------------------------------------
 if (env === 'development')
   app.use(logger('dev'));
 
@@ -126,9 +123,9 @@ if (env === 'development')
 require('./server/routes')(app);
 require('./server/api')(app);
 
-// Main files ==========================================
-const authenticated = require('./server/routes/config/auth');
-app.get("/home/", authenticated, (req, res) => {
+// Main files =============================================
+const { isAuthenticated } = require('./server/routes/user');
+app.get("/home/", isAuthenticated, (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'dist', 'index.html'));
 });
 

@@ -16,21 +16,23 @@ passport.deserializeUser(function (id, done) {
   });
 });
 
-passport.use(new LocalStrategy(
-  function (username, password, done) {
-    console.log(username, password);
+passport.use(new LocalStrategy((username, password, done) => {
     User.getUserByUsername(username, function (err, user) {
-      console.log("getting username");
-      if (err) throw err;
+      if (err) {
+        console.log(`LocalStrategy err: ${err}`)
+        return done(err);
+      }
       if (!user) {
+        console.log(`LocalStrategy No User`)
         return done(null, false, { message: 'Unknown User' });
       }
-      user.comparePassword(password, user.local.password, function (err, isMatch) {
-        console.log("getting password");
+      user.comparePassword(password, user.local.password, (err, isMatch) => {
         if (err) throw err;
+        console.log(`LocalStrategy password err: ${err}`)
         if (isMatch) {
           return done(null, user);
         } else {
+          console.log(`LocalStrategy bad password`)
           return done(null, false, { message: 'Invalid password' });
         }
       });
@@ -56,7 +58,6 @@ passport.use(new LocalStrategy(
 //           newUser.facebook.token = accessToken;
 //           newUser.facebook.name = profile.name.givenName + ' ' + profile.name.familyName;
 //           newUser.facebook.email = profile.emails[0].value;
-
 //           newUser.save(function (err) {
 //             if (err)
 //               throw err;
@@ -67,38 +68,35 @@ passport.use(new LocalStrategy(
 //       });
 //     });
 //   }
-
 // ));
 
 passport.use(new GoogleStrategy({
   clientID: configAuth.googleAuth.clientID,
   clientSecret: configAuth.googleAuth.clientSecret,
   callbackURL: configAuth.googleAuth.callbackURL
-},
-  function (accessToken, refreshToken, profile, done) {
+}, (accessToken, refreshToken, profile, done) => {
 
-    User.getUserByGoogle(profile.id, function (err, user) {
-      if (err)
+    User.getUserByGoogle(profile.id, (err, user) => {
+      if (err) {
         return done(err);
-      if (user)
+      }
+
+      if (user) {
         return done(null, user);
-      else {
-        var newUser = new User();
+      } else {
+        const newUser = new User();
         newUser.google.id = profile.id;
         newUser.google.token = accessToken;
         newUser.google.name = profile.displayName;
         newUser.google.email = profile.emails[0].value;
 
-        newUser.save(function (err) {
-          if (err)
-            throw err;
+        newUser.save( err => {
+          if (err) throw err;
           return done(null, newUser);
-        })
-        console.log(profile);
+        });
       }
     });
-  }
-
-));
+  })
+);
 
 module.exports = passport;

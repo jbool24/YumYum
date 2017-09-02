@@ -1,84 +1,80 @@
-const express = require('express');
-
-const User = require('../models/user');
+const express  = require('express');
+const User     = require('../models/user');
 const passport = require('./config/passport');
 
 
 
-
-exports.checkRegister = function (req, res, next) {
-  console.log(req.body);
+exports.checkRegister = (req, res, next) => {
   if (req.body.register) {
-    register(req, res)
-  } else if(req.body.login) {
+    console.log('calling register')
+    register(req, res);
+  } else if (req.body.login) {
+    console.log('calling authlocal')
     next();
   }
-}
+};
+
 // Register User
-const register = function register(req, res) {
-  var {username, password} = req.body;
-  console.log(req.body);
-
-//   // Validation
-//   req.checkBody('name', 'Name is required').notEmpty();
-//   req.checkBody('email', 'Email is required').notEmpty();
-//   req.checkBody('email', 'Email is not valid').isEmail();
-//   req.checkBody('username', 'Username is required').notEmpty();
-//   req.checkBody('password', 'Password is required').notEmpty();
-//   req.checkBody('password2', 'Passwords do not match').equals(req.body.password);
-
-  var errors = req.validationErrors();
+const register = (req, res) => {
+  const {username, password} = req.body;
+  // Validation
+  req.checkBody('username', 'Name is required').notEmpty();
+  req.checkBody('username', 'Email is not valid').isEmail();
+  req.checkBody('password', 'Password is required').notEmpty();
+  // req.checkBody('password2', 'Passwords do not match').equals(req.body.password);
+  const errors = req.validationErrors();
 
   if (errors) {
-    res.send('/error.html')
-  }
-
-  else {
-    User.getUserByUsername(username, function (err, user) {
-      console.log(user);
+    console.log(errors)
+    res.send('/test-error.html\n' + errors)
+  } else {
+    User.getUserByUsername(username, (err, user) => {
       if (err) throw err;
+
       if (user) {
-        return console.log('that username is already taken');
+        //FIX ME -- Dirty Logging
+        res.end(); // that username is already taken
       } else {
-        const newUser = new User({
-          "local.username": username,
-          "local.password": password
-        });
-        newUser.save(function (err) {
-          if (err) throw err
-        })
+        const newUser = new User({ "local.username": username, "local.password": password });
 
-        //     req.flash('success_msg', 'You are registered and can now login');
-
+        newUser.save(err => { if (err) throw err; });
+        // Take us to main app
         res.redirect('/home#/customer/dashboard');
       }
     });
   }
 };
 
-exports.login = function (req, res) {
+exports.isAuthenticated = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    next();
+  } else {
+    res.redirect('/splash.html');
+  }
+}
+
+exports.login = (req, res) => {
     // res.redirect('/');
 };
 
-exports.logout = function (req, res) {
+exports.logout = (req, res) => {
   req.logout();
-  // req.flash('success_msg', 'You are logged out');
   res.redirect('/');
 };
 
 //Local Authentication
-exports.authLocal = passport.authenticate('local',
-  {
+exports.authLocal = passport.authenticate('local', {
     successRedirect: '/home#/customer/dashboard',
-    failureRedirect: '/error.html',
-    failureFlash: true })
+    failureRedirect: '/test-error.html',
+});
 
 //Google Authentication
-exports.authGoogle = passport.authenticate('google',
-  { scope: ['profile', 'email'] });
+exports.authGoogle = passport.authenticate('google', {
+  scope: ['profile', 'email']
+});
 
-exports.authGoogleCallback = passport.authenticate('google')
+exports.authGoogleCallback = passport.authenticate('google');
 
 exports.continueGoogle = function (req, res) {
-  res.redirect('/home#/customer/dashboard')
-}
+  res.redirect('/home#/customer/dashboard');
+};
