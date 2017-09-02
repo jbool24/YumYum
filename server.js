@@ -27,7 +27,9 @@ if (process.env.NODE_ENV === undefined)
 
 const env = process.env.NODE_ENV;
 
-// Database seteup MongoDB--------------------------
+//==========================================================
+//=== Database seteup MongoDB ==============================
+//==========================================================
 (env === 'development')
     ? mongoose.connect(process.env.MONGO_TESTDB)
     : mongoose.connect(process.env.MONGODB_URI)
@@ -50,8 +52,9 @@ db.once("open", function() {
   console.log(`Mongoose connection successful.\nMongo Host: ${db.host}:${db.port}`);
 });
 
-
-// EXPRESS APP INIT
+//==========================================================
+//=== EXPRESS APP INIT =====================================
+//==========================================================
 const app = express();
 
 app.use(bodyParser.json());
@@ -115,11 +118,11 @@ app.use(expressValidator({
 //   next();
 // });
 
-//---Morgan Logger--------------------------------------
+// Morgan Logger =========================================
 if (env === 'development')
   app.use(logger('dev'));
 
-// Routes ======================
+// Routes ================================================
 require('./server/routes')(app);
 require('./server/api')(app);
 
