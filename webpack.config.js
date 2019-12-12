@@ -1,61 +1,87 @@
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const DashboardPlugin = require("webpack-dashboard/plugin");
 
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const DashboardPlugin   = require('webpack-dashboard/plugin');
+const isProduction = process.env.NODE_env === "production";
 
 module.exports = {
   context: path.resolve(__dirname),
+
+  mode: isProduction ? "production" : "development",
+
+  devtool:
+    process.env.NODE_ENV !== "production" ? "source-map" : "cheap-source-map",
+
+  devServer: {
+    contentBase: path.join(__dirname, "..", "public"),
+    historyApiFallback: true,
+    port: 8081,
+    compress: true,
+    publicPath: "/",
+    quiet: true,
+    overlay: {
+      warnings: true,
+      errors: true
+    },
+    hot: true
+  },
+
   entry: {
-    main: './client/index.js',
-    vendor: ['react', 'react-dom', 'react-router'],
-    style: './client/stylesheets/main.sass',
+    main: "./client/index.js",
+    react: ["react", "react-dom", "react-router"],
+    style: "./client/stylesheets/main.sass"
   },
+
   output: {
-    filename: '[name].bundle.js',
-    path: path.join(__dirname, 'public/dist/'),
-    publicPath: '/dist',
-    sourceMapFilename: '[name].map',
+    filename: "[name].bundle.js",
+    path: path.join(__dirname, "public/"),
+    publicPath: "/",
+    sourceMapFilename: "[name].map"
   },
-  devtool: process.env.NODE_ENV !== 'production' ? 'source-map' : 'cheap-source-map',
+
   module: {
     rules: [
       {
         test: /\.js?$/,
-        exclude: '/node_modules/',
-        loader: 'babel-loader',
+        exclude: "/node_modules/",
+        loader: "babel-loader"
       },
       {
         test: /\.sass?$/,
-        use: ExtractTextPlugin
-          .extract({
-            fallback: 'style-loader',
-            use: [
-              { loader: 'css-loader', query: { modules: false, sourceMaps: true} },
-              { loader: 'sass-loader', query: { modules: false, sourceMaps: true } },
-            ]
-          }),
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: "css/"
+            }
+          },
+          {
+            loader: "css-loader",
+            query: { modules: false, sourceMap: true }
+          },
+          {
+            loader: "sass-loader",
+            query: { sourceMap: true }
+          }
+        ]
       },
       {
-          test: /\.(jpg|png|gif)$/,
-          use: 'file-loader'
-      },
-    ],
+        test: /\.(jpg|png|gif)$/,
+        use: "file-loader"
+      }
+    ]
   },
+
   plugins: [
     // build optimization plugins
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunk: Infinity,
-      filename: '[name].bundle.js'
-    }),
-    new ExtractTextPlugin('[name].min.css'),
+    new MiniCssExtractPlugin("[name].min.css"),
     new DashboardPlugin(),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'public/react_app.html'),
-      filename: 'index.html',
-      inject: 'body',
-    }),
-  ],
-}
+      template: path.join(__dirname, "public/react_app.html"),
+      filename: "index.html",
+      inject: "head"
+    })
+  ]
+};
