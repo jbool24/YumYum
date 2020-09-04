@@ -33,7 +33,7 @@
     "mini-css-extract-plugin": "^0.8.0",
     "mongoose": "^5.8.0",
     "morgan": "^1.8.1",
-    "node-sass": "^4.5.2",
+    "node-sass": "^4.13.1",
     "passport": "^0.4.1",
     "passport-google-oauth": "^2.0.0",
     "passport-http": "^0.3.0",
